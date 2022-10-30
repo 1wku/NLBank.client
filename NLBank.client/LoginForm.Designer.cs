@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
-            this.btn_login = new MaterialSkin.Controls.MaterialButton();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.materialTextBox2 = new MaterialSkin.Controls.MaterialTextBox();
+            this.btn_login = new MaterialSkin.Controls.MaterialButton();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
@@ -52,6 +52,15 @@
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(20);
             this.flowLayoutPanel1.Size = new System.Drawing.Size(586, 307);
             this.flowLayoutPanel1.TabIndex = 1;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Controls.Add(this.materialLabel1);
+            this.flowLayoutPanel2.Controls.Add(this.materialTextBox1);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(23, 23);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(526, 100);
+            this.flowLayoutPanel2.TabIndex = 5;
             // 
             // materialLabel1
             // 
@@ -82,34 +91,6 @@
             this.materialTextBox1.Text = "";
             this.materialTextBox1.TrailingIcon = null;
             // 
-            // btn_login
-            // 
-            this.btn_login.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btn_login.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.btn_login.Depth = 0;
-            this.btn_login.HighEmphasis = true;
-            this.btn_login.Icon = null;
-            this.btn_login.Location = new System.Drawing.Point(24, 238);
-            this.btn_login.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btn_login.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btn_login.Name = "btn_login";
-            this.btn_login.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btn_login.Size = new System.Drawing.Size(105, 36);
-            this.btn_login.TabIndex = 4;
-            this.btn_login.Text = "Đăng nhập";
-            this.btn_login.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.btn_login.UseAccentColor = false;
-            this.btn_login.UseVisualStyleBackColor = true;
-            // 
-            // flowLayoutPanel2
-            // 
-            this.flowLayoutPanel2.Controls.Add(this.materialLabel1);
-            this.flowLayoutPanel2.Controls.Add(this.materialTextBox1);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(23, 23);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(526, 100);
-            this.flowLayoutPanel2.TabIndex = 5;
-            // 
             // flowLayoutPanel3
             // 
             this.flowLayoutPanel3.Controls.Add(this.materialLabel2);
@@ -136,7 +117,7 @@
             this.materialTextBox2.AnimateReadOnly = false;
             this.materialTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.materialTextBox2.Depth = 0;
-            this.materialTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialTextBox2.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialTextBox2.LeadingIcon = null;
             this.materialTextBox2.Location = new System.Drawing.Point(3, 22);
             this.materialTextBox2.MaxLength = 50;
@@ -148,14 +129,33 @@
             this.materialTextBox2.Text = "";
             this.materialTextBox2.TrailingIcon = null;
             // 
-            // Form1
+            // btn_login
+            // 
+            this.btn_login.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_login.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btn_login.Depth = 0;
+            this.btn_login.HighEmphasis = true;
+            this.btn_login.Icon = null;
+            this.btn_login.Location = new System.Drawing.Point(24, 238);
+            this.btn_login.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btn_login.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_login.Name = "btn_login";
+            this.btn_login.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btn_login.Size = new System.Drawing.Size(105, 36);
+            this.btn_login.TabIndex = 4;
+            this.btn_login.Text = "Đăng nhập";
+            this.btn_login.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btn_login.UseAccentColor = false;
+            this.btn_login.UseVisualStyleBackColor = true;
+            // 
+            // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(592, 374);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Name = "Form1";
-            this.Text = "Đăng nhập";
+            this.Name = "LoginForm";
+            this.Text = " ";
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
