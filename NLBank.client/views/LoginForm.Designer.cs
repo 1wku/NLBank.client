@@ -31,9 +31,9 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
+            this.input_email_login = new MaterialSkin.Controls.MaterialTextBox();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            this.input_password_login = new MaterialSkin.Controls.MaterialLabel();
             this.materialTextBox2 = new MaterialSkin.Controls.MaterialTextBox();
             this.btn_login = new MaterialSkin.Controls.MaterialButton();
             this.flowLayoutPanel1.SuspendLayout();
@@ -47,19 +47,21 @@
             this.flowLayoutPanel1.Controls.Add(this.flowLayoutPanel3);
             this.flowLayoutPanel1.Controls.Add(this.btn_login);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 64);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(4, 79);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(20);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(586, 307);
+            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(27, 25, 27, 25);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(781, 377);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.Controls.Add(this.materialLabel1);
-            this.flowLayoutPanel2.Controls.Add(this.materialTextBox1);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(23, 23);
+            this.flowLayoutPanel2.Controls.Add(this.input_email_login);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(31, 29);
+            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(526, 100);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(701, 123);
             this.flowLayoutPanel2.TabIndex = 5;
             // 
             // materialLabel1
@@ -67,50 +69,55 @@
             this.materialLabel1.AutoSize = true;
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel1.Location = new System.Drawing.Point(3, 0);
+            this.materialLabel1.Location = new System.Drawing.Point(4, 0);
+            this.materialLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(109, 19);
+            this.materialLabel1.Size = new System.Drawing.Size(41, 19);
             this.materialLabel1.TabIndex = 1;
-            this.materialLabel1.Text = "Tên đăng nhập";
+            this.materialLabel1.Text = "Email";
+            this.materialLabel1.Click += new System.EventHandler(this.materialLabel1_Click);
             // 
-            // materialTextBox1
+            // input_email_login
             // 
-            this.materialTextBox1.AnimateReadOnly = false;
-            this.materialTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox1.Depth = 0;
-            this.materialTextBox1.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox1.LeadingIcon = null;
-            this.materialTextBox1.Location = new System.Drawing.Point(3, 22);
-            this.materialTextBox1.MaxLength = 50;
-            this.materialTextBox1.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox1.Multiline = false;
-            this.materialTextBox1.Name = "materialTextBox1";
-            this.materialTextBox1.Size = new System.Drawing.Size(526, 50);
-            this.materialTextBox1.TabIndex = 0;
-            this.materialTextBox1.Text = "";
-            this.materialTextBox1.TrailingIcon = null;
+            this.input_email_login.AnimateReadOnly = false;
+            this.input_email_login.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.input_email_login.Depth = 0;
+            this.input_email_login.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.input_email_login.LeadingIcon = null;
+            this.input_email_login.Location = new System.Drawing.Point(4, 23);
+            this.input_email_login.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.input_email_login.MaxLength = 50;
+            this.input_email_login.MouseState = MaterialSkin.MouseState.OUT;
+            this.input_email_login.Multiline = false;
+            this.input_email_login.Name = "input_email_login";
+            this.input_email_login.Size = new System.Drawing.Size(701, 50);
+            this.input_email_login.TabIndex = 0;
+            this.input_email_login.Text = "";
+            this.input_email_login.TrailingIcon = null;
             // 
             // flowLayoutPanel3
             // 
-            this.flowLayoutPanel3.Controls.Add(this.materialLabel2);
+            this.flowLayoutPanel3.Controls.Add(this.input_password_login);
             this.flowLayoutPanel3.Controls.Add(this.materialTextBox2);
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(23, 129);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(31, 160);
+            this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(526, 100);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(701, 123);
             this.flowLayoutPanel3.TabIndex = 5;
             // 
-            // materialLabel2
+            // input_password_login
             // 
-            this.materialLabel2.AutoSize = true;
-            this.materialLabel2.Depth = 0;
-            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel2.Location = new System.Drawing.Point(3, 0);
-            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(68, 19);
-            this.materialLabel2.TabIndex = 1;
-            this.materialLabel2.Text = "Mật khẩu";
+            this.input_password_login.AutoSize = true;
+            this.input_password_login.Depth = 0;
+            this.input_password_login.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.input_password_login.Location = new System.Drawing.Point(4, 0);
+            this.input_password_login.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.input_password_login.MouseState = MaterialSkin.MouseState.HOVER;
+            this.input_password_login.Name = "input_password_login";
+            this.input_password_login.Size = new System.Drawing.Size(68, 19);
+            this.input_password_login.TabIndex = 1;
+            this.input_password_login.Text = "Mật khẩu";
             // 
             // materialTextBox2
             // 
@@ -119,12 +126,13 @@
             this.materialTextBox2.Depth = 0;
             this.materialTextBox2.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialTextBox2.LeadingIcon = null;
-            this.materialTextBox2.Location = new System.Drawing.Point(3, 22);
+            this.materialTextBox2.Location = new System.Drawing.Point(4, 23);
+            this.materialTextBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.materialTextBox2.MaxLength = 50;
             this.materialTextBox2.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox2.Multiline = false;
             this.materialTextBox2.Name = "materialTextBox2";
-            this.materialTextBox2.Size = new System.Drawing.Size(526, 50);
+            this.materialTextBox2.Size = new System.Drawing.Size(701, 50);
             this.materialTextBox2.TabIndex = 0;
             this.materialTextBox2.Text = "";
             this.materialTextBox2.TrailingIcon = null;
@@ -136,8 +144,8 @@
             this.btn_login.Depth = 0;
             this.btn_login.HighEmphasis = true;
             this.btn_login.Icon = null;
-            this.btn_login.Location = new System.Drawing.Point(24, 238);
-            this.btn_login.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btn_login.Location = new System.Drawing.Point(32, 294);
+            this.btn_login.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.btn_login.MouseState = MaterialSkin.MouseState.HOVER;
             this.btn_login.Name = "btn_login";
             this.btn_login.NoAccentTextColor = System.Drawing.Color.Empty;
@@ -147,14 +155,17 @@
             this.btn_login.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btn_login.UseAccentColor = false;
             this.btn_login.UseVisualStyleBackColor = true;
+            this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(592, 374);
+            this.ClientSize = new System.Drawing.Size(789, 460);
             this.Controls.Add(this.flowLayoutPanel1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "LoginForm";
+            this.Padding = new System.Windows.Forms.Padding(4, 79, 4, 4);
             this.Text = " ";
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
@@ -170,10 +181,10 @@
 
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox1;
+        private MaterialSkin.Controls.MaterialTextBox input_email_login;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
-        private MaterialSkin.Controls.MaterialLabel materialLabel2;
+        private MaterialSkin.Controls.MaterialLabel input_password_login;
         private MaterialSkin.Controls.MaterialTextBox materialTextBox2;
         private MaterialSkin.Controls.MaterialButton btn_login;
     }
