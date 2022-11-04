@@ -16,7 +16,6 @@ namespace NLBank.client.DAL
             SqlConnection Conn = Connection.KetNoi();
             SqlCommand command = new SqlCommand("ThemKhoanVay", Conn);
             command.CommandType = CommandType.StoredProcedure;
- _
             command.Parameters.Add("@MaKV", SqlDbType.Char);
             command.Parameters.Add("@MaKH", SqlDbType.Char);
             command.Parameters.Add("@MaTSDB", SqlDbType.Char);
