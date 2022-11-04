@@ -5,7 +5,7 @@ VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLBank.client", "NLBank.client\NLBank.client.csproj", "{6D287318-2E26-4097-B943-1AE4ECAEBD49}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "View", "View", "{64EDF756-1BBE-4C98-94A7-D7D4DA6E74E4}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "assets", "assets", "{64EDF756-1BBE-4C98-94A7-D7D4DA6E74E4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
