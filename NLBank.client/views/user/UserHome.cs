@@ -10,16 +10,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace NLBank.client
+namespace NLBank.client.views.user
 {
-    public partial class LoginForm : MaterialForm
+    public partial class UserHome : MaterialForm
     {
-        public LoginForm()
+        public UserHome()
         {
             InitializeComponent();
-
             var materialSkinManager = MaterialSkinManager.Instance;
-            LoginForm form1 = this;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);

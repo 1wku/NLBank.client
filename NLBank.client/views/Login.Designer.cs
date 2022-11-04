@@ -1,6 +1,6 @@
 ﻿namespace NLBank.client
 {
-    partial class LoginForm
+    partial class Login
     {
         /// <summary>
         /// Required designer variable.
@@ -147,15 +147,16 @@
             this.btn_login.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btn_login.UseAccentColor = false;
             this.btn_login.UseVisualStyleBackColor = true;
+            this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
             // 
-            // LoginForm
+            // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(592, 374);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Name = "LoginForm";
-            this.Text = " ";
+            this.Name = "Login";
+            this.Text = "Đăng nhập";
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
