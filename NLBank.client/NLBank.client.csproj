@@ -55,16 +55,22 @@
     <Compile Include="DAL\TSDBDAL.cs" />
     <Compile Include="DTO\KhoanVayDTO.cs" />
     <Compile Include="DTO\TSDBDTO.cs" />
-    <Compile Include="views\LoginForm.cs">
+    <Compile Include="views\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\LoginForm.Designer.cs">
-      <DependentUpon>LoginForm.cs</DependentUpon>
+    <Compile Include="views\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="views\LoginForm.resx">
-      <DependentUpon>LoginForm.cs</DependentUpon>
+    <Compile Include="views\user\UserHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\user\UserHome.Designer.cs">
+      <DependentUpon>UserHome.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="views\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -75,6 +81,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="views\user\UserHome.resx">
+      <DependentUpon>UserHome.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -89,6 +98,13 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="views\admin\" />
+  </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Content Include="assets\home.png" />
+    <Content Include="assets\setting.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
