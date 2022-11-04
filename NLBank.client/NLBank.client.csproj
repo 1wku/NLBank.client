@@ -50,6 +50,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\Connection.cs" />
+    <Compile Include="DAL\KhoanVayDAL.cs" />
+    <Compile Include="DAL\TSDBDAL.cs" />
+    <Compile Include="DTO\KhoanVayDTO.cs" />
+    <Compile Include="DTO\TSDBDTO.cs" />
     <Compile Include="views\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,5 +89,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
