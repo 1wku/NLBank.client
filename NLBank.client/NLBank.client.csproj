@@ -50,6 +50,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\Connection.cs" />
+    <Compile Include="DAL\KhoanVayDAL.cs" />
+    <Compile Include="DAL\TSDBDAL.cs" />
+    <Compile Include="DTO\KhoanVayDTO.cs" />
+    <Compile Include="DTO\TSDBDTO.cs" />
     <Compile Include="views\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +101,7 @@
   <ItemGroup>
     <Folder Include="views\admin\" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="assets\home.png" />
     <Content Include="assets\setting.png" />
