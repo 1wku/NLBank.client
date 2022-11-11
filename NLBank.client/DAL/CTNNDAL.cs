@@ -11,6 +11,19 @@ namespace NLBank.client.DAL
 {
     public class CTNNDAL
     {
+        public static DataTable getView()
+        {
+            String cmd = "Select * From rentPaper";
+            SqlConnection Con = Connection.KetNoi();
+            SqlCommand command = new SqlCommand(cmd, Con);
+            Con.Open();
+            SqlDataAdapter da = new SqlDataAdapter();
+            da.SelectCommand = command;
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            Con.Close();
+            return dt;
+        }
         public static void ThemCTNN(CTNNDTO ctnn)
         {
             SqlConnection Conn = Connection.KetNoi();

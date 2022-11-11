@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NLBank.client.DTO
 {
-    class CTGNDTO
+    public class CTGNDTO
     {
         private String _SoCTGN;
         private String _SoHDTD;

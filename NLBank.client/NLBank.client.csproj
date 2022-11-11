@@ -50,15 +50,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\CANHANDAL.cs" />
+    <Compile Include="DAL\Common.cs" />
+    <Compile Include="DAL\DOANHNGHIEPDAL.cs" />
+    <Compile Include="DAL\KHDAL.cs" />
     <Compile Include="DAL\Connection.cs" />
     <Compile Include="DAL\CTGNDAL.cs" />
     <Compile Include="DAL\CTNNDAL.cs" />
     <Compile Include="DAL\CTTNDAL.cs" />
+    <Compile Include="DAL\HDTDDAL.cs" />
     <Compile Include="DAL\KhoanVayDAL.cs" />
     <Compile Include="DAL\TSDBDAL.cs" />
+    <Compile Include="DTO\CANHANDTO.cs" />
     <Compile Include="DTO\CTGNDTO.cs" />
     <Compile Include="DTO\CTNNDTO.cs" />
     <Compile Include="DTO\CTTNDTO.cs" />
+    <Compile Include="DTO\DOANHNGHIEPDTO.cs" />
+    <Compile Include="DTO\HDTDDTO.cs" />
+    <Compile Include="DTO\KHDTO.cs" />
     <Compile Include="DTO\KhoanVayDTO.cs" />
     <Compile Include="DTO\TSDBDTO.cs" />
     <Compile Include="views\Login.cs">
