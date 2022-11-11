@@ -83,5 +83,21 @@ namespace NLBank.client.DAL
             command.ExecuteNonQuery();
             Conn.Close();
         }
+        public static List<KhoanVayDTO> getAll()
+        {
+           
+            List<KhoanVayDTO> danhsach = new List<KhoanVayDTO>();
+
+            DataTable data = Connection.Instance.ExcuteQuery("select * from KHOANVAY");
+
+            foreach (DataRow item in data.Rows)
+            {
+                KhoanVayDTO ban = new KhoanVayDTO(item);
+                danhsach.Add(ban);
+            }
+
+            return danhsach;
+        }
+
     }
 }
