@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NLBank.client.DTO
 {
-    class KhoanVayDTO
+    public class KhoanVayDTO
     {
         private String _MaKV ;
         private String _MaKH ;

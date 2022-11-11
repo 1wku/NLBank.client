@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NLBank.client.DTO
 {
-    class TSDBDTO
+    public class TSDBDTO
     {
         private String _MaTSDB; 
         private String _MaLoaiTSDB ; 
