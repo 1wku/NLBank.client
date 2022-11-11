@@ -17,7 +17,7 @@ namespace NLBank.client
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ThanhToan());
+            Application.Run(new Login());
         }
     }
 }
