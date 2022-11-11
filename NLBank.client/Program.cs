@@ -1,4 +1,5 @@
-﻿using NLBank.client.views.user;
+﻿using NLBank.client.views.employee;
+using NLBank.client.views.user;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace NLBank.client
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            Application.Run(new EmployeeHome());
         }
     }
 }

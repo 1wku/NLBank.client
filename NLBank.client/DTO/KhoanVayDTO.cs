@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -43,6 +44,7 @@ namespace NLBank.client.DTO
             get { return _LoaiTien; }
             set { _LoaiTien = value; }
         }
+        public KhoanVayDTO KhachHang { set; get; } 
 
         public KhoanVayDTO(String maKV, String maKH, String maTSDB, String maLoaiKV, String mucDich, int soTienVay, String loaiTien)
         {
@@ -55,6 +57,16 @@ namespace NLBank.client.DTO
             _LoaiTien = loaiTien;
         }
         public KhoanVayDTO() { }
+        public KhoanVayDTO(DataRow row)
+        {
+            _MaKH = row["MaKH"].ToString();
+            _MaKV = row["MaKV"].ToString(); ;
+            _MaTSDB = row["MaTSDB"].ToString(); 
+            _MaLoaiKV = row["MaLoaiKV"].ToString(); 
+            _MucDich = row["MucDich"].ToString(); 
+            _SoTienVay = (int)row["SoTienVay"]; ;
+            _LoaiTien = row["LoaiTien"].ToString();
+        }
 
     }
 }

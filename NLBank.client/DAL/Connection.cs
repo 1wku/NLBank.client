@@ -17,7 +17,13 @@ namespace NLBank.client.DAL
             SqlConnection Con = new SqlConnection(conn);
             return Con;
         }
+        private static Connection instance;
 
+        public static Connection Instance
+        {
+            get { if (instance == null) instance = new Connection(); return Connection.instance; }
+            private set { Connection.instance = value; }
+        }
         public DataTable ExcuteQuery(string query)
         {
             DataTable data = new DataTable();
