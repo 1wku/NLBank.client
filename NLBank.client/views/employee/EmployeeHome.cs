@@ -38,6 +38,10 @@ namespace NLBank.client.views.employee
                 all_kv_panel.Controls.Add(new KhoanVayItem(ds_khoanvay[i]));
 
             }
+            list_hdtd_gridview.DataSource = KhoanVayDAL.getView();
+            tsdb_gridview.DataSource = TSDBDAL.getView(); 
+
+
         }
 
         private void materialLabel16_Click(object sender, EventArgs e)
@@ -48,6 +52,29 @@ namespace NLBank.client.views.employee
         private void tabPage2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void materialButton5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialButton2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void OpenEdit(object sender, DataGridViewCellEventArgs e)
+        {   
+            if (e.ColumnIndex >= 0 && e.RowIndex >= 0)
+            {
+                if (list_hdtd_gridview.CurrentCell.ColumnIndex == list_hdtd_gridview.Columns.IndexOf(list_hdtd_gridview.Columns[5]))
+                {
+                    DataGridViewCell cell = list_hdtd_gridview[5, e.RowIndex];
+                    list_hdtd_gridview.CurrentCell = cell;
+                    list_hdtd_gridview.BeginEdit(true);
+                }
+            }
         }
     }
 }
