@@ -47,12 +47,12 @@
             this.materialCard1.Controls.Add(this.id_tstd_lb);
             this.materialCard1.Depth = 0;
             this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard1.Location = new System.Drawing.Point(0, 0);
+            this.materialCard1.Location = new System.Drawing.Point(0, 8);
             this.materialCard1.Margin = new System.Windows.Forms.Padding(14);
             this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard1.Name = "materialCard1";
             this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard1.Size = new System.Drawing.Size(508, 75);
+            this.materialCard1.Size = new System.Drawing.Size(549, 75);
             this.materialCard1.TabIndex = 7;
             // 
             // materialLabel1
@@ -86,7 +86,7 @@
             this.materialButton1.Depth = 0;
             this.materialButton1.HighEmphasis = true;
             this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(409, 20);
+            this.materialButton1.Location = new System.Drawing.Point(451, 26);
             this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton1.Name = "materialButton1";
@@ -130,7 +130,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.materialCard1);
             this.Name = "HdtdItem";
-            this.Size = new System.Drawing.Size(528, 77);
+            this.Size = new System.Drawing.Size(553, 90);
             this.Load += new System.EventHandler(this.tstdItem_Load);
             this.materialCard1.ResumeLayout(false);
             this.materialCard1.PerformLayout();

@@ -47,12 +47,12 @@
             this.materialCard1.Controls.Add(this.lb_tentsdb_item);
             this.materialCard1.Depth = 0;
             this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard1.Location = new System.Drawing.Point(0, 0);
+            this.materialCard1.Location = new System.Drawing.Point(0, 7);
             this.materialCard1.Margin = new System.Windows.Forms.Padding(14);
             this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard1.Name = "materialCard1";
             this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard1.Size = new System.Drawing.Size(524, 75);
+            this.materialCard1.Size = new System.Drawing.Size(550, 75);
             this.materialCard1.TabIndex = 7;
             this.materialCard1.Paint += new System.Windows.Forms.PaintEventHandler(this.materialCard1_Paint);
             // 
@@ -87,7 +87,7 @@
             this.materialButton1.Depth = 0;
             this.materialButton1.HighEmphasis = true;
             this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(424, 20);
+            this.materialButton1.Location = new System.Drawing.Point(419, 26);
             this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton1.Name = "materialButton1";
@@ -130,7 +130,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.materialCard1);
             this.Name = "TsdbItem";
-            this.Size = new System.Drawing.Size(525, 87);
+            this.Size = new System.Drawing.Size(560, 91);
             this.Load += new System.EventHandler(this.TsdbItem_Load);
             this.materialCard1.ResumeLayout(false);
             this.materialCard1.PerformLayout();

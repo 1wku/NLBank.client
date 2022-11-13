@@ -119,34 +119,31 @@ namespace NLBank.client.DAL
         }
         public static Boolean CheckOverTimeHDTD(String id)
         {
-            //SqlConnection Conn = Connection.KetNoi();
-            //SqlCommand command = new SqlCommand("f_isOvertime", Conn);
-            //command.CommandType = CommandType.StoredProcedure;
-            //command.Parameters.Add("@id", SqlDbType.Char);
+            SqlConnection Conn = Connection.KetNoi();
+            SqlCommand command = new SqlCommand("select dbo.f_isOvertime('"+id+"')", Conn);
 
-            //command.Parameters["@id"].Value = id;
 
-            
 
-            //Conn.Open();
-            //using var reader = command.ExecuteReader();
-            //if (reader.HasRows)
-            //{
-            //    // Đọc từng dòng tập kết quả
-            //    while (reader.Read())
-            //    {
-            //        var danhmuc = reader.GetInt32(0);
-            //        var tendanhmuc = reader["TenDanhMuc"];
-            //        var mota = reader.GetString("Mota");
 
-            //        Console.WriteLine($"{danhmuc,4} - {tendanhmuc,-20} - {mota}");
-            //    }
-            //}
-            //else
-            //{
-            //    Console.WriteLine("Không có dữ liệu trả về");
-            //}
-            //Conn.Close();
+            Conn.Open();
+             var reader = command.ExecuteReader();
+            if (reader.HasRows)
+            {
+                // Đọc từng dòng tập kết quả
+                while (reader.Read())
+                {
+                    var data = reader.GetInt32(0);
+                    if (data == 0) return false;
+                    else return true; 
+
+                }
+            }
+            else
+            {
+                Console.WriteLine("Không có dữ liệu trả về");
+                return true; 
+            }
+            Conn.Close();
             return true; 
         }
 

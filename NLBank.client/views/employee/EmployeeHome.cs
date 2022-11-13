@@ -18,8 +18,8 @@ namespace NLBank.client.views.employee
     public partial class EmployeeHome : MaterialForm
     {
         List<KhoanVayDTO> ds_khoanvay = new List<KhoanVayDTO>();
-        DataTable hdtd_data;
-        DataTable tsdb_data; 
+       
+        DataTable nv_data, kv_data, lsthanhtoan_data, tsdb_data, hdtd_data, dieukhoan_data; 
         public EmployeeHome()
         {
 
@@ -34,7 +34,8 @@ namespace NLBank.client.views.employee
 
         void updateViewHDTD(DataTable hdtd_data)
         {
-            var hdtd_value = new HDTDDTO();
+            all_hdtd_panel.Controls.Clear(); 
+           var hdtd_value = new HDTDDTO();
             var kh_value = new KHDTO();
             var tsdb_value = new TSDBDTO();
             foreach (DataRow row in hdtd_data.Rows)
@@ -52,7 +53,6 @@ namespace NLBank.client.views.employee
                 hdtd_value.TGGiaiNgan = (DateTime)row["TGGiaiNgan"];
                 hdtd_value.NgayKi = (DateTime)row["NgayKi"];
                 hdtd_value.SoTienVay = (int)row["SoTienVay"];
-
                 tsdb_value.MaLoaiTSDB = (string)row["TenLoaiTSDB"];
                 tsdb_value.TenTSDB = (string)row["TenTSDB"];
                 tsdb_value.TriGiaTS = row["TrigiaTS"] != DBNull.Value ? (int)row["TrigiaTS"] : 0;
@@ -64,9 +64,9 @@ namespace NLBank.client.views.employee
         }
         void updateViewTSDB(DataTable tsdb_data)
         {
+            tsdb_panel.Controls.Clear(); 
             foreach (DataRow row in tsdb_data.Rows)
             {
-                Console.WriteLine(row["TriGiaTS"]);
 
                 tsdb_panel.Controls.Add(new TsdbItem(new TSDBDTO(
                     (string)row["MaTSDB"],
@@ -81,22 +81,60 @@ namespace NLBank.client.views.employee
 
             }
         }
+        void updateViewNhanVien(DataTable nv_data)
+        {
+            nhanvien_gridview.DataSource = nv_data; 
+        }
+        void updateViewKhoanVay(DataTable kv_data)
+        {
+            all_kv_panel.Controls.Clear();
+            foreach (DataRow row in kv_data.Rows)
+            {
 
+                all_kv_panel.Controls.Add(new KhoanVayItem(new KhoanVayDTO(
+                    (string)row["MaKV"],
+                    (string)row["MaKH"],
+                    row["MaTSDB"] != DBNull.Value ? (string)row["MaTSDB"] : "Chưa cập nhập",
+                    (string)row["MaLoaiKV"],
+                    row["MucDich"]!= DBNull.Value ? (string)row["MucDich"] : "Chưa cập nhập" ,
+                    row["SoTienVay"] != DBNull.Value ? (int)row["SoTienVay"] : 0,
+                    row["LoaiTien"] != DBNull.Value ? (string)row["LoaiTien"] : "Chưa cập nhập"
+                    )));;
+
+            }
+            
+        }
+
+        void updateViewDieuKhoan(DataTable dieukhoan_data)
+        {
+            dieukhoan_gridview.DataSource = dieukhoan_data; 
+        }
+
+        void updateViewLichSuThanhToan(DataTable lstt_data)
+        {
+            ls_thanhtoan_gridview.DataSource = lstt_data; 
+        }
         private void EmployeeHome_Load(object sender, EventArgs e)
         {
-            ds_khoanvay = KhoanVayDAL.getAll();
-            for (int i = 0; i < ds_khoanvay.Count; i++)
-            {
-                all_kv_panel.Controls.Add(new KhoanVayItem(ds_khoanvay[i]));
-            }
+            kv_data = KhoanVayDAL.getView(); 
+            updateViewKhoanVay(kv_data); 
             //
              hdtd_data = HDTDDAL.getView();
             updateViewHDTD(hdtd_data); 
             //
-            ls_thanhtoan_gridview.DataSource = CTTNDAL.getView();
+            lsthanhtoan_data = CTTNDAL.getView();
+            updateViewLichSuThanhToan(lsthanhtoan_data);
             //
              tsdb_data = TSDBDAL.getView();
-            updateViewTSDB(tsdb_data); 
+            updateViewTSDB(tsdb_data);
+
+            //
+            nv_data = NhanvienDAL.getView();
+            updateViewNhanVien(nv_data);
+
+            //
+            dieukhoan_data = DieuKhoanDAL.getView();
+            updateViewDieuKhoan(dieukhoan_data);
             
         }
 
@@ -107,10 +145,98 @@ namespace NLBank.client.views.employee
 
         private void search_tsdb_btn_Click(object sender, EventArgs e)
         {
-          //  tsdb_data= tsdb_data.AsEnumerable()
-          //.Where(row => row.Field<String>("MaLoaiTSDB") == maloaitsdb_input.Text)
-          //.CopyToDataTable();
-            updateViewTSDB(tsdb_data);
+            if (tsdb_data.AsEnumerable()
+    .Where(r => r.Field<String>("MaLoaiTSDB").Contains(maloaitsdb_input.Text)).Count() == 0)
+            {
+                MessageBox.Show("Mã TSDB không tồn tại. Vui lòng thử lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            else
+            {
+                updateViewTSDB(tsdb_data.AsEnumerable()
+   .Where(r => r.Field<String>("MaLoaiTSDB").Contains(maloaitsdb_input.Text)).CopyToDataTable());
+
+            }
+
+
+        }
+
+        private void search_nv_btn_Click(object sender, EventArgs e)
+        {
+             
+            updateViewNhanVien(nv_data.Select("Ten LIKE '%" + nv_input.Text + "%'").CopyToDataTable()); 
+        }
+
+        private void Reload_TSDB_Click(object sender, EventArgs e)
+        {
+            updateViewTSDB(tsdb_data); 
+        }
+
+        private void reload_kv_btn_Click(object sender, EventArgs e)
+        {
+            updateViewKhoanVay(kv_data); 
+        }
+
+        private void search_hdtd_btn_Click(object sender, EventArgs e)
+        {
+            if (hdtd_data.AsEnumerable().Where(r => r.Field<String>("SoHDTD").Contains(hdtd_input.Text)).Count() == 0)
+            {
+                MessageBox.Show("Mã hợp đồng không tồn tại. Vui lòng thử lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            else
+            {
+                updateViewHDTD(hdtd_data.AsEnumerable().Where(r => r.Field<String>("SoHDTD").Contains(hdtd_input.Text)).CopyToDataTable());
+
+            }
+        }
+
+        private void reaload_hdtd_btn_Click(object sender, EventArgs e)
+        {
+            updateViewHDTD(hdtd_data); 
+        }
+
+        private void reload_thuno_btn_Click(object sender, EventArgs e)
+        {
+            updateViewLichSuThanhToan(lsthanhtoan_data);
+        }
+
+        private void reload_nv_btn_Click(object sender, EventArgs e)
+        {
+            updateViewNhanVien(nv_data);
+        }
+
+        private void reaload_dieukhoan_btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void search_thuno_btn_Click(object sender, EventArgs e)
+        {
+            //if (lsthanhtoan_data.AsEnumerable().Where(r => r.Field<String>("MaKV").Contains(lb_kv_input.Text)).Count() == 0)
+            //{
+            //    MessageBox.Show("Mã khoản vay không tồn tại. Vui lòng thử lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            //}
+            //else
+            //{
+            //    updateViewKhoanVay(kv_data.AsEnumerable().Where(r => r.Field<String>("MaKV").Contains(lb_kv_input.Text)).CopyToDataTable());
+
+            //}
+        }
+
+        private void search_kv_btn_Click(object sender, EventArgs e)
+        {
+            if (kv_data.AsEnumerable().Where(r => r.Field<String>("MaKV").Contains(lb_kv_input.Text)).Count() == 0)
+            {
+                MessageBox.Show("Mã khoản vay không tồn tại. Vui lòng thử lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            else
+            {
+                updateViewKhoanVay(kv_data.AsEnumerable().Where(r => r.Field<String>("MaKV").Contains(lb_kv_input.Text)).CopyToDataTable());
+
+            }
         }
     }
 }

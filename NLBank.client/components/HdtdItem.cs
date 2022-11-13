@@ -1,4 +1,5 @@
-﻿using NLBank.client.DTO;
+﻿using NLBank.client.DAL;
+using NLBank.client.DTO;
 using NLBank.client.views.employee;
 using System;
 using System.Collections.Generic;
@@ -21,15 +22,27 @@ namespace NLBank.client.components
 
         public HdtdItem(HDTDDTO hdtDD, TSDBDTO tsdb, KHDTO kh )
         {
-            InitializeComponent();
             this.hdtDD = hdtDD;
             this.tsdb = tsdb;
-            this.kh = kh; 
+            this.kh = kh;
+            InitializeComponent();
+            
         }
 
         private void tstdItem_Load(object sender, EventArgs e)
         {
-            id_tstd_lb.Text = hdtDD.SoHDTD; 
+            id_tstd_lb.Text = hdtDD.SoHDTD;
+            Console.WriteLine("hehe" + hdtDD.SoHDTD);
+            datoihan = HDTDDAL.CheckOverTimeHDTD(hdtDD.SoHDTD);
+            if (datoihan)
+            {
+                id_isOver_lb.Text="Đã tới hạn";
+            }
+            else
+            {
+                id_isOver_lb.Text = "Chưa tới hạn";
+
+            }
 
         }
 

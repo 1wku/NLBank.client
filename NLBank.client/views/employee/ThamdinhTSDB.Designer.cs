@@ -139,7 +139,7 @@
             this.groupBox2.Controls.Add(this.loaits_combobox);
             this.groupBox2.Controls.Add(this.materialLabel10);
             this.groupBox2.Controls.Add(this.materialLabel12);
-            this.groupBox2.Location = new System.Drawing.Point(30, 296);
+            this.groupBox2.Location = new System.Drawing.Point(30, 236);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(649, 175);
             this.groupBox2.TabIndex = 12;
@@ -216,7 +216,7 @@
             this.materialButton1.Depth = 0;
             this.materialButton1.HighEmphasis = true;
             this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(615, 494);
+            this.materialButton1.Location = new System.Drawing.Point(615, 435);
             this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton1.Name = "materialButton1";
@@ -236,7 +236,7 @@
             this.materialButton2.Depth = 0;
             this.materialButton2.HighEmphasis = true;
             this.materialButton2.Icon = null;
-            this.materialButton2.Location = new System.Drawing.Point(479, 494);
+            this.materialButton2.Location = new System.Drawing.Point(496, 435);
             this.materialButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton2.Name = "materialButton2";

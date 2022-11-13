@@ -87,8 +87,11 @@
     <Compile Include="components\TsdbItem.Designer.cs">
       <DependentUpon>TsdbItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="DAL\DieuKhoanDAL.cs" />
     <Compile Include="DAL\LoaiTSDAL.cs" />
+    <Compile Include="DAL\NhanvienDAL.cs" />
     <Compile Include="DTO\LoaiTSDTO.cs" />
+    <Compile Include="DTO\NhanvienDTO.cs" />
     <Compile Include="models\GiayNhanNo.cs" />
     <Compile Include="DAL\CANHANDAL.cs" />
     <Compile Include="DAL\Common.cs" />

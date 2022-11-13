@@ -9,7 +9,7 @@ namespace NLBank.client.DTO
 {
     public class HDTDDTO
     {
-        private String _SoHDTD = Guid.NewGuid().ToString();
+        private String _SoHDTD; 
         private String _MaKH;
         private String _MAKV;
         private String _Muc_dich;
