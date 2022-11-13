@@ -117,7 +117,39 @@ namespace NLBank.client.DAL
             command.ExecuteNonQuery();
             Conn.Close();
         }
+        public static Boolean CheckOverTimeHDTD(String id)
+        {
+            //SqlConnection Conn = Connection.KetNoi();
+            //SqlCommand command = new SqlCommand("f_isOvertime", Conn);
+            //command.CommandType = CommandType.StoredProcedure;
+            //command.Parameters.Add("@id", SqlDbType.Char);
 
-        
+            //command.Parameters["@id"].Value = id;
+
+            
+
+            //Conn.Open();
+            //using var reader = command.ExecuteReader();
+            //if (reader.HasRows)
+            //{
+            //    // Đọc từng dòng tập kết quả
+            //    while (reader.Read())
+            //    {
+            //        var danhmuc = reader.GetInt32(0);
+            //        var tendanhmuc = reader["TenDanhMuc"];
+            //        var mota = reader.GetString("Mota");
+
+            //        Console.WriteLine($"{danhmuc,4} - {tendanhmuc,-20} - {mota}");
+            //    }
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Không có dữ liệu trả về");
+            //}
+            //Conn.Close();
+            return true; 
+        }
+
+
     }
 }

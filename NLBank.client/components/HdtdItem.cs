@@ -29,12 +29,18 @@ namespace NLBank.client.components
 
         private void tstdItem_Load(object sender, EventArgs e)
         {
+            id_tstd_lb.Text = hdtDD.SoHDTD; 
 
         }
 
         private void materialButton1_Click(object sender, EventArgs e)
         {
             new ChitietHopDongForm(hdtDD, tsdb, kh).Show();
+        }
+
+        private void id_ts_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

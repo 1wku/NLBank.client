@@ -12,7 +12,7 @@ namespace NLBank.client.DTO
         private String _MaLoaiTSDB ; 
         private String _TenTSDB ; 
         private String _MaKH ; 
-        private int _TriGiaTS ;  
+        private int _TriGiaTS =0;  
         private String _HinhThucDB ; 
         public String MaTSDB {
             get { return _MaTSDB; }

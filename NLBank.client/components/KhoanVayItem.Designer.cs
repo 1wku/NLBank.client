@@ -69,7 +69,7 @@
             this.materialButton1.Depth = 0;
             this.materialButton1.HighEmphasis = true;
             this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(511, 20);
+            this.materialButton1.Location = new System.Drawing.Point(447, 19);
             this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton1.Name = "materialButton1";
@@ -116,12 +116,12 @@
             this.materialCard1.Controls.Add(this.lb_id_kv_item);
             this.materialCard1.Depth = 0;
             this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard1.Location = new System.Drawing.Point(14, 8);
+            this.materialCard1.Location = new System.Drawing.Point(0, 0);
             this.materialCard1.Margin = new System.Windows.Forms.Padding(14);
             this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard1.Name = "materialCard1";
             this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard1.Size = new System.Drawing.Size(625, 75);
+            this.materialCard1.Size = new System.Drawing.Size(549, 75);
             this.materialCard1.TabIndex = 6;
             // 
             // chinhSuaCaNhan1
@@ -138,7 +138,7 @@
             this.Controls.Add(this.materialCard1);
             this.Controls.Add(this.chinhSuaCaNhan1);
             this.Name = "KhoanVayItem";
-            this.Size = new System.Drawing.Size(651, 96);
+            this.Size = new System.Drawing.Size(560, 85);
             this.Load += new System.EventHandler(this.KhoanVayItem_Load);
             this.materialCard1.ResumeLayout(false);
             this.materialCard1.PerformLayout();

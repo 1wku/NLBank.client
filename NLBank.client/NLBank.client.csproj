@@ -81,6 +81,14 @@
     <Compile Include="components\HdtdItem.Designer.cs">
       <DependentUpon>HdtdItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="components\TsdbItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="components\TsdbItem.Designer.cs">
+      <DependentUpon>TsdbItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\LoaiTSDAL.cs" />
+    <Compile Include="DTO\LoaiTSDTO.cs" />
     <Compile Include="models\GiayNhanNo.cs" />
     <Compile Include="DAL\CANHANDAL.cs" />
     <Compile Include="DAL\Common.cs" />
@@ -119,6 +127,12 @@
     </Compile>
     <Compile Include="views\employee\EmployeeHome.Designer.cs">
       <DependentUpon>EmployeeHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\employee\ThamdinhTSDB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\employee\ThamdinhTSDB.Designer.cs">
+      <DependentUpon>ThamdinhTSDB.cs</DependentUpon>
     </Compile>
     <Compile Include="views\Login.cs">
       <SubType>Form</SubType>
@@ -179,6 +193,9 @@
     <EmbeddedResource Include="components\HdtdItem.resx">
       <DependentUpon>HdtdItem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="components\TsdbItem.resx">
+      <DependentUpon>TsdbItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="views\employee\ChitietHopDongForm.resx">
       <DependentUpon>ChitietHopDongForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -187,6 +204,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="views\employee\EmployeeHome.resx">
       <DependentUpon>EmployeeHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\employee\ThamdinhTSDB.resx">
+      <DependentUpon>ThamdinhTSDB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

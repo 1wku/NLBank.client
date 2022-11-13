@@ -81,18 +81,18 @@ namespace NLBank.client.views.employee
                 hDTDDTO.MucPhi = mucphi;
                 var result = HDTDDAL.ThemHDTD(hDTDDTO);
                 Console.Write(result);
-                MessageBox.Show("Oh noes!", "My Application", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Tạo hợp đồng mới thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
                 // TODO hien thong bao loi . Nhap lai 
-                MessageBox.Show("Oh noes!", "My Application", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                MessageBox.Show("Thông tin không hợp lệ. Vui lòng nhập lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                thoihanvay_input.Text = "";
+                laiquahan_input.Text = "";
+                laisuat_input.Text = "";
+                mucphi_input.Text = "";
             }
-            thoihanvay_input.Text = "";
-            laiquahan_input.Text = "";
-            laisuat_input.Text = "";
-            mucphi_input.Text = "";
+            
         }
     }
 }

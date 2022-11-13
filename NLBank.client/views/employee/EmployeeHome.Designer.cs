@@ -80,6 +80,10 @@
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.user_home_tabcontrol = new MaterialSkin.Controls.MaterialTabControl();
+            this.tsdb_panel = new System.Windows.Forms.FlowLayoutPanel();
+            this.search_tsdb_btn = new MaterialSkin.Controls.MaterialButton();
+            this.maloaitsdb_input = new MaterialSkin.Controls.MaterialTextBox();
+            this.tabPage6.SuspendLayout();
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ls_thanhtoan_gridview)).BeginInit();
             this.tabPage4.SuspendLayout();
@@ -134,6 +138,9 @@
             // 
             // tabPage6
             // 
+            this.tabPage6.Controls.Add(this.search_tsdb_btn);
+            this.tabPage6.Controls.Add(this.maloaitsdb_input);
+            this.tabPage6.Controls.Add(this.tsdb_panel);
             this.tabPage6.Location = new System.Drawing.Point(4, 39);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
@@ -167,7 +174,7 @@
             this.materialTextBox3.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox3.Multiline = false;
             this.materialTextBox3.Name = "materialTextBox3";
-            this.materialTextBox3.Size = new System.Drawing.Size(685, 50);
+            this.materialTextBox3.Size = new System.Drawing.Size(607, 50);
             this.materialTextBox3.TabIndex = 2;
             this.materialTextBox3.Text = "";
             this.materialTextBox3.TrailingIcon = null;
@@ -179,7 +186,7 @@
             this.search_cttn_btn.Depth = 0;
             this.search_cttn_btn.HighEmphasis = true;
             this.search_cttn_btn.Icon = null;
-            this.search_cttn_btn.Location = new System.Drawing.Point(758, 45);
+            this.search_cttn_btn.Location = new System.Drawing.Point(650, 45);
             this.search_cttn_btn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.search_cttn_btn.MouseState = MaterialSkin.MouseState.HOVER;
             this.search_cttn_btn.Name = "search_cttn_btn";
@@ -190,6 +197,7 @@
             this.search_cttn_btn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.search_cttn_btn.UseAccentColor = false;
             this.search_cttn_btn.UseVisualStyleBackColor = true;
+            this.search_cttn_btn.Click += new System.EventHandler(this.search_cttn_btn_Click);
             // 
             // ls_thanhtoan_gridview
             // 
@@ -250,9 +258,10 @@
             // 
             // all_hdtd_panel
             // 
+            this.all_hdtd_panel.AutoScroll = true;
             this.all_hdtd_panel.Location = new System.Drawing.Point(16, 103);
             this.all_hdtd_panel.Name = "all_hdtd_panel";
-            this.all_hdtd_panel.Size = new System.Drawing.Size(685, 392);
+            this.all_hdtd_panel.Size = new System.Drawing.Size(685, 444);
             this.all_hdtd_panel.TabIndex = 2;
             // 
             // tabPage2
@@ -748,6 +757,50 @@
             this.user_home_tabcontrol.Size = new System.Drawing.Size(1004, 596);
             this.user_home_tabcontrol.TabIndex = 1;
             // 
+            // tsdb_panel
+            // 
+            this.tsdb_panel.Location = new System.Drawing.Point(6, 73);
+            this.tsdb_panel.Name = "tsdb_panel";
+            this.tsdb_panel.Size = new System.Drawing.Size(777, 452);
+            this.tsdb_panel.TabIndex = 0;
+            // 
+            // search_tsdb_btn
+            // 
+            this.search_tsdb_btn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.search_tsdb_btn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.search_tsdb_btn.Depth = 0;
+            this.search_tsdb_btn.HighEmphasis = true;
+            this.search_tsdb_btn.Icon = null;
+            this.search_tsdb_btn.Location = new System.Drawing.Point(719, 31);
+            this.search_tsdb_btn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.search_tsdb_btn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.search_tsdb_btn.Name = "search_tsdb_btn";
+            this.search_tsdb_btn.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.search_tsdb_btn.Size = new System.Drawing.Size(64, 36);
+            this.search_tsdb_btn.TabIndex = 5;
+            this.search_tsdb_btn.Text = "Tìm ";
+            this.search_tsdb_btn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.search_tsdb_btn.UseAccentColor = false;
+            this.search_tsdb_btn.UseVisualStyleBackColor = true;
+            this.search_tsdb_btn.Click += new System.EventHandler(this.search_tsdb_btn_Click);
+            // 
+            // maloaitsdb_input
+            // 
+            this.maloaitsdb_input.AnimateReadOnly = false;
+            this.maloaitsdb_input.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.maloaitsdb_input.Depth = 0;
+            this.maloaitsdb_input.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.maloaitsdb_input.LeadingIcon = null;
+            this.maloaitsdb_input.Location = new System.Drawing.Point(6, 17);
+            this.maloaitsdb_input.MaxLength = 50;
+            this.maloaitsdb_input.MouseState = MaterialSkin.MouseState.OUT;
+            this.maloaitsdb_input.Multiline = false;
+            this.maloaitsdb_input.Name = "maloaitsdb_input";
+            this.maloaitsdb_input.Size = new System.Drawing.Size(666, 50);
+            this.maloaitsdb_input.TabIndex = 4;
+            this.maloaitsdb_input.Text = "";
+            this.maloaitsdb_input.TrailingIcon = null;
+            // 
             // EmployeeHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -762,6 +815,8 @@
             this.Sizable = false;
             this.Text = "Trang chủ";
             this.Load += new System.EventHandler(this.EmployeeHome_Load);
+            this.tabPage6.ResumeLayout(false);
+            this.tabPage6.PerformLayout();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ls_thanhtoan_gridview)).EndInit();
@@ -839,5 +894,8 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialLabel lb_name;
         private MaterialSkin.Controls.MaterialTabControl user_home_tabcontrol;
+        private System.Windows.Forms.FlowLayoutPanel tsdb_panel;
+        private MaterialSkin.Controls.MaterialButton search_tsdb_btn;
+        private MaterialSkin.Controls.MaterialTextBox maloaitsdb_input;
     }
 }
