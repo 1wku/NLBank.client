@@ -1,6 +1,6 @@
 ﻿using MaterialSkin;
 using MaterialSkin.Controls;
-using NLBank.client.views.user ;
+using NLBank.client.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,29 +11,31 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace NLBank.client
+namespace NLBank.client.views.employee
 {
-    public partial class Login : MaterialForm
+    public partial class ChitietHopDongForm : MaterialForm
     {
-        public Login()
+        KHDTO kh = new KHDTO();
+        HDTDDTO hdtDD = new HDTDDTO();
+        TSDBDTO tsdb = new TSDBDTO();
+        public ChitietHopDongForm(HDTDDTO hdtDD, TSDBDTO tsdb, KHDTO kh)
         {
+            this.hdtDD = hdtDD;
+            this.tsdb = tsdb;
+            this.kh = kh;
             InitializeComponent();
-
             var materialSkinManager = MaterialSkinManager.Instance;
-      
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
         }
 
-        private void btn_login_Click(object sender, EventArgs e)
+        private void ChitietHopDongForm_Load(object sender, EventArgs e)
         {
-            UserHome homeForm = new UserHome();
-            homeForm.Show();
-            Hide();
+
         }
 
-        private void Login_Load(object sender, EventArgs e)
+        private void materialLabel5_Click(object sender, EventArgs e)
         {
 
         }

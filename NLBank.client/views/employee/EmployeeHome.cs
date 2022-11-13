@@ -38,43 +38,43 @@ namespace NLBank.client.views.employee
                 all_kv_panel.Controls.Add(new KhoanVayItem(ds_khoanvay[i]));
 
             }
-            list_hdtd_gridview.DataSource = KhoanVayDAL.getView();
-            tsdb_gridview.DataSource = TSDBDAL.getView(); 
+            var hdtd_data = HDTDDAL.getView();
 
-
-        }
-
-        private void materialLabel16_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void materialButton5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void materialButton2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void OpenEdit(object sender, DataGridViewCellEventArgs e)
-        {   
-            if (e.ColumnIndex >= 0 && e.RowIndex >= 0)
+            var hdtd_value = new HDTDDTO();
+            var kh_value = new KHDTO();
+            var tsdb_value = new TSDBDTO(); 
+            foreach(DataRow row in hdtd_data.Rows)
             {
-                if (list_hdtd_gridview.CurrentCell.ColumnIndex == list_hdtd_gridview.Columns.IndexOf(list_hdtd_gridview.Columns[5]))
-                {
-                    DataGridViewCell cell = list_hdtd_gridview[5, e.RowIndex];
-                    list_hdtd_gridview.CurrentCell = cell;
-                    list_hdtd_gridview.BeginEdit(true);
-                }
+                Console.WriteLine(row.ToString());
+                kh_value.Ten = (string)row["Ten"];
+                kh_value.MaKH = (string)row["MaKH"];
+                hdtd_value.SoHDTD = (string)row["SoHDTD"];
+                hdtd_value.Muc_dich = (string)row["Muc_dich"];
+                hdtd_value.LaiQuaHan = (decimal)row["LaiQuaHan"];
+                hdtd_value.LaiSuat = (decimal)row["LaiSuat"];
+                hdtd_value.ThoiHanVay = (int)row["ThoiHanVay"];
+                hdtd_value.PhuongThucTra = (string)row["PhuongThucTra"];
+                hdtd_value.MucPhi = (int)row["MucPhi"];
+                hdtd_value.TGGiaiNgan = (DateTime)row["TGGiaiNgan"];
+                hdtd_value.NgayKi = (DateTime)row["NgayKi"];
+                hdtd_value.SoTienVay = (double)row["SoTienVay"];
+
+                tsdb_value.MaLoaiTSDB = (string)row["TenLoaiTSDB"]; 
+                tsdb_value.TenTSDB = (string)row["TenTSDB"];
+                tsdb_value.TriGiaTS = (int)row["TrigiaTS"];
+                tsdb_value.HinhThucDB = (string)row["HinhThucDB"];
+
+
+                all_hdtd_panel.Controls.Add(new HdtdItem(hdtd_value,tsdb_value,kh_value));
+
             }
+           
+            ls_thanhtoan_gridview.DataSource = CTTNDAL.getView(); 
+
+
         }
+
+
+       
     }
 }

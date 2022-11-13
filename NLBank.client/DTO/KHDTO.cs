@@ -8,7 +8,7 @@ namespace NLBank.client.DTO
 {
     public class KHDTO
     {
-        private String _MaKH;
+        private String _MaKH = Guid.NewGuid().ToString();
         private String _Ten;
         private String _Dia_chi;
         private String _Email;

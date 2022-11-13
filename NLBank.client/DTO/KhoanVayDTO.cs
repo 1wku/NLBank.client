@@ -9,7 +9,7 @@ namespace NLBank.client.DTO
 {
     public class KhoanVayDTO
     {
-        private String _MaKV ;
+        private String _MaKV = Guid.NewGuid().ToString();
         private String _MaKH ;
         private String _MaTSDB ;
         private String _MaLoaiKV ;

@@ -75,6 +75,12 @@
     <Compile Include="components\ThongBaoNhacNo.Designer.cs">
       <DependentUpon>ThongBaoNhacNo.cs</DependentUpon>
     </Compile>
+    <Compile Include="components\HdtdItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="components\HdtdItem.Designer.cs">
+      <DependentUpon>HdtdItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="models\GiayNhanNo.cs" />
     <Compile Include="DAL\CANHANDAL.cs" />
     <Compile Include="DAL\Common.cs" />
@@ -96,6 +102,12 @@
     <Compile Include="DTO\KHDTO.cs" />
     <Compile Include="DTO\KhoanVayDTO.cs" />
     <Compile Include="DTO\TSDBDTO.cs" />
+    <Compile Include="views\employee\ChitietHopDongForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\employee\ChitietHopDongForm.Designer.cs">
+      <DependentUpon>ChitietHopDongForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\employee\ChitietKhoanVayForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -163,6 +175,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="components\ThongBaoNhacNo.resx">
       <DependentUpon>ThongBaoNhacNo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="components\HdtdItem.resx">
+      <DependentUpon>HdtdItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\employee\ChitietHopDongForm.resx">
+      <DependentUpon>ChitietHopDongForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\employee\ChitietKhoanVayForm.resx">
       <DependentUpon>ChitietKhoanVayForm.cs</DependentUpon>
