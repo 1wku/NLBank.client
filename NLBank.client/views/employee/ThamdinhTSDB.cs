@@ -35,10 +35,10 @@ namespace NLBank.client.views.employee
         {
             tents.Text = ts.TenTSDB; 
             htdambao.Text = ts.HinhThucDB;
-            idkh.Text = ts.MaKH;
+            idkh.Text = ts.MaKH.ToString();
             trigia_input.Text = ts.TriGiaTS.ToString(); 
             foreach (DataRow row in Common.getLoaiTS().Rows) {
-                allTS.Add(new LoaiTSDTO((string)row["MaLoaiTSDB"], (string)row["TenLoaiTSDB"])); 
+                allTS.Add(new LoaiTSDTO(int.Parse(row["MaLoaiTSDB"].ToString()), (string)row["TenLoaiTSDB"])); 
                 loaits_combobox.Items.Add((string)row["TenLoaiTSDB"]); 
             }
             loaits_combobox.SelectedItem = allTS.Find(a=>a.MaLoaiTS==ts.MaLoaiTSDB).LoaiTS; 

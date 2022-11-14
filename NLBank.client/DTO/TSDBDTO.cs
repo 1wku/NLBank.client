@@ -8,25 +8,26 @@ namespace NLBank.client.DTO
 {
     public class TSDBDTO
     {
-        private String _MaTSDB; 
-        private String _MaLoaiTSDB ; 
+        private int _MaTSDB; 
+        private int _MaLoaiTSDB ; 
         private String _TenTSDB ; 
-        private String _MaKH ; 
+        private int _MaKH ; 
         private int _TriGiaTS =0;  
         private String _HinhThucDB ; 
-        public String MaTSDB {
+        public int MaTSDB {
             get { return _MaTSDB; }
             set { _MaTSDB = value; } 
         }
-        public String MaLoaiTSDB {
+        public int MaLoaiTSDB {
             get { return _MaLoaiTSDB; }
             set { _MaLoaiTSDB = value; }
         }
+        public String TenLoaiTSDB { set; get; }
         public String TenTSDB {
             get { return _TenTSDB; }
             set { _TenTSDB = value; }
         }
-        public String MaKH {
+        public int MaKH {
             get { return _MaKH; }
             set { _MaKH = value; }
         }
@@ -38,7 +39,7 @@ namespace NLBank.client.DTO
             get { return _HinhThucDB; }
             set { _HinhThucDB = value; }
         }
-        public TSDBDTO(String maTSDB, String maLoaiTSDB, String tenTSDB, String maKH, int triGiaTS, String hinhThucDB)
+        public TSDBDTO(int maTSDB, int maLoaiTSDB, String tenTSDB, int maKH, int triGiaTS, String hinhThucDB)
         {
             _MaTSDB = maTSDB;
             _MaLoaiTSDB = maLoaiTSDB;

@@ -34,7 +34,7 @@ namespace NLBank.client.components
         private void TsdbItem_Load(object sender, EventArgs e)
         {
             lb_tentsdb_item.Text = ts.TenTSDB;
-            lb_maloaitsdb_item.Text = ts.MaLoaiTSDB; 
+            lb_maloaitsdb_item.Text = ts.MaLoaiTSDB.ToString(); 
         }
     }
 }

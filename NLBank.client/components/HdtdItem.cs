@@ -31,7 +31,7 @@ namespace NLBank.client.components
 
         private void tstdItem_Load(object sender, EventArgs e)
         {
-            id_tstd_lb.Text = hdtDD.SoHDTD;
+            id_tstd_lb.Text = hdtDD.SoHDTD.ToString();
             Console.WriteLine("hehe" + hdtDD.SoHDTD);
             datoihan = HDTDDAL.CheckOverTimeHDTD(hdtDD.SoHDTD);
             if (datoihan)

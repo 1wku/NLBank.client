@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            MaterialSkin.Controls.MaterialTabControl employee_tabcontrol;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeHome));
-            this.user_home_navbar = new System.Windows.Forms.ImageList(this.components);
             this.tabPage9 = new System.Windows.Forms.TabPage();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.nhanvien_gridview = new System.Windows.Forms.DataGridView();
@@ -77,7 +77,6 @@
             this.lb_email = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.lb_name = new MaterialSkin.Controls.MaterialLabel();
-            this.user_home_tabcontrol = new MaterialSkin.Controls.MaterialTabControl();
             this.reload_kv_btn = new MaterialSkin.Controls.MaterialButton();
             this.search_kv_btn = new MaterialSkin.Controls.MaterialButton();
             this.lb_kv_input = new MaterialSkin.Controls.MaterialTextBox();
@@ -103,6 +102,14 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.materialLabel12 = new MaterialSkin.Controls.MaterialLabel();
             this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.materialLabel13 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
+            this.khachhang_datagrid = new System.Windows.Forms.DataGridView();
+            this.materialButton3 = new MaterialSkin.Controls.MaterialButton();
+            this.materialTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
+            this.employee_icon = new System.Windows.Forms.ImageList(this.components);
+            employee_tabcontrol = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage9.SuspendLayout();
             this.tabPage8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nhanvien_gridview)).BeginInit();
@@ -119,20 +126,13 @@
             this.tabChinhSua.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.materialCard1.SuspendLayout();
-            this.user_home_tabcontrol.SuspendLayout();
+            employee_tabcontrol.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dieukhoan_gridview)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.khachhang_datagrid)).BeginInit();
             this.SuspendLayout();
-            // 
-            // user_home_navbar
-            // 
-            this.user_home_navbar.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("user_home_navbar.ImageStream")));
-            this.user_home_navbar.TransparentColor = System.Drawing.Color.Transparent;
-            this.user_home_navbar.Images.SetKeyName(0, "home.png");
-            this.user_home_navbar.Images.SetKeyName(1, "setting.png");
-            this.user_home_navbar.Images.SetKeyName(2, "payment.png");
-            this.user_home_navbar.Images.SetKeyName(3, "conheo.png");
             // 
             // tabPage9
             // 
@@ -141,9 +141,10 @@
             this.tabPage9.Controls.Add(this.dieukhoan_gridview);
             this.tabPage9.Controls.Add(this.search_dieukhoan_btn);
             this.tabPage9.Controls.Add(this.dieukhoan_input);
-            this.tabPage9.Location = new System.Drawing.Point(4, 39);
+            this.tabPage9.ImageKey = "dieukhoan.png";
+            this.tabPage9.Location = new System.Drawing.Point(4, 23);
             this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Size = new System.Drawing.Size(896, 553);
+            this.tabPage9.Size = new System.Drawing.Size(896, 569);
             this.tabPage9.TabIndex = 9;
             this.tabPage9.Text = "Điều khoản";
             this.tabPage9.UseVisualStyleBackColor = true;
@@ -155,9 +156,10 @@
             this.tabPage8.Controls.Add(this.nhanvien_gridview);
             this.tabPage8.Controls.Add(this.search_nv_btn);
             this.tabPage8.Controls.Add(this.nv_input);
-            this.tabPage8.Location = new System.Drawing.Point(4, 39);
+            this.tabPage8.ImageKey = "nhanvien.png";
+            this.tabPage8.Location = new System.Drawing.Point(4, 23);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(896, 553);
+            this.tabPage8.Size = new System.Drawing.Size(896, 569);
             this.tabPage8.TabIndex = 8;
             this.tabPage8.Text = "Nhân viên";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -209,13 +211,14 @@
             // 
             // tabPage7
             // 
+            this.tabPage7.BackColor = System.Drawing.Color.White;
             this.tabPage7.Controls.Add(this.materialLabel8);
-            this.tabPage7.Location = new System.Drawing.Point(4, 39);
+            this.tabPage7.ImageKey = "thongnke.png";
+            this.tabPage7.Location = new System.Drawing.Point(4, 23);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(896, 553);
+            this.tabPage7.Size = new System.Drawing.Size(896, 569);
             this.tabPage7.TabIndex = 7;
             this.tabPage7.Text = "Thống kê";
-            this.tabPage7.UseVisualStyleBackColor = true;
             // 
             // tabPage6
             // 
@@ -224,10 +227,11 @@
             this.tabPage6.Controls.Add(this.search_tsdb_btn);
             this.tabPage6.Controls.Add(this.maloaitsdb_input);
             this.tabPage6.Controls.Add(this.tsdb_panel);
-            this.tabPage6.Location = new System.Drawing.Point(4, 39);
+            this.tabPage6.ImageKey = "kiemdinhtaisan.png";
+            this.tabPage6.Location = new System.Drawing.Point(4, 23);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(896, 553);
+            this.tabPage6.Size = new System.Drawing.Size(896, 569);
             this.tabPage6.TabIndex = 6;
             this.tabPage6.Text = "Thẩm định tài sản ";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -304,10 +308,11 @@
             this.tabPage5.Controls.Add(this.reload_thuno_btn);
             this.tabPage5.Controls.Add(this.thuno_input);
             this.tabPage5.Controls.Add(this.ls_thanhtoan_gridview);
-            this.tabPage5.Location = new System.Drawing.Point(4, 39);
+            this.tabPage5.ImageKey = "conheo.png";
+            this.tabPage5.Location = new System.Drawing.Point(4, 23);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(896, 553);
+            this.tabPage5.Size = new System.Drawing.Size(896, 569);
             this.tabPage5.TabIndex = 5;
             this.tabPage5.Text = "Thu nợ";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -327,10 +332,11 @@
             this.tabPage4.Controls.Add(this.all_hdtd_panel);
             this.tabPage4.Controls.Add(this.reaload_hdtd_btn);
             this.tabPage4.Controls.Add(this.hdtd_input);
-            this.tabPage4.Location = new System.Drawing.Point(4, 39);
+            this.tabPage4.ImageKey = "hopdong.png";
+            this.tabPage4.Location = new System.Drawing.Point(4, 23);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(896, 553);
+            this.tabPage4.Size = new System.Drawing.Size(896, 569);
             this.tabPage4.TabIndex = 4;
             this.tabPage4.Text = "Hợp đồng ";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -351,10 +357,10 @@
             this.tabPage2.Controls.Add(this.lb_kv_input);
             this.tabPage2.Controls.Add(this.all_kv_panel);
             this.tabPage2.Controls.Add(this.materialCard3);
-            this.tabPage2.ImageIndex = 2;
-            this.tabPage2.Location = new System.Drawing.Point(4, 39);
+            this.tabPage2.ImageIndex = 5;
+            this.tabPage2.Location = new System.Drawing.Point(4, 23);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(896, 553);
+            this.tabPage2.Size = new System.Drawing.Size(896, 569);
             this.tabPage2.TabIndex = 2;
             this.tabPage2.Text = "Khoản Vay";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -457,10 +463,10 @@
             this.tabChinhSua.Controls.Add(this.groupBox1);
             this.tabChinhSua.Controls.Add(this.materialButton6);
             this.tabChinhSua.ImageKey = "setting.png";
-            this.tabChinhSua.Location = new System.Drawing.Point(4, 39);
+            this.tabChinhSua.Location = new System.Drawing.Point(4, 42);
             this.tabChinhSua.Name = "tabChinhSua";
             this.tabChinhSua.Padding = new System.Windows.Forms.Padding(3);
-            this.tabChinhSua.Size = new System.Drawing.Size(896, 553);
+            this.tabChinhSua.Size = new System.Drawing.Size(896, 550);
             this.tabChinhSua.TabIndex = 1;
             this.tabChinhSua.Text = "Thông tin cá nhân";
             this.tabChinhSua.UseVisualStyleBackColor = true;
@@ -671,10 +677,10 @@
             this.tabPage1.BackColor = System.Drawing.Color.Transparent;
             this.tabPage1.Controls.Add(this.materialCard1);
             this.tabPage1.ImageKey = "home.png";
-            this.tabPage1.Location = new System.Drawing.Point(4, 39);
+            this.tabPage1.Location = new System.Drawing.Point(4, 42);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(16, 16, 30, 16);
-            this.tabPage1.Size = new System.Drawing.Size(896, 553);
+            this.tabPage1.Size = new System.Drawing.Size(896, 550);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Trang chủ";
             // 
@@ -743,27 +749,28 @@
             this.lb_name.TabIndex = 0;
             this.lb_name.Text = "Phạm Nhật Tiến";
             // 
-            // user_home_tabcontrol
+            // employee_tabcontrol
             // 
-            this.user_home_tabcontrol.Controls.Add(this.tabPage1);
-            this.user_home_tabcontrol.Controls.Add(this.tabPage2);
-            this.user_home_tabcontrol.Controls.Add(this.tabPage4);
-            this.user_home_tabcontrol.Controls.Add(this.tabPage5);
-            this.user_home_tabcontrol.Controls.Add(this.tabPage6);
-            this.user_home_tabcontrol.Controls.Add(this.tabPage8);
-            this.user_home_tabcontrol.Controls.Add(this.tabPage9);
-            this.user_home_tabcontrol.Controls.Add(this.tabPage7);
-            this.user_home_tabcontrol.Controls.Add(this.tabChinhSua);
-            this.user_home_tabcontrol.Depth = 0;
-            this.user_home_tabcontrol.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.user_home_tabcontrol.ImageList = this.user_home_navbar;
-            this.user_home_tabcontrol.Location = new System.Drawing.Point(2, 52);
-            this.user_home_tabcontrol.MouseState = MaterialSkin.MouseState.HOVER;
-            this.user_home_tabcontrol.Multiline = true;
-            this.user_home_tabcontrol.Name = "user_home_tabcontrol";
-            this.user_home_tabcontrol.SelectedIndex = 0;
-            this.user_home_tabcontrol.Size = new System.Drawing.Size(904, 596);
-            this.user_home_tabcontrol.TabIndex = 1;
+            employee_tabcontrol.Controls.Add(this.tabPage1);
+            employee_tabcontrol.Controls.Add(this.tabPage2);
+            employee_tabcontrol.Controls.Add(this.tabPage4);
+            employee_tabcontrol.Controls.Add(this.tabPage5);
+            employee_tabcontrol.Controls.Add(this.tabPage6);
+            employee_tabcontrol.Controls.Add(this.tabPage3);
+            employee_tabcontrol.Controls.Add(this.tabPage8);
+            employee_tabcontrol.Controls.Add(this.tabPage9);
+            employee_tabcontrol.Controls.Add(this.tabPage7);
+            employee_tabcontrol.Controls.Add(this.tabChinhSua);
+            employee_tabcontrol.Depth = 0;
+            employee_tabcontrol.Dock = System.Windows.Forms.DockStyle.Fill;
+            employee_tabcontrol.ImageList = this.employee_icon;
+            employee_tabcontrol.Location = new System.Drawing.Point(2, 52);
+            employee_tabcontrol.MouseState = MaterialSkin.MouseState.HOVER;
+            employee_tabcontrol.Multiline = true;
+            employee_tabcontrol.Name = "employee_tabcontrol";
+            employee_tabcontrol.SelectedIndex = 0;
+            employee_tabcontrol.Size = new System.Drawing.Size(904, 596);
+            employee_tabcontrol.TabIndex = 1;
             // 
             // reload_kv_btn
             // 
@@ -1169,26 +1176,133 @@
             this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton1.Name = "materialButton1";
             this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton1.Size = new System.Drawing.Size(123, 36);
+            this.materialButton1.Size = new System.Drawing.Size(103, 36);
             this.materialButton1.TabIndex = 13;
             this.materialButton1.Text = "Đăng xuất";
             this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton1.UseAccentColor = false;
             this.materialButton1.UseVisualStyleBackColor = true;
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.materialLabel13);
+            this.tabPage3.Controls.Add(this.materialButton2);
+            this.tabPage3.Controls.Add(this.khachhang_datagrid);
+            this.tabPage3.Controls.Add(this.materialButton3);
+            this.tabPage3.Controls.Add(this.materialTextBox1);
+            this.tabPage3.ImageKey = "khachhang.png";
+            this.tabPage3.Location = new System.Drawing.Point(4, 23);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(896, 569);
+            this.tabPage3.TabIndex = 10;
+            this.tabPage3.Text = "Khách hàng";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // materialLabel13
+            // 
+            this.materialLabel13.AutoSize = true;
+            this.materialLabel13.Depth = 0;
+            this.materialLabel13.Font = new System.Drawing.Font("Roboto", 34F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel13.FontType = MaterialSkin.MaterialSkinManager.fontType.H4;
+            this.materialLabel13.Location = new System.Drawing.Point(20, 12);
+            this.materialLabel13.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel13.Name = "materialLabel13";
+            this.materialLabel13.Size = new System.Drawing.Size(189, 41);
+            this.materialLabel13.TabIndex = 15;
+            this.materialLabel13.Text = "Khách hàng ";
+            // 
+            // materialButton2
+            // 
+            this.materialButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton2.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton2.Depth = 0;
+            this.materialButton2.HighEmphasis = true;
+            this.materialButton2.Icon = null;
+            this.materialButton2.Location = new System.Drawing.Point(552, 77);
+            this.materialButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton2.Name = "materialButton2";
+            this.materialButton2.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton2.Size = new System.Drawing.Size(98, 36);
+            this.materialButton2.TabIndex = 14;
+            this.materialButton2.Text = "Khôi phục";
+            this.materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton2.UseAccentColor = false;
+            this.materialButton2.UseVisualStyleBackColor = true;
+            // 
+            // khachhang_datagrid
+            // 
+            this.khachhang_datagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.khachhang_datagrid.Location = new System.Drawing.Point(15, 142);
+            this.khachhang_datagrid.Name = "khachhang_datagrid";
+            this.khachhang_datagrid.Size = new System.Drawing.Size(741, 391);
+            this.khachhang_datagrid.TabIndex = 13;
+            // 
+            // materialButton3
+            // 
+            this.materialButton3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton3.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton3.Depth = 0;
+            this.materialButton3.HighEmphasis = true;
+            this.materialButton3.Icon = null;
+            this.materialButton3.Location = new System.Drawing.Point(692, 77);
+            this.materialButton3.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton3.Name = "materialButton3";
+            this.materialButton3.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton3.Size = new System.Drawing.Size(64, 36);
+            this.materialButton3.TabIndex = 12;
+            this.materialButton3.Text = "Tìm ";
+            this.materialButton3.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton3.UseAccentColor = false;
+            this.materialButton3.UseVisualStyleBackColor = true;
+            // 
+            // materialTextBox1
+            // 
+            this.materialTextBox1.AnimateReadOnly = false;
+            this.materialTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.materialTextBox1.Depth = 0;
+            this.materialTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialTextBox1.LeadingIcon = null;
+            this.materialTextBox1.Location = new System.Drawing.Point(15, 63);
+            this.materialTextBox1.MaxLength = 50;
+            this.materialTextBox1.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialTextBox1.Multiline = false;
+            this.materialTextBox1.Name = "materialTextBox1";
+            this.materialTextBox1.Size = new System.Drawing.Size(509, 50);
+            this.materialTextBox1.TabIndex = 11;
+            this.materialTextBox1.Text = "";
+            this.materialTextBox1.TrailingIcon = null;
+            // 
+            // employee_icon
+            // 
+            this.employee_icon.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("employee_icon.ImageStream")));
+            this.employee_icon.TransparentColor = System.Drawing.Color.Transparent;
+            this.employee_icon.Images.SetKeyName(0, "conheo.png");
+            this.employee_icon.Images.SetKeyName(1, "dieukhoan.png");
+            this.employee_icon.Images.SetKeyName(2, "home.png");
+            this.employee_icon.Images.SetKeyName(3, "hopdong.png");
+            this.employee_icon.Images.SetKeyName(4, "khachhang.png");
+            this.employee_icon.Images.SetKeyName(5, "khoanvay.png");
+            this.employee_icon.Images.SetKeyName(6, "kiemdinhtaisan.png");
+            this.employee_icon.Images.SetKeyName(7, "nhanvien.png");
+            this.employee_icon.Images.SetKeyName(8, "payment.png");
+            this.employee_icon.Images.SetKeyName(9, "setting.png");
+            this.employee_icon.Images.SetKeyName(10, "thongnke.png");
+            // 
             // EmployeeHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(908, 650);
-            this.Controls.Add(this.user_home_tabcontrol);
+            this.Controls.Add(employee_tabcontrol);
             this.DrawerShowIconsWhenHidden = true;
-            this.DrawerTabControl = this.user_home_tabcontrol;
+            this.DrawerTabControl = employee_tabcontrol;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "EmployeeHome";
             this.Padding = new System.Windows.Forms.Padding(2, 52, 2, 2);
             this.Sizable = false;
-            this.Text = "Trang chủ";
+            this.Text = "Quản lý tín dụng (Nhân viên)";
             this.Load += new System.EventHandler(this.EmployeeHome_Load);
             this.tabPage9.ResumeLayout(false);
             this.tabPage9.PerformLayout();
@@ -1216,19 +1330,20 @@
             this.tabPage1.ResumeLayout(false);
             this.materialCard1.ResumeLayout(false);
             this.materialCard1.PerformLayout();
-            this.user_home_tabcontrol.ResumeLayout(false);
+            employee_tabcontrol.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dieukhoan_gridview)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.khachhang_datagrid)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ImageList user_home_navbar;
         private System.Windows.Forms.TabPage tabPage9;
         private System.Windows.Forms.TabPage tabPage8;
         private System.Windows.Forms.TabPage tabPage7;
@@ -1268,7 +1383,6 @@
         private MaterialSkin.Controls.MaterialLabel lb_email;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialLabel lb_name;
-        private MaterialSkin.Controls.MaterialTabControl user_home_tabcontrol;
         private System.Windows.Forms.FlowLayoutPanel tsdb_panel;
         private MaterialSkin.Controls.MaterialButton search_tsdb_btn;
         private MaterialSkin.Controls.MaterialTextBox maloaitsdb_input;
@@ -1301,5 +1415,12 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel12;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TabPage tabPage3;
+        private MaterialSkin.Controls.MaterialLabel materialLabel13;
+        private MaterialSkin.Controls.MaterialButton materialButton2;
+        private System.Windows.Forms.DataGridView khachhang_datagrid;
+        private MaterialSkin.Controls.MaterialButton materialButton3;
+        private MaterialSkin.Controls.MaterialTextBox materialTextBox1;
+        private System.Windows.Forms.ImageList employee_icon;
     }
 }

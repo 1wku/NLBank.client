@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 namespace NLBank.client.DTO
 {
     public class LoaiTSDTO    {
-        public string MaLoaiTS { set; get; }
+        public int MaLoaiTS { set; get; }
         public string LoaiTS { set; get; }
-        public LoaiTSDTO(string id, string name) {
+        public LoaiTSDTO(int id, string name) {
             MaLoaiTS = id;
             LoaiTS = name;  
         }

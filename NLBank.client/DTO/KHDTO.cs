@@ -8,14 +8,14 @@ namespace NLBank.client.DTO
 {
     public class KHDTO
     {
-        private String _MaKH = Guid.NewGuid().ToString();
+        private int _MaKH; 
         private String _Ten;
         private String _Dia_chi;
         private String _Email;
         private String _Sdt;
         private int _RoleID;
 
-        public String MaKH {
+        public int MaKH {
             get { return _MaKH; }
             set { _MaKH = value;} 
         }
@@ -39,7 +39,7 @@ namespace NLBank.client.DTO
             get { return _RoleID; }
             set { _RoleID = value;} 
         }
-        public KHDTO ( String maKH, String ten,  String dia_chi, String email, String sdt, int roleID)
+        public KHDTO (int maKH, String ten,  String dia_chi, String email, String sdt, int roleID)
         {
             _MaKH = maKH;
             _Ten = ten;

@@ -13,7 +13,7 @@ namespace NLBank.client.DAL
     {
         public static DataTable getView()
         {           
-            String cmd = "Select * From contract";
+            String cmd = "Select * From HopDong";
             SqlConnection Con = Connection.KetNoi();
             SqlCommand command = new SqlCommand(cmd, Con);
             Con.Open();
@@ -117,13 +117,10 @@ namespace NLBank.client.DAL
             command.ExecuteNonQuery();
             Conn.Close();
         }
-        public static Boolean CheckOverTimeHDTD(String id)
+        public static Boolean CheckOverTimeHDTD(int id)
         {
             SqlConnection Conn = Connection.KetNoi();
-            SqlCommand command = new SqlCommand("select dbo.f_isOvertime('"+id+"')", Conn);
-
-
-
+            SqlCommand command = new SqlCommand("select dbo.f_LaHDTDQuaHan('" + id+"')", Conn);
 
             Conn.Open();
              var reader = command.ExecuteReader();

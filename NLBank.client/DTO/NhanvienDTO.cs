@@ -14,8 +14,8 @@ namespace NLBank.client.DTO
         public string Dia_chi { set; get; }
         public string Email { set; get; }
         public string Sdt { set; get; }
-        public string MaCV { set; get; }
-        public NhanvienDTO(string maNV, string cCCD, string ten, string dia_chi, string email, string sdt, string maCV)
+        public int MaCV { set; get; }
+        public NhanvienDTO(string maNV, string cCCD, string ten, string dia_chi, string email, string sdt, int maCV)
         {
             MaNV = maNV;
             CCCD = cCCD;
@@ -25,6 +25,7 @@ namespace NLBank.client.DTO
             Sdt = sdt;
             MaCV = maCV;
         }
+        public NhanvienDTO() { }
         
     }
 }

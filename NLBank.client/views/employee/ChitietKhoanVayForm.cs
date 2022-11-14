@@ -52,11 +52,11 @@ namespace NLBank.client.views.employee
 
         private void ChitietKhoanVayForm_Load(object sender, EventArgs e)
         {
-            makh.Text = kv.MaKH;
-            makv.Text = kv.MaKV;
+            makh.Text = kv.MaKH.ToString();
+            makv.Text = kv.MaKV.ToString();
             sotienvay.Text = kv.SoTienVay.ToString();
-            loaikv.Text = kv.MaLoaiKV;
-            taisanthechap.Text = kv.MaTSDB;
+            loaikv.Text = kv.MaLoaiKV.ToString();
+            taisanthechap.Text = kv.MaTSDB.ToString();
             mucdich.Text = kv.MucDich; 
 
             
@@ -68,7 +68,6 @@ namespace NLBank.client.views.employee
             if (isValid())
             {
                 HDTDDTO hDTDDTO = new HDTDDTO();
-                hDTDDTO.SoHDTD = new Guid().ToString(); 
                 hDTDDTO.LoaiTien = kv.LoaiTien;
                 hDTDDTO.MaKH = kv.MaKH;
                 hDTDDTO.MAKV = kv.MaKV;

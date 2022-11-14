@@ -17,11 +17,12 @@ namespace NLBank.client.views.employee
 {
     public partial class EmployeeHome : MaterialForm
     {
-        List<KhoanVayDTO> ds_khoanvay = new List<KhoanVayDTO>();
+        NhanvienDTO nv = new NhanvienDTO(); 
        
         DataTable nv_data, kv_data, lsthanhtoan_data, tsdb_data, hdtd_data, dieukhoan_data; 
-        public EmployeeHome()
+        public EmployeeHome(NhanvienDTO nv)
         {
+            this.nv = nv; 
 
             InitializeComponent();
             var materialSkinManager = MaterialSkinManager.Instance;
@@ -42,8 +43,8 @@ namespace NLBank.client.views.employee
             {
                 Console.WriteLine(row.ToString());
                 kh_value.Ten = (string)row["Ten"];
-                kh_value.MaKH = (string)row["MaKH"];
-                hdtd_value.SoHDTD = (string)row["SoHDTD"];
+                kh_value.MaKH = row["MaKH"] != DBNull.Value ? (int)row["MaKH"] : 0; 
+                hdtd_value.SoHDTD = row["SoHDTD"] != DBNull.Value ? (int)row["SoHDTD"] : 0; 
                 hdtd_value.Muc_dich = (string)row["Muc_dich"];
                 hdtd_value.LaiQuaHan = (decimal)row["LaiQuaHan"];
                 hdtd_value.LaiSuat = (decimal)row["LaiSuat"];
@@ -53,7 +54,7 @@ namespace NLBank.client.views.employee
                 hdtd_value.TGGiaiNgan = (DateTime)row["TGGiaiNgan"];
                 hdtd_value.NgayKi = (DateTime)row["NgayKi"];
                 hdtd_value.SoTienVay = (int)row["SoTienVay"];
-                tsdb_value.MaLoaiTSDB = (string)row["TenLoaiTSDB"];
+                tsdb_value.TenLoaiTSDB = (string)row["TenLoaiTSDB"];
                 tsdb_value.TenTSDB = (string)row["TenTSDB"];
                 tsdb_value.TriGiaTS = row["TrigiaTS"] != DBNull.Value ? (int)row["TrigiaTS"] : 0;
                 tsdb_value.HinhThucDB = row["HinhThucDB"] != DBNull.Value ? (string)row["HinhThucDB"] : "Chưa cập nhập";
@@ -69,11 +70,10 @@ namespace NLBank.client.views.employee
             {
 
                 tsdb_panel.Controls.Add(new TsdbItem(new TSDBDTO(
-                    (string)row["MaTSDB"],
-                    (string)row["MaLoaiTSDB"],
+                    row["MaTSDB"] != DBNull.Value ? (int)row["MaTSDB"] : 0,
+                    row["MaLoaiTSDB"] != DBNull.Value ? (int)row["MaLoaiTSDB"] : 0,
                     (string)row["TenTSDB"],
-
-                    (string)row["MaKH"],
+                    row["MaKH"] != DBNull.Value ? (int)row["MaKH"] : 0,
                     row["TrigiaTS"] != DBNull.Value ? (int)row["TrigiaTS"] : 0,
 
                 row["HinhThucDB"] != DBNull.Value ? (string)row["HinhThucDB"] : "Chưa cập nhập"
@@ -92,10 +92,10 @@ namespace NLBank.client.views.employee
             {
 
                 all_kv_panel.Controls.Add(new KhoanVayItem(new KhoanVayDTO(
-                    (string)row["MaKV"],
-                    (string)row["MaKH"],
-                    row["MaTSDB"] != DBNull.Value ? (string)row["MaTSDB"] : "Chưa cập nhập",
-                    (string)row["MaLoaiKV"],
+                    row["MaKV"] != DBNull.Value ? (int)row["MaKV"] : 0,
+                    row["MaKH"] != DBNull.Value ? (int)row["MaKH"] : 0,
+                    row["MaTSDB"] != DBNull.Value ? (int)row["MaTSDB"] : 0,
+                    row["MaLoaiKV"] != DBNull.Value ? (int)row["MaLoaiKV"] : 0,
                     row["MucDich"]!= DBNull.Value ? (string)row["MucDich"] : "Chưa cập nhập" ,
                     row["SoTienVay"] != DBNull.Value ? (int)row["SoTienVay"] : 0,
                     row["LoaiTien"] != DBNull.Value ? (string)row["LoaiTien"] : "Chưa cập nhập"

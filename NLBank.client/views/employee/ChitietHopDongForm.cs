@@ -33,7 +33,7 @@ namespace NLBank.client.views.employee
 
         private void ChitietHopDongForm_Load(object sender, EventArgs e)
         {
-            hdtd_id.Text = hdtDD.SoHDTD; 
+            hdtd_id.Text = hdtDD.SoHDTD.ToString(); 
             hdtd_laisuat.Text = hdtDD.LaiSuat.ToString(); 
             hdtd_laiquahan.Text = hdtDD.LaiQuaHan.ToString(); 
             hdtd_thoihanvay.Text = hdtDD.ThoiHanVay.ToString()+ " ngày"; 
