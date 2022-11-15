@@ -18,7 +18,7 @@ namespace NLBank.client
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new EmployeeHome());
+            Application.Run(new Login());
         }
     }
 }

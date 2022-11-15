@@ -9,26 +9,26 @@ namespace NLBank.client.DTO
 {
     public class KhoanVayDTO
     {
-        private String _MaKV ;
-        private String _MaKH ;
-        private String _MaTSDB ;
-        private String _MaLoaiKV ;
+        private int _MaKV; 
+        private int _MaKH ;
+        private int _MaTSDB ;
+        private int _MaLoaiKV ;
         private String _MucDich ;
         private int _SoTienVay ;
         private String _LoaiTien ;
-        public String MaKV {
+        public int MaKV {
             get { return _MaKV; }
             set { _MaKV = value; }
         }
-        public String MaKH {
+        public int MaKH {
             get { return _MaKH; }
             set { _MaKH = value; }
         }
-        public String MaTSDB {
+        public int MaTSDB {
             get { return _MaTSDB; }
             set { _MaTSDB = value; }
         }
-        public String MaLoaiKV {
+        public int MaLoaiKV {
             get { return _MaLoaiKV; }
             set { _MaLoaiKV = value; }
         }
@@ -46,7 +46,7 @@ namespace NLBank.client.DTO
         }
         public KhoanVayDTO KhachHang { set; get; } 
 
-        public KhoanVayDTO(String maKV, String maKH, String maTSDB, String maLoaiKV, String mucDich, int soTienVay, String loaiTien)
+        public KhoanVayDTO(int maKV, int maKH, int maTSDB, int maLoaiKV, String mucDich, int soTienVay, String loaiTien)
         {
             _MaKH = maKH;
             _MaKV = maKV;
@@ -59,10 +59,10 @@ namespace NLBank.client.DTO
         public KhoanVayDTO() { }
         public KhoanVayDTO(DataRow row)
         {
-            _MaKH = row["MaKH"].ToString();
-            _MaKV = row["MaKV"].ToString(); ;
-            _MaTSDB = row["MaTSDB"].ToString(); 
-            _MaLoaiKV = row["MaLoaiKV"].ToString(); 
+            _MaKH = (int)row["MaKH"]; 
+            _MaKV = (int)row["MaKV"] ;
+            _MaTSDB = (int) row["MaTSDB"];
+            _MaLoaiKV = (int)row["MaLoaiKV"];
             _MucDich = row["MucDich"].ToString(); 
             _SoTienVay = (int)row["SoTienVay"]; ;
             _LoaiTien = row["LoaiTien"].ToString();

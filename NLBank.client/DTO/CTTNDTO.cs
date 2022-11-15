@@ -60,7 +60,7 @@ namespace NLBank.client.DTO
             _SoCTThuNo = soCTThuNo;
             _SoHDTD = soHDTD;
             _MaCN = maCN;
-            _KyThuNoGoc = kyThuNoGoc;
+            _KyThuNoGoc = kyThuNoGoc;   
             _KyThuNoLai = kyThuNoLai;
             _SoDuNo = soDuNo;
             _SoTienTra = soTienTra;

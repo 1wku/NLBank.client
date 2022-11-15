@@ -1,6 +1,7 @@
 ﻿using MaterialSkin;
 using MaterialSkin.Controls;
 using NLBank.client.components;
+using NLBank.client.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,8 +16,10 @@ namespace NLBank.client.views.user
 {
     public partial class UserHome : MaterialForm
     {
-        public UserHome()
+        KHDTO kh = new KHDTO(); 
+        public UserHome(KHDTO kHDTO)
         {
+            kh = kHDTO; 
             InitializeComponent();
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);

@@ -19,7 +19,7 @@ namespace NLBank.client.components
         {
             khoanVayDTO = kv;
             InitializeComponent();
-            lb_id_kv_item.Text = kv.MaKV; 
+            lb_id_kv_item.Text = kv.MaKV.ToString(); 
         }
 
      
