@@ -38,18 +38,13 @@ namespace NLBank.client
             Console.WriteLine(roleID);
             switch (roleID)
             {
-
                 case 0:
+                case 1:
                     KHDTO kh = AccountDAL.GetKhachHangByEmail(txt_email.Text);
                     if (kh != null)
                     {
                         new UserHome(kh).Show();
-                    }
-                    break;
-                case 1:
-                    if (AccountDAL.GetKhachHangByEmail(txt_email.Text) != null)
-                    {
-                        new UserHome(AccountDAL.GetKhachHangByEmail(txt_email.Text)).Show();
+                        this.Hide();
                     }
                     break;
                 case 2:
@@ -57,11 +52,21 @@ namespace NLBank.client
                     if (nv != null)
                     {
                         new EmployeeHome(nv).Show();
+<<<<<<< HEAD
                        
+=======
+                        this.Hide();
+>>>>>>> e5534cbc67a9a18be5830ae1d5eea2d37b12530d
                     }
                     break;
+                case -1:
+                    MessageBox.Show("Không tồn tại tài khoản này! Vui lòng thử lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
+                case -2:
+                    MessageBox.Show("Mật khẩu không đúng! Vui lòng thử lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
                 default:
-                    MessageBox.Show("Email hoặc mật khẩu đã sai. Vui lòng thử lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Có lỗi xảy ra. Vui lòng thử lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
 
             }

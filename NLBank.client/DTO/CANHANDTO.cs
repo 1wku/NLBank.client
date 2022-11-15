@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,5 +27,12 @@ namespace NLBank.client.DTO
             _FICO_score = fICO_score;
         }
         public CANHANDTO() { }
+
+        public CANHANDTO(DataRow row) {
+            _MaKH = row["MaKH"].ToString();
+            _NgaySinh = (DateTime)row["NgaySinh"];
+            _CCCD = row["CCCD"].ToString();
+            _FICO_score = (int)row["FICO_score"];
+        }
     }
 }

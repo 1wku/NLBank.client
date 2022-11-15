@@ -27,7 +27,7 @@ namespace NLBank.client.DAL
         public static void ThemTSDB(TSDBDTO tsdb)
         {
             SqlConnection Conn = Connection.KetNoi();
-            SqlCommand command = new SqlCommand("ThemTaiSanDamBao", Conn);
+            SqlCommand command = new SqlCommand("sp_ThemTaiSanDamBao", Conn);
             command.CommandType = CommandType.StoredProcedure;
             command.Parameters.Add("@MaTSDB", SqlDbType.Char);
             command.Parameters.Add("@MaLoaiTSDB", SqlDbType.Char);
@@ -48,7 +48,7 @@ namespace NLBank.client.DAL
         public static void SuaTSDB(TSDBDTO tsdb)
         {
             SqlConnection Conn = Connection.KetNoi();
-            SqlCommand command = new SqlCommand("SuaTaiSanDamBao", Conn);
+            SqlCommand command = new SqlCommand("sp_SuaTaiSanDamBao", Conn);
             command.CommandType = CommandType.StoredProcedure;
             command.Parameters.Add("@MaTSDB", SqlDbType.Char);
             command.Parameters.Add("@MaLoaiTSDB", SqlDbType.Char);
@@ -69,7 +69,7 @@ namespace NLBank.client.DAL
         public static void XoaTSDB(TSDBDTO tsdb)
         {
             SqlConnection Conn = Connection.KetNoi();
-            SqlCommand command = new SqlCommand("XoaTaiSanDamBao", Conn);
+            SqlCommand command = new SqlCommand("sp_XoaTaiSanDamBao", Conn);
             command.CommandType = CommandType.StoredProcedure;
             command.Parameters.Add("@MaTSDB", SqlDbType.Char);
             command.Parameters["@MaTSDB"].Value = tsdb.MaTSDB;
