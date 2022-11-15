@@ -1,6 +1,7 @@
 ﻿using NLBank.client.DTO;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -17,7 +18,7 @@ namespace NLBank.client.DAL
 
         public static KHDTO GetKhachHangByEmail(string email)
         {
-            KHDTO khdto = new KHDTO();
+            /*KHDTO khdto = new KHDTO();
             SqlConnection Conn = Connection.KetNoi();
             SqlCommand command = new SqlCommand($"select * from f_GetKHByEmail('{email}') ", Conn);
 
@@ -36,8 +37,15 @@ namespace NLBank.client.DAL
             }
             
             Conn.Close();
-            return khdto; 
+            return khdto; */
 
+            DataTable data = Connection.Instance.ExcuteQuery($"select * from f_GetKHByEmail('{email}')");
+            foreach (DataRow item in data.Rows)
+            {
+                KHDTO khachHang = new KHDTO(item);
+                return khachHang;
+            }
+            return null;
         }
 
         public static NhanvienDTO GetNhanVienByEmail(string email)

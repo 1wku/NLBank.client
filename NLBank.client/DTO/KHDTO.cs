@@ -1,6 +1,7 @@
 ﻿using NLBank.client.DAL;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -59,5 +60,21 @@ namespace NLBank.client.DTO
             }
         }
         public KHDTO() { }
+        public KHDTO(DataRow row) {
+            _MaKH = (int)row["MaKH"];
+            _Ten = row["Ten"].ToString();
+            _Dia_chi = row["Dia_chi"].ToString();
+            _Email = row["Email"].ToString();
+            _Sdt = row["Sdt"].ToString();
+            _RoleID = (byte)row["RoleID"];
+            if (_RoleID == 0)
+            {
+                _canhan = CANHANDAL.GetCaNhan(_MaKH);
+            }
+            if (_RoleID == 1)
+            {
+                _doanhNghiep = DOANHNGHIEPDAL.GetDoanhNghiep(_MaKH);
+            }
+        }
     }
 }
