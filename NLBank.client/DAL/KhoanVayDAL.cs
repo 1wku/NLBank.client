@@ -24,19 +24,23 @@ namespace NLBank.client.DAL
             Con.Close();
             return dt;
         }
+
+        public static DataTable GetLoaiKV()
+        {
+            String sql = "SELECT * FROM LOAIKV";
+            return Connection.Instance.ExcuteQuery(sql);
+        }
         public static void ThemKhoanVay(KhoanVayDTO kv)
         {
             SqlConnection Conn = Connection.KetNoi();
-            SqlCommand command = new SqlCommand("ThemKhoanVay", Conn);
+            SqlCommand command = new SqlCommand("sp_ThemKhoanVay", Conn);
             command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.Add("@MaKV", SqlDbType.Char);
             command.Parameters.Add("@MaKH", SqlDbType.Char);
             command.Parameters.Add("@MaTSDB", SqlDbType.Char);
             command.Parameters.Add("@MaLoaiKV", SqlDbType.Char);
             command.Parameters.Add("@MucDich", SqlDbType.NVarChar);
             command.Parameters.Add("@SoTienVay", SqlDbType.Int);
             command.Parameters.Add("@LoaiTien", SqlDbType.Char);
-            command.Parameters["@MaKV"].Value = kv.MaKV;
             command.Parameters["@MaKH"].Value = kv.MaKH;
             command.Parameters["@MaTSDB"].Value = kv.MaTSDB;
             command.Parameters["@MaLoaiKV"].Value = kv.MaLoaiKV;

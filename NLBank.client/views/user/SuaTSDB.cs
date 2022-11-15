@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace NLBank.client.views.user
 {
-    public partial class SuaTSCB : MaterialForm
+    public partial class SuaTSDB : MaterialForm
     {
-        public SuaTSCB()
+        public SuaTSDB()
         {
             InitializeComponent();
             var materialSkinManager = MaterialSkinManager.Instance;

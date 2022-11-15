@@ -1,6 +1,6 @@
 ﻿namespace NLBank.client.views.user
 {
-    partial class SuaTSCB
+    partial class SuaTSDB
     {
         /// <summary>
         /// Required designer variable.

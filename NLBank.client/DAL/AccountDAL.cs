@@ -47,7 +47,7 @@ namespace NLBank.client.DAL
                     khdto.Ten = reader["Ten"].ToString(); 
                     khdto.Sdt = reader["Sdt"].ToString();
                     khdto.RoleID = Int32.Parse(reader["RoleID"].ToString());  
-                   
+                   khdto.MaKH = Int32.Parse(reader["MaKH"].ToString());
                 }
             }
             
