@@ -24,6 +24,7 @@ namespace NLBank.client.DAL
             get { if (instance == null) instance = new Connection(); return Connection.instance; }
             private set { Connection.instance = value; }
         }
+
         public DataTable ExcuteQuery(string query)
         {
             DataTable data = new DataTable();

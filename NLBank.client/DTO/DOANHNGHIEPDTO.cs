@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,12 @@ namespace NLBank.client.DTO
             _MADN = MADN;
             _DnB_rating = dnB_rating;
         }
-    }
 
+        public DOANHNGHIEPDTO(DataRow row)
+        {
+            _MaKH = row["MaKh"].ToString();
+            _MADN = row["MaDN"].ToString();
+            _DnB_rating = (int)row["DnB_rating"];
+        }
+    }
 }

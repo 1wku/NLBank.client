@@ -12,24 +12,9 @@ namespace NLBank.client.DAL
     {
         public static int login(string email, string password)
         {
-            Console.WriteLine(email);   
-            SqlConnection Conn = Connection.KetNoi();
-            SqlCommand command = new SqlCommand($"select dbo.f_login_getRoleID('{email}', '{password}') ", Conn);
-
-            Conn.Open();
-            var reader = command.ExecuteReader();
-            if (reader.HasRows)
-            {
-                while (reader.Read())
-                {
-                    var data = reader.GetInt32(0);
-                    return data;
-                }
-            }
-            Conn.Close();
-            return -1;
-
+            return (int)Connection.Instance.ExecuteScalar($"select dbo.f_login_getRoleID('{email}', '{password}')");
         }
+
         public static KHDTO GetKhachHangByEmail(string email)
         {
             KHDTO khdto = new KHDTO();
@@ -47,7 +32,6 @@ namespace NLBank.client.DAL
                     khdto.Ten = reader["Ten"].ToString(); 
                     khdto.Sdt = reader["Sdt"].ToString();
                     khdto.RoleID = Int32.Parse(reader["RoleID"].ToString());  
-                   
                 }
             }
             
