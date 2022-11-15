@@ -57,12 +57,20 @@ namespace NLBank.client
                     if (nv != null)
                     {
                         new EmployeeHome(nv).Show();
+                       
                     }
                     break;
                 default:
                     MessageBox.Show("Email hoặc mật khẩu đã sai. Vui lòng thử lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
+
             }
+            Hide();
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

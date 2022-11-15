@@ -138,7 +138,7 @@
             this.Controls.Add(this.materialCard1);
             this.Controls.Add(this.chinhSuaCaNhan1);
             this.Name = "KhoanVayItem";
-            this.Size = new System.Drawing.Size(560, 85);
+            this.Size = new System.Drawing.Size(551, 85);
             this.Load += new System.EventHandler(this.KhoanVayItem_Load);
             this.materialCard1.ResumeLayout(false);
             this.materialCard1.PerformLayout();

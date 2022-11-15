@@ -130,7 +130,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.materialCard1);
             this.Name = "TsdbItem";
-            this.Size = new System.Drawing.Size(560, 91);
+            this.Size = new System.Drawing.Size(554, 91);
             this.Load += new System.EventHandler(this.TsdbItem_Load);
             this.materialCard1.ResumeLayout(false);
             this.materialCard1.PerformLayout();

@@ -32,7 +32,42 @@ namespace NLBank.client.views.employee
            
            
         }
+        private void EmployeeHome_Load(object sender, EventArgs e)
+        {
+            kv_data = KhoanVayDAL.getView();
+            updateViewKhoanVay(kv_data);
+            //
+            hdtd_data = HDTDDAL.getView();
+            updateViewHDTD(hdtd_data);
+            //
+            lsthanhtoan_data = CTTNDAL.getView();
+            updateViewLichSuThanhToan(lsthanhtoan_data);
+            //
+            tsdb_data = TSDBDAL.getView();
+            updateViewTSDB(tsdb_data);
 
+            //
+            nv_data = NhanvienDAL.getView();
+            updateViewNhanVien(nv_data);
+
+            //
+            dieukhoan_data = DieuKhoanDAL.getView();
+            updateViewDieuKhoan(dieukhoan_data);
+
+            //
+            updateThongTinCaNhan(); 
+
+
+        }
+        void updateThongTinCaNhan()
+        {
+            ten_nv.Text = nv.Ten;
+            email_nv.Text = nv.Email;
+            sdt_nv.Text = nv.Sdt;
+            diachi_nv.Text = nv.Dia_chi; 
+            cccd_nv.Text = nv.CCCD; 
+
+        }
         void updateViewHDTD(DataTable hdtd_data)
         {
             all_hdtd_panel.Controls.Clear(); 
@@ -114,29 +149,7 @@ namespace NLBank.client.views.employee
         {
             ls_thanhtoan_gridview.DataSource = lstt_data; 
         }
-        private void EmployeeHome_Load(object sender, EventArgs e)
-        {
-            kv_data = KhoanVayDAL.getView(); 
-            updateViewKhoanVay(kv_data); 
-            //
-             hdtd_data = HDTDDAL.getView();
-            updateViewHDTD(hdtd_data); 
-            //
-            lsthanhtoan_data = CTTNDAL.getView();
-            updateViewLichSuThanhToan(lsthanhtoan_data);
-            //
-             tsdb_data = TSDBDAL.getView();
-            updateViewTSDB(tsdb_data);
-
-            //
-            nv_data = NhanvienDAL.getView();
-            updateViewNhanVien(nv_data);
-
-            //
-            dieukhoan_data = DieuKhoanDAL.getView();
-            updateViewDieuKhoan(dieukhoan_data);
-            
-        }
+        
 
         private void search_cttn_btn_Click(object sender, EventArgs e)
         {

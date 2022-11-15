@@ -1,7 +1,5 @@
-﻿using NLBank.client.DTO;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -9,54 +7,33 @@ using System.Threading.Tasks;
 
 namespace NLBank.client.DAL
 {
-    public class CHUCVUDAL
+    public class ChucVuDAL
     {
-        public static void ThemCV(CHUCVUDTO cv)
+        public static Boolean CheckOverTimeHDTD(int id)
         {
             SqlConnection Conn = Connection.KetNoi();
-            SqlCommand command = new SqlCommand("proc_themChucVu", Conn);
-            command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.Add("@MaCV", SqlDbType.Char);
-            command.Parameters.Add("@TenCV", SqlDbType.NVarChar);
-            command.Parameters.Add("@HSLuong", SqlDbType.Decimal);
-
-            command.Parameters["@MaCV"].Value = cv.MaCV;
-            command.Parameters["@TenCV"].Value = cv.TenCV;
-            command.Parameters["@HSLuong"].Value = cv.HSLuong;
+            SqlCommand command = new SqlCommand("select dbo.f_LaHDTDQuaHan('" + id + "')", Conn);
 
             Conn.Open();
-            command.ExecuteNonQuery();
-            Conn.Close();
-        }
-        public static void SuaCV(CHUCVUDTO cv)
-        {
-            SqlConnection Conn = Connection.KetNoi();
-            SqlCommand command = new SqlCommand("proc_suaChucVu", Conn);
-            command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.Add("@MaCV", SqlDbType.Char);
-            command.Parameters.Add("@TenCV", SqlDbType.NVarChar);
-            command.Parameters.Add("@HSLuong", SqlDbType.Decimal);
+            var reader = command.ExecuteReader();
+            if (reader.HasRows)
+            {
+                // Đọc từng dòng tập kết quả
+                while (reader.Read())
+                {
+                    var data = reader.GetInt32(0);
+                    if (data == 0) return false;
+                    else return true;
 
-            command.Parameters["@MaCV"].Value = cv.MaCV;
-            command.Parameters["@TenCV"].Value = cv.TenCV;
-            command.Parameters["@HSLuong"].Value = cv.HSLuong;
-
-            Conn.Open();
-            command.ExecuteNonQuery();
+                }
+            }
+            else
+            {
+                Console.WriteLine("Không có dữ liệu trả về");
+                return true;
+            }
             Conn.Close();
-        }
-        public static void XoaCV(CHUCVUDTO cv)
-        {
-            SqlConnection Conn = Connection.KetNoi();
-            SqlCommand command = new SqlCommand("proc_xoaChucVu", Conn);
-            command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.Add("@MaCV", SqlDbType.Char);
-            
-            command.Parameters["@MaCV"].Value = cv.MaCV;
-            
-            Conn.Open();
-            command.ExecuteNonQuery();
-            Conn.Close();
+            return true;
         }
 
     }
