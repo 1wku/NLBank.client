@@ -10,17 +10,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace NLBank.client.views
+namespace NLBank.client.views.admin
 {
-    public partial class SignUp : MaterialForm
+    public partial class AdminHome : MaterialForm
     {
-        public SignUp()
+        public AdminHome()
         {
+
             InitializeComponent();
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
+
+        }
+
+        private void AdminHome_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -23,5 +23,19 @@ namespace NLBank.client.DAL
             Con.Close();
             return dt;
         }
+        public static DataTable getLoaiTS()
+        {
+            String cmd = "select * from LOAITSDB  ";
+            SqlConnection Con = Connection.KetNoi();
+            SqlCommand command = new SqlCommand(cmd, Con);
+            Con.Open();
+            SqlDataAdapter da = new SqlDataAdapter();
+            da.SelectCommand = command;
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            Con.Close();
+            return dt;
+        }
+       
     }
 }
