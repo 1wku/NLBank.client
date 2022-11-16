@@ -22,5 +22,9 @@ namespace NLBank.client.BUS
         {
             return CTTNDAL.GetListTN(makh);
         }
+        public static DataTable GetSoDuNoByHDTDMoiNhat(int makh)
+        {
+            return CTTNDAL.GetSoDuNoByHDTDMoiNhat(makh);
+        }
     }
 }

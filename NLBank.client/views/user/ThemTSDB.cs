@@ -29,10 +29,17 @@ namespace NLBank.client.views.user
 
         private void materialButton1_Click(object sender, EventArgs e)
         {
-            Console.WriteLine(kh.MaKH);
             TSDBDTO tsdb = new TSDBDTO(Int32.Parse(cbx_loai.SelectedValue.ToString()), txt_name.Text, kh.MaKH, 
                 Int32.Parse(cbx_value.SelectedValue.ToString()), cbx_hinhthuc.SelectedValue.ToString());
-            TSDBBUS.ThemTSDB(tsdb);
+            if (TSDBBUS.ThemTSDB(tsdb))
+            {
+                MessageBox.Show("Thêm Tài sản đảm bảo thành công");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Thêm tài sản đảm bảo thất bại");
+            }
         }
 
         private void ThemTSDB_Load(object sender, EventArgs e)

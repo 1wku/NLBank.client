@@ -35,16 +35,20 @@ namespace NLBank.client.BUS
 
             return dt;
         }
-        public static DataTable GetListTSDB(int makh)
+   
+        public static DataTable GetListKVchuaDuyet(int makh)
         {
-            return TSDBBUS.GetListTSDB(makh);
+            return KhoanVayDAL.GetListKVChuaDuyet(makh);
+        }
+        public static DataTable getListSoTienVayByMaKH(int makh)
+        {
+            return KhoanVayDAL.getListSoTienVayByMaKH(makh);
         }
 
-        
 
-        public static void ThemKV(KhoanVayDTO kv)
+        public static Boolean ThemKV(KhoanVayDTO kv)
         {
-            KhoanVayDAL.ThemKhoanVay(kv);
+            return KhoanVayDAL.ThemKhoanVay(kv);
         }
     }
 }

@@ -28,9 +28,22 @@ namespace NLBank.client.DAL
 
         public static DataTable GetListTSDB(int makh)
         {
-            String sql = "SELECT * from TAISANDAMBAO where MaKH = " + makh;
+            String sql = "SELECT * FROM TAISANDAMBAO WHERE MaKH = " + makh;
             return Connection.Instance.ExcuteQuery(sql);
         }
+
+        public static DataTable GetListTSDBChuaSD(int makh)
+        {
+            String sql = "SELECT * FROM f_TSDBChuaSuDung() WHERE MaKH = " + makh;
+            return Connection.Instance.ExcuteQuery(sql);
+        }
+
+        public static DataTable GetListTSDBDaSD(int makh)
+        {
+            String sql = "SELECT * FROM f_TSDBDaSuDung() WHERE MaKH = " + makh;
+            return Connection.Instance.ExcuteQuery(sql);
+        }
+
         public static DataTable GetListTSDBbyName(String searchString, int makh)
         {
             String sql = "SELECT * from TAISANDAMBAO where TenTSDB like '" + searchString+ "' and MaKH = " + makh;
@@ -48,37 +61,38 @@ namespace NLBank.client.DAL
             String sql = "SELECT * FROM LOAITSDB";
             return Connection.Instance.ExcuteQuery(sql);
         }
-        public static void ThemTSDB(TSDBDTO tsdb)
+        public static Boolean ThemTSDB(TSDBDTO tsdb)
         {
-            SqlConnection Conn = Connection.KetNoi();
-            SqlCommand command = new SqlCommand("sp_ThemTaiSanDamBao", Conn);
-            command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.Add("@MaLoaiTSDB", SqlDbType.Int);
-            command.Parameters.Add("@TenTSDB", SqlDbType.NVarChar);
-            command.Parameters.Add("@MaKH", SqlDbType.Int);
-            command.Parameters.Add("@TriGiaTS", SqlDbType.Int);
-            command.Parameters.Add("@HinhThucDB", SqlDbType.NVarChar);
-            command.Parameters["@MaLoaiTSDB"].Value = tsdb.MaLoaiTSDB;
-            command.Parameters["@TenTSDB"].Value = tsdb.TenTSDB;
-            command.Parameters["@MaKH"].Value = tsdb.MaKH;
-            command.Parameters["@TriGiaTS"].Value = tsdb.TriGiaTS;
-            command.Parameters["@HinhThucDB"].Value = tsdb.HinhThucDB;
-            Conn.Open();
-            int result = command.ExecuteNonQuery();
-            if (result == 0)
+            try
             {
-                MessageBox.Show("Thêm tài sản đảm bảo thành công");
+                SqlConnection Conn = Connection.KetNoi();
+                SqlCommand command = new SqlCommand("sp_ThemTaiSanDamBao", Conn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add("@MaLoaiTSDB", SqlDbType.Int);
+                command.Parameters.Add("@TenTSDB", SqlDbType.NVarChar);
+                command.Parameters.Add("@MaKH", SqlDbType.Int);
+                command.Parameters.Add("@TriGiaTS", SqlDbType.Int);
+                command.Parameters.Add("@HinhThucDB", SqlDbType.NVarChar);
+                command.Parameters["@MaLoaiTSDB"].Value = tsdb.MaLoaiTSDB;
+                command.Parameters["@TenTSDB"].Value = tsdb.TenTSDB;
+                command.Parameters["@MaKH"].Value = tsdb.MaKH;
+                command.Parameters["@TriGiaTS"].Value = tsdb.TriGiaTS;
+                command.Parameters["@HinhThucDB"].Value = tsdb.HinhThucDB;
+                Conn.Open();
+                command.ExecuteNonQuery();
+                Conn.Close();
+                return true;
             }
-            else
+            catch(Exception e)
             {
-                MessageBox.Show("Thêm tài sản đảm bảo thất bại");
+                Console.WriteLine(e);
+                return false;
             }
-            Conn.Close();
         }
         public static void SuaTSDB(TSDBDTO tsdb)
         {
             SqlConnection Conn = Connection.KetNoi();
-            SqlCommand command = new SqlCommand("SuaTaiSanDamBao", Conn);
+            SqlCommand command = new SqlCommand("sp_SuaTaiSanDamBao", Conn);
             command.CommandType = CommandType.StoredProcedure;
             command.Parameters.Add("@MaTSDB", SqlDbType.Char);
             command.Parameters.Add("@MaLoaiTSDB", SqlDbType.Char);
@@ -96,13 +110,13 @@ namespace NLBank.client.DAL
             command.ExecuteNonQuery();
             Conn.Close();
         }
-        public static void XoaTSDB(TSDBDTO tsdb)
+        public static void XoaTSDB(int matsdb)
         {
             SqlConnection Conn = Connection.KetNoi();
-            SqlCommand command = new SqlCommand("XoaTaiSanDamBao", Conn);
+            SqlCommand command = new SqlCommand("sp_XoaTaiSanDamBao", Conn);
             command.CommandType = CommandType.StoredProcedure;
             command.Parameters.Add("@MaTSDB", SqlDbType.Char);
-            command.Parameters["@MaTSDB"].Value = tsdb.MaTSDB;
+            command.Parameters["@MaTSDB"].Value = matsdb;
             Conn.Open();
             command.ExecuteNonQuery();
             Conn.Close();

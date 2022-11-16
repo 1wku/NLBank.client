@@ -26,7 +26,12 @@ namespace NLBank.client.DAL
         }
         public static DataTable GetListTN(int makh)
         {
-            String sql = "SELECT SoHDTD,SoTienTra, SoDuNo FROM CHUNGTUTHUNO WHERE MaKH = 4" + makh;
+            String sql = "SELECT SoHDTD,SoTienTra, SoDuNo FROM CHUNGTUTHUNO WHERE MaKH =" + makh;
+            return Connection.Instance.ExcuteQuery(sql);
+        }
+        public static DataTable GetSoDuNoByHDTDMoiNhat(int makh)
+        {
+            String sql = "SELECT SoHDTD, SoDuNo FROM CHUNGTUTHUNO as cttn WHERE SoCTThuNo = (select dbo.f_CTTNMoiNhat(SoHDTD)) and MaKH = " + makh;
             return Connection.Instance.ExcuteQuery(sql);
         }
         public static void ThemCTTN(CTTNDTO cttn)

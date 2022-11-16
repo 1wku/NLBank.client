@@ -11,6 +11,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using NLBank.client.DTO;
 using NLBank.client.BUS;
+using System.Data.SqlClient;
+
 namespace NLBank.client.views.user
 {
     public partial class DangKyKhoanVay_Form : MaterialForm
@@ -34,52 +36,28 @@ namespace NLBank.client.views.user
             cbx_loaitien.DataSource = KVBUS.GetLoaiTien();
             cbx_loaitien.DisplayMember = "LoaiTien";
             cbx_loaitien.ValueMember = "MaloaiTien";
-            dg_tsdb.DataSource = KVBUS.GetListTSDB(kh.MaKH);
+            dg_tsdb.DataSource = TSDBBUS.GetListTSDBChuaSD(kh.MaKH);
         }
 
-        private void materialLabel1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void materialTextBox6_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void materialLabel3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void materialTextBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void materialLabel6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void materialTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void materialLabel2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+        
 
         private void materialButton1_Click(object sender, EventArgs e)
         {
-            KVBUS.ThemKV(new KhoanVayDTO(kh.MaKH, Int32.Parse(dg_tsdb.SelectedRows[0].Cells[0].Value.ToString()), Int32.Parse(cbx_loaikv.SelectedValue.ToString()), txt_mucdich.Text, Int32.Parse(txt_sotienvay.Text), cbx_loaitien.SelectedValue.ToString()));
+            if (KVBUS.ThemKV(new KhoanVayDTO(kh.MaKH, Int32.Parse(dg_tsdb.Rows[dg_tsdb.CurrentRow.Index].Cells[0].Value.ToString()), Int32.Parse(cbx_loaikv.SelectedValue.ToString()),
+                                txt_mucdich.Text, Int32.Parse(txt_sotienvay.Text), cbx_loaitien.SelectedValue.ToString())))
+            {
+                MessageBox.Show("Thêm Khoản vay thành công");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Thêm Khoản vay thất bại");
+            }
+        }
+
+        private void materialButton2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

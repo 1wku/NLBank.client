@@ -55,10 +55,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\CommonBUS.cs" />
     <Compile Include="BUS\CTBUS.cs" />
     <Compile Include="BUS\GNNBUS.cs" />
+    <Compile Include="BUS\HDTDBUS.cs" />
     <Compile Include="BUS\KVBUS.cs" />
     <Compile Include="BUS\TSDBBUS.cs" />
+    <Compile Include="BUS\TTTKBUS.cs" />
     <Compile Include="components\ChinhSuaCaNhan.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -96,6 +99,12 @@
     <Compile Include="components\TsdbItem.Designer.cs">
       <DependentUpon>TsdbItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="components\TSDBitemUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="components\TSDBitemUser.Designer.cs">
+      <DependentUpon>TSDBitemUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="DAL\AccountDAL.cs" />
     <Compile Include="DAL\DieuKhoanDAL.cs" />
     <Compile Include="DAL\GNNDAL.cs" />
@@ -106,7 +115,7 @@
     <Compile Include="DTO\NhanvienDTO.cs" />
     <Compile Include="models\GiayNhanNo.cs" />
     <Compile Include="DAL\CANHANDAL.cs" />
-    <Compile Include="DAL\Common.cs" />
+    <Compile Include="DAL\CommonDAL.cs" />
     <Compile Include="DAL\DOANHNGHIEPDAL.cs" />
     <Compile Include="DAL\KHDAL.cs" />
     <Compile Include="DAL\Connection.cs" />
@@ -175,6 +184,12 @@
     <Compile Include="views\user\SuaTSDB.Designer.cs">
       <DependentUpon>SuaTSDB.cs</DependentUpon>
     </Compile>
+    <Compile Include="views\user\TSDBinfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\user\TSDBinfo.Designer.cs">
+      <DependentUpon>TSDBinfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\user\ThanhToan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,6 +226,9 @@
     <EmbeddedResource Include="components\TsdbItem.resx">
       <DependentUpon>TsdbItem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="components\TSDBitemUser.resx">
+      <DependentUpon>TSDBitemUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="views\admin\AdminHome.resx">
       <DependentUpon>AdminHome.cs</DependentUpon>
     </EmbeddedResource>
@@ -243,6 +261,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="views\user\SuaTSDB.resx">
       <DependentUpon>SuaTSDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\user\TSDBinfo.resx">
+      <DependentUpon>TSDBinfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\user\ThanhToan.resx">
       <DependentUpon>ThanhToan.cs</DependentUpon>

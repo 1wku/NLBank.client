@@ -35,7 +35,6 @@ namespace NLBank.client
         {
             Console.WriteLine("Login  btn");
             int roleID = AccountDAL.login(txt_email.Text, txt_password.Text);
-            Console.WriteLine(roleID);
             switch (roleID)
             {
 

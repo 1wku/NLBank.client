@@ -11,13 +11,17 @@ namespace NLBank.client.BUS
 {
     class TSDBBUS
     {
-        public static void ThemTSDB(TSDBDTO tsdb)
+        public static Boolean ThemTSDB(TSDBDTO tsdb)
         {
-            TSDBDAL.ThemTSDB(tsdb);
+            return TSDBDAL.ThemTSDB(tsdb);
         }
         public static void SuaTSDB(TSDBDTO tsdb)
         {
             TSDBDAL.SuaTSDB(tsdb);
+        }
+        public static void XoaTSDB(int matsdb)
+        {
+            TSDBDAL.XoaTSDB(matsdb);
         }
         public static DataTable GetHinhThucDB()
         {
@@ -72,6 +76,15 @@ namespace NLBank.client.BUS
         public static DataTable GetListTSDB(int makh)
         {
             return TSDBDAL.GetListTSDB(makh);
+        }
+             public static DataTable GetListTSDBChuaSD(int makh)
+        {
+            return TSDBDAL.GetListTSDBChuaSD(makh);
+        }
+
+        public static DataTable GetListTSDBDaSD(int makh)
+        {
+            return TSDBDAL.GetListTSDBDaSD(makh);
         }
         public static DataTable GetListTSDBbyName(String searchString, int makh)
         {

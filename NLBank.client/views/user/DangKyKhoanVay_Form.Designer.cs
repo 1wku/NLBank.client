@@ -54,7 +54,6 @@
             this.materialLabel6.Size = new System.Drawing.Size(100, 19);
             this.materialLabel6.TabIndex = 22;
             this.materialLabel6.Text = "Mục đích vay ";
-            this.materialLabel6.Click += new System.EventHandler(this.materialLabel6_Click);
             // 
             // txt_mucdich
             // 
@@ -64,7 +63,7 @@
             this.txt_mucdich.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txt_mucdich.LeadingIcon = null;
             this.txt_mucdich.Location = new System.Drawing.Point(72, 390);
-            this.txt_mucdich.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txt_mucdich.Margin = new System.Windows.Forms.Padding(6);
             this.txt_mucdich.MaxLength = 50;
             this.txt_mucdich.MouseState = MaterialSkin.MouseState.OUT;
             this.txt_mucdich.Multiline = false;
@@ -73,7 +72,6 @@
             this.txt_mucdich.TabIndex = 21;
             this.txt_mucdich.Text = "";
             this.txt_mucdich.TrailingIcon = null;
-            this.txt_mucdich.TextChanged += new System.EventHandler(this.materialTextBox6_TextChanged);
             // 
             // materialLabel3
             // 
@@ -87,7 +85,6 @@
             this.materialLabel3.Size = new System.Drawing.Size(66, 19);
             this.materialLabel3.TabIndex = 19;
             this.materialLabel3.Text = "Loại tiền ";
-            this.materialLabel3.Click += new System.EventHandler(this.materialLabel3_Click);
             // 
             // materialLabel1
             // 
@@ -101,7 +98,6 @@
             this.materialLabel1.Size = new System.Drawing.Size(79, 19);
             this.materialLabel1.TabIndex = 20;
             this.materialLabel1.Text = "Số tiền vay";
-            this.materialLabel1.Click += new System.EventHandler(this.materialLabel1_Click);
             // 
             // txt_sotienvay
             // 
@@ -111,7 +107,7 @@
             this.txt_sotienvay.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txt_sotienvay.LeadingIcon = null;
             this.txt_sotienvay.Location = new System.Drawing.Point(72, 200);
-            this.txt_sotienvay.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txt_sotienvay.Margin = new System.Windows.Forms.Padding(6);
             this.txt_sotienvay.MaxLength = 50;
             this.txt_sotienvay.MouseState = MaterialSkin.MouseState.OUT;
             this.txt_sotienvay.Multiline = false;
@@ -120,7 +116,6 @@
             this.txt_sotienvay.TabIndex = 18;
             this.txt_sotienvay.Text = "";
             this.txt_sotienvay.TrailingIcon = null;
-            this.txt_sotienvay.TextChanged += new System.EventHandler(this.materialTextBox1_TextChanged);
             // 
             // materialLabel2
             // 
@@ -134,7 +129,6 @@
             this.materialLabel2.Size = new System.Drawing.Size(109, 19);
             this.materialLabel2.TabIndex = 24;
             this.materialLabel2.Text = "Loại khoản vay";
-            this.materialLabel2.Click += new System.EventHandler(this.materialLabel2_Click);
             // 
             // cbx_loaitien
             // 
@@ -151,7 +145,7 @@
             this.cbx_loaitien.IntegralHeight = false;
             this.cbx_loaitien.ItemHeight = 43;
             this.cbx_loaitien.Location = new System.Drawing.Point(780, 202);
-            this.cbx_loaitien.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.cbx_loaitien.Margin = new System.Windows.Forms.Padding(6);
             this.cbx_loaitien.MaxDropDownItems = 4;
             this.cbx_loaitien.MouseState = MaterialSkin.MouseState.OUT;
             this.cbx_loaitien.Name = "cbx_loaitien";
@@ -174,7 +168,7 @@
             this.cbx_loaikv.IntegralHeight = false;
             this.cbx_loaikv.ItemHeight = 43;
             this.cbx_loaikv.Location = new System.Drawing.Point(72, 567);
-            this.cbx_loaikv.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.cbx_loaikv.Margin = new System.Windows.Forms.Padding(6);
             this.cbx_loaikv.MaxDropDownItems = 4;
             this.cbx_loaikv.MouseState = MaterialSkin.MouseState.OUT;
             this.cbx_loaikv.Name = "cbx_loaikv";
@@ -186,12 +180,11 @@
             // 
             this.dg_tsdb.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dg_tsdb.Location = new System.Drawing.Point(72, 738);
-            this.dg_tsdb.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dg_tsdb.Margin = new System.Windows.Forms.Padding(6);
             this.dg_tsdb.Name = "dg_tsdb";
             this.dg_tsdb.RowHeadersWidth = 82;
             this.dg_tsdb.Size = new System.Drawing.Size(1326, 288);
             this.dg_tsdb.TabIndex = 29;
-            this.dg_tsdb.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // materialButton1
             // 
@@ -231,6 +224,7 @@
             this.materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton2.UseAccentColor = false;
             this.materialButton2.UseVisualStyleBackColor = true;
+            this.materialButton2.Click += new System.EventHandler(this.materialButton2_Click);
             // 
             // DangKyKhoanVay_Form
             // 
@@ -248,10 +242,10 @@
             this.Controls.Add(this.materialLabel3);
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.txt_sotienvay);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "DangKyKhoanVay_Form";
             this.Padding = new System.Windows.Forms.Padding(6, 123, 6, 6);
-            this.Text = "gt";
+            this.Text = "Đăng ký khoản vay";
             this.Load += new System.EventHandler(this.DangKyKhoanVay_Form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dg_tsdb)).EndInit();
             this.ResumeLayout(false);

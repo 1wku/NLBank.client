@@ -25,32 +25,52 @@ namespace NLBank.client.DAL
             return dt;
         }
 
+        public static DataTable GetListKVChuaDuyet(int makh)
+        {
+            string sql = "SELECT * FROM f_KVChuaSuDung() WHERE MaKH = "+ makh;
+            return Connection.Instance.ExcuteQuery(sql);
+        }
+
+        public static DataTable getListSoTienVayByMaKH(int makh)
+        {
+            String sql = "SELECT SoTienVay FROM dbo.f_KVChuaSuDung() WHERE MaKH =" + makh;
+            return Connection.Instance.ExcuteQuery(sql);
+        }
         public static DataTable GetLoaiKV()
         {
             String sql = "SELECT * FROM LOAIKV";
             return Connection.Instance.ExcuteQuery(sql);
         }
-        public static void ThemKhoanVay(KhoanVayDTO kv)
+        public static Boolean ThemKhoanVay(KhoanVayDTO kv)
         {
-            SqlConnection Conn = Connection.KetNoi();
-            SqlCommand command = new SqlCommand("sp_ThemKhoanVay", Conn);
-            command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.Add("@MaKH", SqlDbType.Char);
-            command.Parameters.Add("@MaTSDB", SqlDbType.Char);
-            command.Parameters.Add("@MaLoaiKV", SqlDbType.Char);
-            command.Parameters.Add("@MucDich", SqlDbType.NVarChar);
-            command.Parameters.Add("@SoTienVay", SqlDbType.Int);
-            command.Parameters.Add("@LoaiTien", SqlDbType.Char);
-            command.Parameters["@MaKH"].Value = kv.MaKH;
-            command.Parameters["@MaTSDB"].Value = kv.MaTSDB;
-            command.Parameters["@MaLoaiKV"].Value = kv.MaLoaiKV;
-            command.Parameters["@MucDich"].Value = kv.MucDich;
-            command.Parameters["@SoTienVay"].Value = kv.SoTienVay;
-            command.Parameters["@LoaiTien"].Value = kv.LoaiTien;
+            try
+            {
+                SqlConnection Conn = Connection.KetNoi();
+                SqlCommand command = new SqlCommand("sp_ThemKhoanVay", Conn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add("@MaKH", SqlDbType.Char);
+                command.Parameters.Add("@MaTSDB", SqlDbType.Char);
+                command.Parameters.Add("@MaLoaiKV", SqlDbType.Char);
+                command.Parameters.Add("@MucDich", SqlDbType.NVarChar);
+                command.Parameters.Add("@SoTienVay", SqlDbType.Int);
+                command.Parameters.Add("@LoaiTien", SqlDbType.Char);
+                command.Parameters["@MaKH"].Value = kv.MaKH;
+                command.Parameters["@MaTSDB"].Value = kv.MaTSDB;
+                command.Parameters["@MaLoaiKV"].Value = kv.MaLoaiKV;
+                command.Parameters["@MucDich"].Value = kv.MucDich;
+                command.Parameters["@SoTienVay"].Value = kv.SoTienVay;
+                command.Parameters["@LoaiTien"].Value = kv.LoaiTien;
 
-            Conn.Open();
-            command.ExecuteNonQuery();
-            Conn.Close();
+                Conn.Open();
+                command.ExecuteNonQuery();
+                Conn.Close();
+                return true;
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e);
+                return false;
+            }
         }
         public static void SuaKhoanVay(KhoanVayDTO kv)
         {

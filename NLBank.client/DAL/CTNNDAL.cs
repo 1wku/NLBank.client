@@ -26,7 +26,7 @@ namespace NLBank.client.DAL
         }
         public static DataTable GetListNN(int makh)
         {
-            String sql = "SELECT SoHDTD, NgayKyGNN, HanTraNo FROM GIAYNHANNO WHERE MaKH = 4" + makh;
+            String sql = "SELECT SoHDTD, NgayKyGNN, HanTraNo FROM GIAYNHANNO WHERE MaKH =" + makh;
             return Connection.Instance.ExcuteQuery(sql);
         }
         public static void ThemCTNN(CTNNDTO ctnn)
