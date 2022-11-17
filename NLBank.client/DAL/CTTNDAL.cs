@@ -21,6 +21,7 @@ namespace NLBank.client.DAL
             SqlDataAdapter da = new SqlDataAdapter();
             da.SelectCommand = command;
             DataTable dt = new DataTable();
+
             da.Fill(dt);
             Con.Close();
             return dt;

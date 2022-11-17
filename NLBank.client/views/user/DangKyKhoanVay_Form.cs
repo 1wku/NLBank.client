@@ -39,19 +39,58 @@ namespace NLBank.client.views.user
             dg_tsdb.DataSource = TSDBBUS.GetListTSDBChuaSD(kh.MaKH);
         }
 
-        
+
 
         private void materialButton1_Click(object sender, EventArgs e)
         {
-            if (KVBUS.ThemKV(new KhoanVayDTO(kh.MaKH, Int32.Parse(dg_tsdb.Rows[dg_tsdb.CurrentRow.Index].Cells[0].Value.ToString()), Int32.Parse(cbx_loaikv.SelectedValue.ToString()),
-                                txt_mucdich.Text, Int32.Parse(txt_sotienvay.Text), cbx_loaitien.SelectedValue.ToString())))
+            if(txt_mucdich.Text == "")
             {
-                MessageBox.Show("Thêm Khoản vay thành công");
-                this.Close();
+                MessageBox.Show("Dữ liệu không hợp lệ! vui lòng điền vào những trường còn trống");
+                return;
             }
+            if (txt_sotienvay.Text == "")
+            {
+                MessageBox.Show("Dữ liệu không hợp lệ! vui lòng điền vào những trường còn trống");
+                return;
+            }
+            try
+            {
+                Int32.Parse(txt_sotienvay.Text);
+            }
+            catch (Exception _)
+            {
+                MessageBox.Show("Dữ liệu không hợp lệ");
+                return;
+            }
+            Console.WriteLine();
+
+            if (dg_tsdb.SelectedRows.Count == 1 && dg_tsdb.CurrentRow.Index  != dg_tsdb.Rows.Count - 1 ) {
+
+            if (KVBUS.ThemKV(
+                new KhoanVayDTO(
+                    kh.MaKH,
+                    Int32.Parse(dg_tsdb.Rows[dg_tsdb.CurrentRow.Index].Cells[0].Value.ToString()
+                ),
+                Int32.Parse(cbx_loaikv.SelectedValue.ToString()),
+                txt_mucdich.Text,
+                Int32.Parse(txt_sotienvay.Text),
+                cbx_loaitien.SelectedValue.ToString()
+                )
+            ))
+                {
+                    MessageBox.Show("Thêm Khoản vay thành công");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Thêm Khoản vay thất bại");
+                }
+
+            }
+
             else
             {
-                MessageBox.Show("Thêm Khoản vay thất bại");
+                MessageBox.Show("Không có tài sản đảm bảo");
             }
         }
 
