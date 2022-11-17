@@ -34,11 +34,10 @@ namespace NLBank.client.DAL
             try
             {
                 SqlConnection Conn = Connection.KetNoi();
-                SqlCommand command = new SqlCommand("ThemHopDongTinDung", Conn);
+                SqlCommand command = new SqlCommand("sp_ThemHopDongTinDung", Conn);
                 command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.Add("@SoHDTD", SqlDbType.Char);
-                command.Parameters.Add("@MaKH", SqlDbType.Char);
-                command.Parameters.Add("@MaKV", SqlDbType.Char);
+                command.Parameters.Add("@MaKH", SqlDbType.Int);
+                command.Parameters.Add("@MaKV", SqlDbType.Int);
                 command.Parameters.Add("@Muc_dich", SqlDbType.NVarChar);
                 command.Parameters.Add("@LaiSuat", SqlDbType.Decimal);
                 command.Parameters.Add("@LaiQuaHan", SqlDbType.Decimal);
@@ -49,7 +48,6 @@ namespace NLBank.client.DAL
                 command.Parameters.Add("@LoaiTien", SqlDbType.Char);
                 command.Parameters.Add("@NgayKi", SqlDbType.Date);
 
-                command.Parameters["@SoHDTD"].Value = hdtd.SoHDTD;
                 command.Parameters["@MaKH"].Value = hdtd.MaKH;
                 command.Parameters["@MakV"].Value = hdtd.MAKV;
                 command.Parameters["@Muc_dich"].Value = hdtd.Muc_dich;
@@ -63,7 +61,8 @@ namespace NLBank.client.DAL
                 command.Parameters["@NgayKi"].Value = hdtd.NgayKi;
 
                 Conn.Open();
-                command.ExecuteNonQuery();
+                var reader = (string)command.ExecuteScalar();
+                Console.WriteLine(reader);
                 Conn.Close();
                 return true; 
             }
@@ -77,11 +76,11 @@ namespace NLBank.client.DAL
         public static void SuaHDTD(HDTDDTO hdtd)
         {
             SqlConnection Conn = Connection.KetNoi();
-            SqlCommand command = new SqlCommand("SuaHopDongTinDung", Conn);
+            SqlCommand command = new SqlCommand("sp_SuaHopDongTinDung", Conn);
             command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.Add("@SoHDTD", SqlDbType.Char);
-            command.Parameters.Add("@MaKH", SqlDbType.Char);
-            command.Parameters.Add("@MaKV", SqlDbType.Char);
+            command.Parameters.Add("@SoHDTD", SqlDbType.Int);
+            command.Parameters.Add("@MaKH", SqlDbType.Int);
+            command.Parameters.Add("@MaKV", SqlDbType.Int);
             command.Parameters.Add("@Muc_dich", SqlDbType.NVarChar);
             command.Parameters.Add("@LaiSuat", SqlDbType.Decimal);
             command.Parameters.Add("@LaiQuaHan", SqlDbType.Decimal);
@@ -112,9 +111,9 @@ namespace NLBank.client.DAL
         public static void XoaHDTD(HDTDDTO hdtd)
         {
             SqlConnection Conn = Connection.KetNoi();
-            SqlCommand command = new SqlCommand("XoaHopDongTinDung", Conn);
+            SqlCommand command = new SqlCommand("sp_XoaHopDongTinDung", Conn);
             command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.Add("@SoHDTD", SqlDbType.Char); 
+            command.Parameters.Add("@SoHDTD", SqlDbType.Int); 
 
             command.Parameters["@SoHDTD"].Value = hdtd.SoHDTD;
             
@@ -124,29 +123,10 @@ namespace NLBank.client.DAL
         }
         public static Boolean CheckOverTimeHDTD(int id)
         {
-            SqlConnection Conn = Connection.KetNoi();
-            SqlCommand command = new SqlCommand("select dbo.f_LaHDTDQuaHan('" + id+"')", Conn);
+            String query = "select dbo.f_LaHDTDQuaHan(" + id + ")";
+            Boolean data = (Boolean)Connection.Instance.ExecuteScalar(query);
 
-            Conn.Open();
-             var reader = command.ExecuteReader();
-            if (reader.HasRows)
-            {
-                // Đọc từng dòng tập kết quả
-                while (reader.Read())
-                {
-                    var data = reader.GetInt32(0);
-                    if (data == 0) return false;
-                    else return true; 
-
-                }
-            }
-            else
-            {
-                Console.WriteLine("Không có dữ liệu trả về");
-                return true; 
-            }
-            Conn.Close();
-            return true; 
+            return data; 
         }
 
 

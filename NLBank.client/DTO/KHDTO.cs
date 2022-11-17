@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,15 +11,21 @@ namespace NLBank.client.DTO
 {
     public class KHDTO
     {
-        private int _MaKH; 
-        private String _Ten;
-        private String _Dia_chi;
-        private String _Email;
-        private String _Sdt;
-        private int _RoleID;
-        public CANHANDTO canhan;
-        public DOANHNGHIEPDTO doanhNghiep;
+        private int _MaKH=0; 
+        private String _Ten="";
+        private String _Dia_chi="";
+        private String _Email="";
+        private string _Password=""; 
+        private String _Sdt = "";
+        private int _RoleID=-1;
+        public CANHANDTO canhan= new CANHANDTO();
+        public DOANHNGHIEPDTO doanhNghiep = new DOANHNGHIEPDTO();
 
+        public String Password
+        {
+            get { return _Password; }
+            set { _Password = value; }
+        }
         public int MaKH {
             get { return _MaKH; }
             set { _MaKH = value;} 
@@ -60,21 +67,15 @@ namespace NLBank.client.DTO
             }
         }
         public KHDTO() { }
-        public KHDTO(DataRow row) {
+        public KHDTO(DataRow row)
+        {
             _MaKH = (int)row["MaKH"];
-            _Ten = row["Ten"].ToString();
-            _Dia_chi = row["Dia_chi"].ToString();
-            _Email = row["Email"].ToString();
-            _Sdt = row["Sdt"].ToString();
-            _RoleID = (byte)row["RoleID"];
-            if (_RoleID == 0)
-            {
-                canhan = CANHANDAL.GetCaNhan(_MaKH);
-            }
-            if (_RoleID == 1)
-            {
-                doanhNghiep = DOANHNGHIEPDAL.GetDoanhNghiep(_MaKH);
-            }
+            _Ten = (string)row["Ten"];
+            _Dia_chi = (string)row["Dia_chi"];
+            _Email = (string)row["Email"];
+            _Sdt = (string)row["Sdt"];
+            //_RoleID = (int)row["RoleID"];
         }
+
     }
 }

@@ -48,6 +48,8 @@ namespace NLBank.client.views.employee
             tsdb_loai.Text = tsdb.MaLoaiTSDB.ToString();
             tsdb_trigia.Text = tsdb.TriGiaTS.ToString();
             tsdb_hinhthuc.Text = tsdb.HinhThucDB.ToString();
+            kh_id.Text = kh.MaKH.ToString();
+            kh_ten.Text = kh.Ten.ToString(); 
         }
 
         private void materialLabel5_Click(object sender, EventArgs e)

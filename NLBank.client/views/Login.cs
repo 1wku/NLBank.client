@@ -38,8 +38,17 @@ namespace NLBank.client
             switch (roleID)
             {
                 case 0:
+                    KHDTO kh1 = AccountDAL.GetKhachHangByEmail(txt_email.Text);
+                    kh1.RoleID = 0;
+                    if (kh1 != null)
+                    {
+                        new UserHome(kh1).Show();
+                        this.Hide();
+                    }
+                    break;
                 case 1:
                     KHDTO kh = AccountDAL.GetKhachHangByEmail(txt_email.Text);
+                    kh.RoleID = 1; 
                     if (kh != null)
                     {
                         new UserHome(kh).Show();
@@ -47,7 +56,10 @@ namespace NLBank.client
                     }
                     break;
                 case 2:
+
                     NhanvienDTO nv = AccountDAL.GetNhanVienByEmail(txt_email.Text);
+                    
+
                     if (nv != null)
                     {
                         new EmployeeHome(nv).Show();
@@ -63,7 +75,14 @@ namespace NLBank.client
                 default:
                     MessageBox.Show("Có lỗi xảy ra. Vui lòng thử lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
+
             }
+            Hide();
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

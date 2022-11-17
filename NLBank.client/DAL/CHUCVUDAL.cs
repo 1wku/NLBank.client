@@ -9,54 +9,17 @@ using System.Threading.Tasks;
 
 namespace NLBank.client.DAL
 {
-    public class CHUCVUDAL
+    public class ChucVuDAL
     {
-        public static void ThemCV(CHUCVUDTO cv)
+        public static ChucVuDTO GetChucVu(int id)
         {
-            SqlConnection Conn = Connection.KetNoi();
-            SqlCommand command = new SqlCommand("proc_themChucVu", Conn);
-            command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.Add("@MaCV", SqlDbType.Char);
-            command.Parameters.Add("@TenCV", SqlDbType.NVarChar);
-            command.Parameters.Add("@HSLuong", SqlDbType.Decimal);
+            DataTable result = Connection.Instance.ExcuteQuery("select * from CHUCVU where MaCV="+ id);
+            foreach (DataRow dr in result.Rows)
+            {
+                return new ChucVuDTO((int)dr["MaCV"], (string)dr["TenCV"], (decimal)dr["HSLuong"]);
 
-            command.Parameters["@MaCV"].Value = cv.MaCV;
-            command.Parameters["@TenCV"].Value = cv.TenCV;
-            command.Parameters["@HSLuong"].Value = cv.HSLuong;
-
-            Conn.Open();
-            command.ExecuteNonQuery();
-            Conn.Close();
-        }
-        public static void SuaCV(CHUCVUDTO cv)
-        {
-            SqlConnection Conn = Connection.KetNoi();
-            SqlCommand command = new SqlCommand("proc_suaChucVu", Conn);
-            command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.Add("@MaCV", SqlDbType.Char);
-            command.Parameters.Add("@TenCV", SqlDbType.NVarChar);
-            command.Parameters.Add("@HSLuong", SqlDbType.Decimal);
-
-            command.Parameters["@MaCV"].Value = cv.MaCV;
-            command.Parameters["@TenCV"].Value = cv.TenCV;
-            command.Parameters["@HSLuong"].Value = cv.HSLuong;
-
-            Conn.Open();
-            command.ExecuteNonQuery();
-            Conn.Close();
-        }
-        public static void XoaCV(CHUCVUDTO cv)
-        {
-            SqlConnection Conn = Connection.KetNoi();
-            SqlCommand command = new SqlCommand("proc_xoaChucVu", Conn);
-            command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.Add("@MaCV", SqlDbType.Char);
-            
-            command.Parameters["@MaCV"].Value = cv.MaCV;
-            
-            Conn.Open();
-            command.ExecuteNonQuery();
-            Conn.Close();
+            }
+            return new ChucVuDTO(); 
         }
 
     }

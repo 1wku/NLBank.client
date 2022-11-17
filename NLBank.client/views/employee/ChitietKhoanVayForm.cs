@@ -94,5 +94,19 @@ namespace NLBank.client.views.employee
             }
             
         }
+
+        private void xoa_kv_btn_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa khoản vay", "Chấp nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            if (result.Equals(DialogResult.OK))
+            {
+                //Do something
+                KhoanVayDAL.XoaKhoanVay(kv.MaKV); 
+            }
+            else
+            {
+
+            }
+        }
     }
 }

@@ -18,7 +18,7 @@ namespace NLBank.client.DTO
         public string Sdt { set; get; }
         public int MaCV { set; get; }
 
-        public ChucVuDTO ChucVu;
+        public ChucVuDTO ChucVu { set; get; }
 
         public NhanvienDTO(string maNV, string cCCD, string ten, string dia_chi, string email, string sdt, int maCV)
         {
@@ -45,5 +45,6 @@ namespace NLBank.client.DTO
                 ChucVu = new ChucVuDTO(item);
             }
         }
+        
     }
 }

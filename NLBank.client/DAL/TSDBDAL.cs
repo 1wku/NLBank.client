@@ -111,16 +111,24 @@ namespace NLBank.client.DAL
             command.ExecuteNonQuery();
             Conn.Close();
         }
-        public static void XoaTSDB(int matsdb)
+        public static void XoaTSDB(int id)
         {
-            SqlConnection Conn = Connection.KetNoi();
+            try {             
+                SqlConnection Conn = Connection.KetNoi();
             SqlCommand command = new SqlCommand("sp_XoaTaiSanDamBao", Conn);
             command.CommandType = CommandType.StoredProcedure;
             command.Parameters.Add("@MaTSDB", SqlDbType.Char);
-            command.Parameters["@MaTSDB"].Value = matsdb;
+            command.Parameters["@MaTSDB"].Value = id;
             Conn.Open();
             command.ExecuteNonQuery();
             Conn.Close();
+        
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show("Xóa tài sản không thành công. Vui lòng thử lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
         }
     }
 }

@@ -17,7 +17,7 @@ namespace NLBank.client.DTO
         public  String MADN { get { return _MADN; } set { _MADN = value;} }
         public  int DnB_rating { get { return _DnB_rating; } set { _DnB_rating = value;} }
 
-        public DOANHNGHIEPDTO(int maKH, String mADN, int dnB_rating)
+        public DOANHNGHIEPDTO(int maKH, string mADN, int dnB_rating)
         {
             _MaKH = maKH;
             _MADN = mADN;

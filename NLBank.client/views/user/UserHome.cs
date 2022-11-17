@@ -129,29 +129,28 @@ namespace NLBank.client.views.user
             lb_phone.Text = kh.Sdt;
 
             //Thong bao giay nhac no
-            DataTable gnn_data = GNNBUS.GetGNN(kh.MaKH);
-            pnl_reminder.Controls.Clear();
-            foreach (DataRow row in gnn_data.Rows)
-            {
-                pnl_reminder.Controls.Add(new ThongBaoNhacNo(new GNNDTO(
-                    row["SoGNN"] != DBNull.Value ? (int)row["SoGNN"] : 0,
-                    (String)row["Ten"],
-                    row["MaKH"] != DBNull.Value ? (int)row["MaKH"] : 0,
-                    row["SoHDTD"] != DBNull.Value ? (int)row["SoHDTD"] : 0,
-                    row["LaiSuat"] != DBNull.Value ? (decimal)row["LaiSuat"] : 0,
-                    row["LaiQuaHan"] != DBNull.Value ? (decimal)row["LaiQuaHan"] : 0,
-                    row["ThoiHanVay"] != DBNull.Value ? (int)row["ThoiHanVay"] : 0,
-                    (String)row["PhuongThucTra"],
-                    (String)row["LoaiTien"],
-                    (DateTime)row["NgayKi"],
-                    row["SoTienVay"] != DBNull.Value ? (int)row["SoTienVay"] : 0,
-                    row["HanMucTinDung"] != DBNull.Value ? (int)row["HanMucTinDung"] : 0,
-                    (DateTime)row["NgayKyGNN"],
-                    (String)row["Chi_nhanh"],
-                    (DateTime)row["NgayNN"],
-                    (DateTime)row["HanTraNo"]
-                    )));
-            }
+            //DataTable gnn_data = GNNBUS.GetGNN(kh.MaKH);
+            //pnl_reminder.Controls.Clear();
+            //foreach (DataRow row in gnn_data.Rows)
+            //{
+            //    pnl_reminder.Controls.Add(new ThongBaoNhacNo(new GNNDTO(
+            //        row["SoGNN"] != DBNull.Value ? (int)row["SoGNN"] : 0,
+            //        (String)row["Ten"],
+            //        row["MaKH"] != DBNull.Value ? (int)row["MaKH"] : 0,
+            //        row["SoHDTD"] != DBNull.Value ? (int)row["SoHDTD"] : 0,
+            //        row["LaiSuat"] != DBNull.Value ? (decimal)row["LaiSuat"] : 0,
+            //        row["LaiQuaHan"] != DBNull.Value ? (decimal)row["LaiQuaHan"] : 0,
+            //        row["ThoiHanVay"] != DBNull.Value ? (int)row["ThoiHanVay"] : 0,
+            //        (String)row["PhuongThucTra"],
+            //        (String)row["LoaiTien"],
+            //        (DateTime)row["NgayKi"],
+            //        row["SoTienVay"] != DBNull.Value ? (int)row["SoTienVay"] : 0,
+            //        row["HanMucTinDung"] != DBNull.Value ? (int)row["HanMucTinDung"] : 0,
+            //        (DateTime)row["NgayKyGNN"],
+            //        (String)row["Chi_nhanh"],
+            //        (DateTime)row["NgayNN"]
+            //        )));
+            //}
 
             //Khoan vay
             DataTable ctgn_data = CTBUS.getListGN(kh.MaKH);

@@ -1,4 +1,5 @@
-﻿using NLBank.client.views.employee;
+﻿using NLBank.client.DAL;
+using NLBank.client.views.employee;
 using NLBank.client.views.user;
 using System;
 using System.Collections.Generic;

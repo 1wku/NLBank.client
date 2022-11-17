@@ -8,25 +8,25 @@ namespace NLBank.client.DTO
 {
     public class CTNNDTO
     {
-        private String _SoGNN;
-        private String _SoHDTD;
-        private String _MaKH;
+        private int _SoGNN;
+        private int _SoHDTD;
+        private int _MaKH;
         private DateTime _NgayKyGNN;
-        private String _MaCN;
+        private int _MaCN;
         private int _HanMucTinDung;
         private DateTime _HanTraNo;
         private decimal _LaiQuaHan;
         private decimal _LaiSuat;
 
-        public String SoGNN { 
+        public int SoGNN { 
             get{ return _SoGNN; } 
             set{ _SoGNN = value;}
         }
-        public String SoHDTD { 
+        public int SoHDTD { 
             get{ return _SoHDTD; }
             set{ _SoHDTD = value;}
         }
-        public String MaKH { 
+        public int MaKH { 
             get{ return _MaKH; } 
             set{ _MaKH = value;}
         }
@@ -34,7 +34,7 @@ namespace NLBank.client.DTO
             get{ return _NgayKyGNN; }
             set{ _NgayKyGNN = value;}
         }
-        public String MaCN {
+        public int MaCN {
             get{ return _MaCN; }
             set{ _MaCN = value;}
         }
@@ -54,7 +54,7 @@ namespace NLBank.client.DTO
             get{ return _LaiSuat; } 
             set{ _LaiSuat = value;}
         }
-        public CTNNDTO( String soGNN, String soHDTD, String maKH, DateTime ngayKyGNN, String maCN, int hanMucTinDung, 
+        public CTNNDTO(int soGNN, int soHDTD, int maKH, DateTime ngayKyGNN, int maCN, int hanMucTinDung, 
                                 DateTime hanTraNo, decimal laiQuaHan, decimal laiSuat)
         {
             _SoGNN = soGNN;
@@ -68,5 +68,6 @@ namespace NLBank.client.DTO
             _LaiSuat = laiSuat;
         }
         public CTNNDTO() { }
+        public HDTDDTO hd { set; get; }
     }
 }

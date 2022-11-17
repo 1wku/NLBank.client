@@ -69,7 +69,7 @@ namespace NLBank.client.components
             this.materialButton1.Depth = 0;
             this.materialButton1.HighEmphasis = true;
             this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(447, 19);
+            this.materialButton1.Location = new System.Drawing.Point(470, 19);
             this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton1.Name = "materialButton1";
@@ -121,24 +121,20 @@ namespace NLBank.client.components
             this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard1.Name = "materialCard1";
             this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard1.Size = new System.Drawing.Size(549, 75);
+            this.materialCard1.Size = new System.Drawing.Size(592, 75);
             this.materialCard1.TabIndex = 6;
             // 
             // chinhSuaCaNhan1
             // 
-            this.chinhSuaCaNhan1.Location = new System.Drawing.Point(69, 88);
-            this.chinhSuaCaNhan1.Name = "chinhSuaCaNhan1";
-            this.chinhSuaCaNhan1.Size = new System.Drawing.Size(8, 8);
-            this.chinhSuaCaNhan1.TabIndex = 5;
+         
             // 
             // KhoanVayItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.materialCard1);
-            this.Controls.Add(this.chinhSuaCaNhan1);
             this.Name = "KhoanVayItem";
-            this.Size = new System.Drawing.Size(560, 85);
+            this.Size = new System.Drawing.Size(595, 85);
             this.Load += new System.EventHandler(this.KhoanVayItem_Load);
             this.materialCard1.ResumeLayout(false);
             this.materialCard1.PerformLayout();
@@ -153,7 +149,6 @@ namespace NLBank.client.components
         private MaterialSkin.Controls.MaterialButton materialButton1;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
-        private ChinhSuaCaNhan chinhSuaCaNhan1;
         private MaterialSkin.Controls.MaterialCard materialCard1;
     }
 }

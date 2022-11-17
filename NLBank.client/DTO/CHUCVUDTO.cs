@@ -13,7 +13,8 @@ namespace NLBank.client.DTO
         private String _TenCV;
         private decimal _HsLuong;
 
-        public int MaCV {
+        public int MaCV
+        {
             get { return _MaCV; }
             set { _MaCV = value; }
         }
@@ -29,6 +30,12 @@ namespace NLBank.client.DTO
         }
 
         public ChucVuDTO() { }
+        public ChucVuDTO(int maCV, string tenCV, decimal hsLuong)
+        {
+            MaCV = maCV;
+            TenCV = tenCV;
+            HsLuong = hsLuong;
+        }
 
         public ChucVuDTO(DataRow row)
         {
@@ -37,4 +44,5 @@ namespace NLBank.client.DTO
             _HsLuong = (decimal)row["HSLuong"];
         }
     }
+    
 }

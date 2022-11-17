@@ -13,7 +13,7 @@ namespace NLBank.client.DAL
     {
         public static DataTable getView()
         {
-            String cmd = "Select * From disbursementPaper";
+            String cmd = "Select * From GiayGiaiNgan";
             SqlConnection Con = Connection.KetNoi();
             SqlCommand command = new SqlCommand(cmd, Con);
             Con.Open();

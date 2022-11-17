@@ -19,6 +19,7 @@ namespace NLBank.client.components
         HDTDDTO hdtDD = new HDTDDTO();  
         TSDBDTO tsdb = new TSDBDTO();
         Boolean datoihan = false; 
+        
 
         public HdtdItem(HDTDDTO hdtDD, TSDBDTO tsdb, KHDTO kh )
         {
@@ -32,7 +33,6 @@ namespace NLBank.client.components
         private void tstdItem_Load(object sender, EventArgs e)
         {
             id_tstd_lb.Text = hdtDD.SoHDTD.ToString();
-            Console.WriteLine("hehe" + hdtDD.SoHDTD);
             datoihan = HDTDDAL.CheckOverTimeHDTD(hdtDD.SoHDTD);
             if (datoihan)
             {
@@ -54,6 +54,12 @@ namespace NLBank.client.components
         private void id_ts_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void thuno_btn_Click(object sender, EventArgs e)
+        {
+
+            new ThuNoForm(hdtDD).Show(); 
         }
     }
 }

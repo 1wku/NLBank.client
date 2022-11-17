@@ -157,6 +157,7 @@
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "Login";
             this.Text = "Đăng nhập";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
