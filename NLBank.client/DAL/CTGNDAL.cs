@@ -24,6 +24,11 @@ namespace NLBank.client.DAL
             Con.Close();
             return dt;
         }
+        public static DataTable GetListGN(int makh)
+        {
+            String sql = "SELECT SoHDTD , SoTienGiaiNgan FROM CHUNGTUGIAINGAN WHERE MaKH = " + makh;
+            return Connection.Instance.ExcuteQuery(sql);
+        }
         public static void ThemCTGN(CTGNDTO ctgn)
         {
             SqlConnection Conn = Connection.KetNoi();

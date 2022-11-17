@@ -56,6 +56,15 @@ namespace NLBank.client.DTO
             _SoTienVay = soTienVay;
             _LoaiTien = loaiTien;
         }
+        public KhoanVayDTO(int maKH, int maTSDB, int maLoaiKV, String mucDich, int soTienVay, String loaiTien)
+        {
+            _MaKH = maKH;
+            _MaTSDB = maTSDB;
+            _MaLoaiKV = maLoaiKV;
+            _MucDich = mucDich;
+            _SoTienVay = soTienVay;
+            _LoaiTien = loaiTien;
+        }
         public KhoanVayDTO() { }
         public KhoanVayDTO(DataRow row)
         {

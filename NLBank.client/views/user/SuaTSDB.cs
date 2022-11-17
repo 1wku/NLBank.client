@@ -1,7 +1,5 @@
 ﻿using MaterialSkin;
 using MaterialSkin.Controls;
-using NLBank.client.DTO;
-using NLBank.client.BUS;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,15 +9,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NLBank.client.BUS;
+using NLBank.client.DTO;
+using System.Data.SqlClient;
 
 namespace NLBank.client.views.user
 {
-    public partial class ThemTSDB : MaterialForm 
+    public partial class SuaTSDB : MaterialForm
     {
+        TSDBDTO ts = new TSDBDTO();
         KHDTO kh = new KHDTO();
-        public ThemTSDB(KHDTO user)
+        public SuaTSDB(TSDBDTO ts, KHDTO kh)
         {
-            kh = user;
+            this.ts = ts;
+            this.kh = kh;
             InitializeComponent();
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
@@ -29,32 +32,26 @@ namespace NLBank.client.views.user
 
         private void materialButton1_Click(object sender, EventArgs e)
         {
-            TSDBDTO tsdb = new TSDBDTO(Int32.Parse(cbx_loai.SelectedValue.ToString()), txt_name.Text, kh.MaKH, 
-                Int32.Parse(cbx_value.SelectedValue.ToString()), cbx_hinhthuc.SelectedValue.ToString());
-            if (TSDBBUS.ThemTSDB(tsdb))
-            {
-                MessageBox.Show("Thêm Tài sản đảm bảo thành công");
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Thêm tài sản đảm bảo thất bại");
-            }
+            TSDBDTO tsdb = new TSDBDTO (ts.MaTSDB, int.Parse(cbx_loai.SelectedValue.ToString()), txt_ten.Text, kh.MaKH,
+                int.Parse(cbx_giatri.SelectedValue.ToString()), cbx_hinhthuc.SelectedValue.ToString());
+            TSDBBUS.SuaTSDB(tsdb);
+            this.Close();
         }
 
-        private void ThemTSDB_Load(object sender, EventArgs e)
+        private void SuaTSDB_Load(object sender, EventArgs e)
         {
+            txt_ten.Text = ts.TenTSDB;
             cbx_hinhthuc.DataSource = TSDBBUS.GetHinhThucDB();
             cbx_hinhthuc.DisplayMember = "HinhThuc";
             cbx_hinhthuc.ValueMember = "MaHinhThuc";
 
             cbx_loai.DataSource = TSDBBUS.GetLoaiTSDB();
-            cbx_loai.DisplayMember = "TenLoaiTSDB"; 
+            cbx_loai.DisplayMember = "TenLoaiTSDB";
             cbx_loai.ValueMember = "MaLoaiTSDB";
 
-            cbx_value.DataSource = TSDBBUS.GetTriGiaTS();
-            cbx_value.DisplayMember = "TriGia";
-            cbx_value.ValueMember = "MaTriGia";
+            cbx_giatri.DataSource = TSDBBUS.GetTriGiaTS();
+            cbx_giatri.DisplayMember = "TriGia";
+            cbx_giatri.ValueMember = "MaTriGia";
         }
     }
 }

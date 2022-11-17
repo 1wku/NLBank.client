@@ -9,20 +9,29 @@ namespace NLBank.client.DTO
 {
     public class DOANHNGHIEPDTO
     {
-        private String _MaKH;
+        private int _MaKH;
         private String _MADN;
         private int _DnB_rating;
 
-        public  String MaKH { get { return _MaKH; } set { _MaKH = value;} }
+        public  int MaKH { get { return _MaKH; } set { _MaKH = value;} }
         public  String MADN { get { return _MADN; } set { _MADN = value;} }
         public  int DnB_rating { get { return _DnB_rating; } set { _DnB_rating = value;} }
 
-        public DOANHNGHIEPDTO(String maKH, String mADN, int dnB_rating)
+        public DOANHNGHIEPDTO(int maKH, String mADN, int dnB_rating)
         {
             _MaKH = maKH;
-            _MADN = MADN;
+            _MADN = mADN;
             _DnB_rating = dnB_rating;
         }
+
+        public DOANHNGHIEPDTO() { }
+        public DOANHNGHIEPDTO(DataRow row)
+        {
+            this._MaKH = (int)row["MaKH"];
+            this._MADN = (String)row["MADN"];
+            this._DnB_rating = (int)row["DnB_rating"];
+        }
+    }
 
         public DOANHNGHIEPDTO(DataRow row)
         {
