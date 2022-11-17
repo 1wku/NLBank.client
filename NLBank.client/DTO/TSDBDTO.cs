@@ -48,6 +48,14 @@ namespace NLBank.client.DTO
             _TriGiaTS = triGiaTS;
             _HinhThucDB = hinhThucDB;
         }
+        public TSDBDTO(int maLoaiTSDB, String tenTSDB, int maKH, int triGiaTS, String hinhThucDB)
+        {
+            _MaLoaiTSDB = maLoaiTSDB;
+            _TenTSDB = tenTSDB;
+            _MaKH = maKH;
+            _TriGiaTS = triGiaTS;
+            _HinhThucDB = hinhThucDB;
+        }
         public TSDBDTO() { }
     }
 }

@@ -25,6 +25,16 @@ namespace NLBank.client.DAL
             Con.Close();
             return dt;
         }
+        public static DataTable GetListTN(int makh)
+        {
+            String sql = "SELECT SoHDTD,SoTienTra, SoDuNo FROM CHUNGTUTHUNO WHERE MaKH =" + makh;
+            return Connection.Instance.ExcuteQuery(sql);
+        }
+        public static DataTable GetSoDuNoByHDTDMoiNhat(int makh)
+        {
+            String sql = "SELECT SoHDTD, SoDuNo FROM CHUNGTUTHUNO as cttn WHERE SoCTThuNo = (select dbo.f_CTTNMoiNhat(SoHDTD)) and MaKH = " + makh;
+            return Connection.Instance.ExcuteQuery(sql);
+        }
         public static void ThemCTTN(int mahd , int macn , int sotienvay)
         {
 
@@ -70,16 +80,14 @@ namespace NLBank.client.DAL
         }
         public static void XoaCTTN(CTTNDTO cttn)
         {
-            try
-            {
-                //CTTNDAL.ThemCTTN(thuno); 
-                SqlConnection Conn = Connection.KetNoi();
-                SqlCommand command = new SqlCommand("sp_XoaCTTN", Conn);
-                command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.Add("@payBackCode", SqlDbType.Int);
-                command.Parameters.Add("@HDTDCode", SqlDbType.Int);
-                command.Parameters["@payBackCode"].Value = cttn.SoCTThuNo;
-                command.Parameters["@HDTDCode"].Value = cttn.SoHDTD;
+            try {
+            SqlConnection Conn = Connection.KetNoi();
+            SqlCommand command = new SqlCommand("sp_deletePayBackPaper", Conn);
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.Add("@payBackCode", SqlDbType.Char);
+            command.Parameters.Add("@HDTDCode", SqlDbType.Char);
+            command.Parameters["@payBackCode"].Value = cttn.SoCTThuNo;
+            command.Parameters["@HDTDCode"].Value = cttn.SoHDTD;
 
                 Conn.Open();
                 command.ExecuteNonQuery();

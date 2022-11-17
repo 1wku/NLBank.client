@@ -1,5 +1,6 @@
 ﻿using MaterialSkin;
 using MaterialSkin.Controls;
+using NLBank.client.BUS;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,8 +15,11 @@ namespace NLBank.client.views.user
 {
     public partial class ThanhToan : MaterialForm 
     {
-        public ThanhToan()
+        String totaldn, totalnn;
+        public ThanhToan(String totaldn, String totalnn)
         {
+            this.totaldn = totaldn;
+            this.totalnn = totalnn;
             InitializeComponent();
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
@@ -26,6 +30,24 @@ namespace NLBank.client.views.user
         private void materialButton1_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+
+        private void materialLabel4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialLabel2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ThanhToan_Load(object sender, EventArgs e)
+        {
+            lb_duno.Text = totaldn;
+            lb_ttn.Text = totalnn;
+            dg_chinhanh.DataSource = CommonBUS.GetChiNhanh();
         }
     }
 }

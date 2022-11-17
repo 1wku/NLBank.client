@@ -30,7 +30,7 @@ namespace NLBank.client.DAL
         {
             try
             {
-                Connection.Instance.ExecuteScalar($"EXEC sp_ThemKhachHang N'{kh.Ten}', N'{kh.Dia_chi}', '{kh.Email}', '{kh.Sdt}', {kh.RoleID}, '{kh.Password}', '{kh._canhan.NgaySinh.ToString("yyyy-MM-dd")}', '{kh._canhan.CCCD}', '{kh._doanhNghiep.MADN}'");
+                Connection.Instance.ExecuteScalar($"EXEC sp_ThemKhachHang N'{kh.Ten}', N'{kh.Dia_chi}', '{kh.Email}', '{kh.Sdt}', {kh.RoleID}, '{kh.Password}', '{kh.canhan.NgaySinh.ToString("yyyy-MM-dd")}', '{kh.canhan.CCCD}', '{kh.doanhNghiep.MADN}'");
                 MessageBox.Show("Tạo tài khoản mới thành công! Vui lòng nhấn 'Khôi phục' để lấy được dữ liệu mới nhất!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
@@ -40,26 +40,35 @@ namespace NLBank.client.DAL
 
             }
         }
-        public static void SuaKH(KHDTO kh)
+        public static Boolean SuaKH(KHDTO kh)
         {
-            SqlConnection Conn = Connection.KetNoi();
-            SqlCommand command = new SqlCommand("SuaKhachHang", Conn);
-            command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.Add("@MaKH", SqlDbType.Char);
-            command.Parameters.Add("@Ten", SqlDbType.NVarChar);
-            command.Parameters.Add("@Dia_chi", SqlDbType.NVarChar);
-            command.Parameters.Add("@Email", SqlDbType.Char);
-            command.Parameters.Add("@Sdt", SqlDbType.Char);
+            try
+            {
+                SqlConnection Conn = Connection.KetNoi();
+                SqlCommand command = new SqlCommand("sp_SuaKhachHang", Conn);
+                command.CommandType = CommandType.StoredProcedure;
 
-            command.Parameters["@MaKH"].Value = kh.MaKH;
-            command.Parameters["@Ten"].Value = kh.Ten;
-            command.Parameters["@Dia_chi"].Value = kh.Dia_chi;
-            command.Parameters["@Email"].Value = kh.Email;
-            command.Parameters["@Sdt"].Value = kh.Sdt;
+                command.Parameters.Add("@MaKH", SqlDbType.Int);
+                command.Parameters.Add("@Ten", SqlDbType.NVarChar);
+                command.Parameters.Add("@Dia_chi", SqlDbType.NVarChar);
+                command.Parameters.Add("@Email", SqlDbType.Char);
+                command.Parameters.Add("@Sdt", SqlDbType.Char);
+                command.Parameters["@MaKH"].Value = kh.MaKH;
+                command.Parameters["@Ten"].Value = kh.Ten;
+                command.Parameters["@Dia_chi"].Value = kh.Dia_chi;
+                command.Parameters["@Email"].Value = kh.Email;
+                command.Parameters["@Sdt"].Value = kh.Sdt;
 
-            Conn.Open();
-            command.ExecuteNonQuery();
-            Conn.Close();
+                Conn.Open();
+                command.ExecuteNonQuery();
+                Conn.Close();
+                return true;
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e);
+                return false;
+            }
         }
         public static void XoaKH(KHDTO kh)
         {

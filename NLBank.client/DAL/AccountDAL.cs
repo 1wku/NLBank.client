@@ -1,6 +1,7 @@
 ﻿using NLBank.client.DTO;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -18,53 +19,24 @@ namespace NLBank.client.DAL
 
         public static KHDTO GetKhachHangByEmail(string email)
         {
-            KHDTO khdto = new KHDTO();
-            SqlConnection Conn = Connection.KetNoi();
-            SqlCommand command = new SqlCommand($"select * from f_GetKHByEmail('{email}') ", Conn);
-
-            Conn.Open();
-            var reader = command.ExecuteReader();
-            if (reader.HasRows)
+            DataTable data = Connection.Instance.ExcuteQuery($"select * from f_GetKHByEmail('{email}')");
+            foreach (DataRow item in data.Rows)
             {
-                while (reader.Read())
-                {
-                    khdto.Dia_chi = reader["Dia_chi"].ToString(); 
-                    khdto.Email = reader["Email"].ToString(); 
-                    khdto.Ten = reader["Ten"].ToString(); 
-                    khdto.Sdt = reader["Sdt"].ToString();
-                    khdto.RoleID = Int32.Parse(reader["RoleID"].ToString());  
-                }
+                KHDTO khachHang = new KHDTO(item);
+                return khachHang;
             }
-            
-            Conn.Close();
-            return khdto; 
-
+            return null;
         }
 
         public static NhanvienDTO GetNhanVienByEmail(string email)
         {
-            NhanvienDTO nv = new NhanvienDTO();
-            SqlConnection Conn = Connection.KetNoi();
-            SqlCommand command = new SqlCommand($" select * from f_GetNVByEmail('{email}') ", Conn);
-
-            Conn.Open();
-            var reader = command.ExecuteReader();
-            if (reader.HasRows)
+            DataTable data = Connection.Instance.ExcuteQuery($"select * from f_GetNVByEmail('{email}')");
+            foreach (DataRow item in data.Rows)
             {
-                while (reader.Read())
-                {
-                    nv.Dia_chi = reader["Dia_chi"].ToString();
-                    nv.Email = reader["Email"].ToString();
-                    nv.Ten = reader["Ten"].ToString();
-                    nv.Sdt = reader["Sdt"].ToString();
-                    nv.MaCV = Int32.Parse(reader["MaCV"].ToString());
-                    nv.CCCD = reader["CCCD"].ToString(); 
-                }
+                NhanvienDTO khachHang = new NhanvienDTO(item);
+                return khachHang;
             }
-
-            Conn.Close();
-            return nv;
-
+            return null;
         }
         public static int ChangePassword(string email, string oldpassword, string newpassword)
         {

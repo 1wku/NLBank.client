@@ -37,7 +37,7 @@ namespace NLBank.client.views.employee
             htdambao.Text = ts.HinhThucDB;
             idkh.Text = ts.MaKH.ToString();
             trigia_input.Text = ts.TriGiaTS.ToString(); 
-            foreach (DataRow row in Common.getLoaiTS().Rows) {
+            foreach (DataRow row in CommonDAL.getLoaiTS().Rows) {
                 allTS.Add(new LoaiTSDTO(int.Parse(row["MaLoaiTSDB"].ToString()), (string)row["TenLoaiTSDB"])); 
                 loaits_combobox.Items.Add((string)row["TenLoaiTSDB"]); 
             }

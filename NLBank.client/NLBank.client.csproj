@@ -38,6 +38,11 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Common, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.Common.4.3.0\lib\net451\System.Data.Common.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Design" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -50,6 +55,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\CommonBUS.cs" />
+    <Compile Include="BUS\CTBUS.cs" />
+    <Compile Include="BUS\GNNBUS.cs" />
+    <Compile Include="BUS\HDTDBUS.cs" />
+    <Compile Include="BUS\KVBUS.cs" />
+    <Compile Include="BUS\TSDBBUS.cs" />
+    <Compile Include="BUS\TTTKBUS.cs" />
     <Compile Include="components\ChinhSuaCaNhan.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -87,17 +99,25 @@
     <Compile Include="components\TsdbItem.Designer.cs">
       <DependentUpon>TsdbItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="components\TSDBitemUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="components\TSDBitemUser.Designer.cs">
+      <DependentUpon>TSDBitemUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="DAL\AccountDAL.cs" />
     <Compile Include="DAL\CHUCVUDAL.cs" />
     <Compile Include="DAL\DieuKhoanDAL.cs" />
+    <Compile Include="DAL\GNNDAL.cs" />
     <Compile Include="DAL\LoaiTSDAL.cs" />
     <Compile Include="DAL\NhanvienDAL.cs" />
+    <Compile Include="DTO\GNNDTO.cs" />
     <Compile Include="DTO\CHUCVUDTO.cs" />
     <Compile Include="DTO\LoaiTSDTO.cs" />
     <Compile Include="DTO\NhanvienDTO.cs" />
     <Compile Include="models\GiayNhanNo.cs" />
     <Compile Include="DAL\CANHANDAL.cs" />
-    <Compile Include="DAL\Common.cs" />
+    <Compile Include="DAL\CommonDAL.cs" />
     <Compile Include="DAL\DOANHNGHIEPDAL.cs" />
     <Compile Include="DAL\KHDAL.cs" />
     <Compile Include="DAL\Connection.cs" />
@@ -184,11 +204,17 @@
     <Compile Include="views\user\DangKyKhoanVay_Form.Designer.cs">
       <DependentUpon>DangKyKhoanVay_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\user\SuaTSCB.cs">
+    <Compile Include="views\user\SuaTSDB.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\user\SuaTSCB.Designer.cs">
-      <DependentUpon>SuaTSCB.cs</DependentUpon>
+    <Compile Include="views\user\SuaTSDB.Designer.cs">
+      <DependentUpon>SuaTSDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\user\TSDBinfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\user\TSDBinfo.Designer.cs">
+      <DependentUpon>TSDBinfo.cs</DependentUpon>
     </Compile>
     <Compile Include="views\user\ThanhToan.cs">
       <SubType>Form</SubType>
@@ -225,6 +251,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="components\TsdbItem.resx">
       <DependentUpon>TsdbItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="components\TSDBitemUser.resx">
+      <DependentUpon>TSDBitemUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\admin\AdminHome.resx">
       <DependentUpon>AdminHome.cs</DependentUpon>
@@ -268,8 +297,11 @@
     <EmbeddedResource Include="views\user\DangKyKhoanVay_Form.resx">
       <DependentUpon>DangKyKhoanVay_Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\user\SuaTSCB.resx">
-      <DependentUpon>SuaTSCB.cs</DependentUpon>
+    <EmbeddedResource Include="views\user\SuaTSDB.resx">
+      <DependentUpon>SuaTSDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\user\TSDBinfo.resx">
+      <DependentUpon>TSDBinfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\user\ThanhToan.resx">
       <DependentUpon>ThanhToan.cs</DependentUpon>

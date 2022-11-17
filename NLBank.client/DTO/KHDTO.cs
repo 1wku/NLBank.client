@@ -1,7 +1,9 @@
 ﻿using NLBank.client.DAL;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,8 +18,8 @@ namespace NLBank.client.DTO
         private string _Password=""; 
         private String _Sdt = "";
         private int _RoleID=-1;
-        public CANHANDTO _canhan= new CANHANDTO();
-        public DOANHNGHIEPDTO _doanhNghiep = new DOANHNGHIEPDTO();
+        public CANHANDTO canhan= new CANHANDTO();
+        public DOANHNGHIEPDTO doanhNghiep = new DOANHNGHIEPDTO();
 
         public String Password
         {
@@ -58,12 +60,22 @@ namespace NLBank.client.DTO
             _RoleID = roleID;
             if (_RoleID == 0)
             {
-                _canhan = CANHANDAL.GetCaNhan(_MaKH);
+                canhan = CANHANDAL.GetCaNhan(_MaKH);
             }
             if (_RoleID == 1) {
-                _doanhNghiep = DOANHNGHIEPDAL.GetDoanhNghiep(_MaKH);
+                doanhNghiep = DOANHNGHIEPDAL.GetDoanhNghiep(_MaKH);
             }
         }
         public KHDTO() { }
+        public KHDTO(DataRow row)
+        {
+            _MaKH = (int)row["MaKH"];
+            _Ten = (string)row["Ten"];
+            _Dia_chi = (string)row["Dia_chi"];
+            _Email = (string)row["Email"];
+            _Sdt = (string)row["Sdt"];
+            _RoleID = (int)row["RoleID"]; 
+        }
+
     }
 }

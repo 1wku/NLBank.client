@@ -24,6 +24,11 @@ namespace NLBank.client.DAL
             Con.Close();
             return dt;
         }
+        public static DataTable getListHDTD(int makh)
+        {
+            String sql = "SELECT* FROM HDTD WHERE MaKH = " + makh;
+            return Connection.Instance.ExcuteQuery(sql);
+        }
         public static Boolean ThemHDTD(HDTDDTO hdtd)
         {
             try

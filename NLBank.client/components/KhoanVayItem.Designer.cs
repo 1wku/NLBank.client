@@ -1,4 +1,5 @@
-﻿namespace NLBank.client.components
+﻿using NLBank.client.DTO;
+namespace NLBank.client.components
 {
     partial class KhoanVayItem
     {
@@ -34,7 +35,6 @@
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
-            this.chinhSuaCaNhan1 = new NLBank.client.components.ChinhSuaCaNhan();
             this.materialCard1.SuspendLayout();
             this.SuspendLayout();
             // 
