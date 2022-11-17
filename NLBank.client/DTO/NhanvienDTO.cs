@@ -26,6 +26,7 @@ namespace NLBank.client.DTO
             MaCV = maCV;
         }
         public NhanvienDTO() { }
+        public ChucVuDTO ChucVu { set; get; }
         
     }
 }

@@ -13,7 +13,7 @@ namespace NLBank.client.DAL
     {
         public static DataTable getView()
         {
-            String cmd = "Select * From rentPaper";
+            String cmd = "Select * From GiayNo";
             SqlConnection Con = Connection.KetNoi();
             SqlCommand command = new SqlCommand(cmd, Con);
             Con.Open();
@@ -27,7 +27,7 @@ namespace NLBank.client.DAL
         public static void ThemCTNN(CTNNDTO ctnn)
         {
             SqlConnection Conn = Connection.KetNoi();
-            SqlCommand command = new SqlCommand("sp_addDebtPaper", Conn);
+            SqlCommand command = new SqlCommand("sp_ThemGiayNhanNo", Conn);
             command.CommandType = CommandType.StoredProcedure;
             command.Parameters.Add("@DebtCode", SqlDbType.Char);
             command.Parameters.Add("@HDTDCode", SqlDbType.Char);
@@ -55,7 +55,7 @@ namespace NLBank.client.DAL
         public static void SuaCTNN(CTNNDTO ctnn)
         {
             SqlConnection Conn = Connection.KetNoi();
-            SqlCommand command = new SqlCommand("sp_updateDebtPaper", Conn);
+            SqlCommand command = new SqlCommand("sp_CapNhatGiayNhanNo", Conn);
             command.CommandType = CommandType.StoredProcedure;
             command.Parameters.Add("@DebtCode", SqlDbType.Char);
             command.Parameters.Add("@HDTDCode", SqlDbType.Char);
@@ -83,7 +83,7 @@ namespace NLBank.client.DAL
         public static void XoaCTNN(CTNNDTO ctnn)
         {
             SqlConnection Conn = Connection.KetNoi();
-            SqlCommand command = new SqlCommand("sp_deleteDebtPaper", Conn);
+            SqlCommand command = new SqlCommand("sp_XoaGiayNhanNo", Conn);
             command.CommandType = CommandType.StoredProcedure;
             command.Parameters.Add("@DebtCode", SqlDbType.Char);
             command.Parameters.Add("@HDTDCode", SqlDbType.Char);
@@ -93,6 +93,19 @@ namespace NLBank.client.DAL
             Conn.Open();
             command.ExecuteNonQuery();
             Conn.Close();
+        }
+        public static int GetSoduNo(int hdid)
+        {
+            try
+            {
+                return (int)Connection.Instance.ExecuteScalar($"SELECT TOP 1 SoDuNo FROM CHUNGTUTHUNO WHERE SoHDTD = {hdid} ORDER BY SoCTThuNo DESC");
+
+            }
+            catch(Exception e)
+            {
+                return 0; 
+            }
+
         }
     }
 }

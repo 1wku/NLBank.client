@@ -6,14 +6,20 @@ using System.Threading.Tasks;
 
 namespace NLBank.client.DTO
 {
-    public class CHUCVUDTO
+    public class ChucVuDTO
     {
-        private String _MaCV;
-        private String _TenCV;
-        private String _HSLuong;
+        public int MaCV { set; get; }
+        public string TenCV { set; get; }
+        public decimal HSLuong { set; get; }
+        public ChucVuDTO(int maCV, string tenCV, decimal hSLuong)
+        {
+            MaCV = maCV;
+            TenCV = tenCV;
+            HSLuong = hSLuong;
+        }
+        public ChucVuDTO()
+        {
 
-        public String MaCV { get { return _MaCV; } set { _MaCV = value;} }
-        public String TenCV { get { return _TenCV; } set { _TenCV = value;} }
-        public String HSLuong { get { return _HSLuong; } set { _HSLuong = value;} }
+        }
     }
 }

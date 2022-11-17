@@ -1,4 +1,5 @@
-﻿using NLBank.client.views.employee;
+﻿using NLBank.client.DAL;
+using NLBank.client.views.employee;
 using NLBank.client.views.user;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,7 @@ namespace NLBank.client
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            Application.Run(new EmployeeHome(AccountDAL.GetNhanVienByEmail("beo1962@employee.NLBank")));
         }
     }
 }

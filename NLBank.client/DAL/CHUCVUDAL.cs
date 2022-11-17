@@ -1,5 +1,7 @@
-﻿using System;
+﻿using NLBank.client.DTO;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -9,31 +11,15 @@ namespace NLBank.client.DAL
 {
     public class ChucVuDAL
     {
-        public static Boolean CheckOverTimeHDTD(int id)
+        public static ChucVuDTO GetChucVu(int id)
         {
-            SqlConnection Conn = Connection.KetNoi();
-            SqlCommand command = new SqlCommand("select dbo.f_LaHDTDQuaHan('" + id + "')", Conn);
-
-            Conn.Open();
-            var reader = command.ExecuteReader();
-            if (reader.HasRows)
+            DataTable result = Connection.Instance.ExcuteQuery("select * from CHUCVU where MaCV="+ id);
+            foreach (DataRow dr in result.Rows)
             {
-                // Đọc từng dòng tập kết quả
-                while (reader.Read())
-                {
-                    var data = reader.GetInt32(0);
-                    if (data == 0) return false;
-                    else return true;
+                return new ChucVuDTO((int)dr["MaCV"], (string)dr["TenCV"], (decimal)dr["HSLuong"]);
 
-                }
             }
-            else
-            {
-                Console.WriteLine("Không có dữ liệu trả về");
-                return true;
-            }
-            Conn.Close();
-            return true;
+            return new ChucVuDTO(); 
         }
 
     }

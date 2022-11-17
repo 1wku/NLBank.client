@@ -34,12 +34,14 @@
             this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
             this.id_isOver_lb = new MaterialSkin.Controls.MaterialLabel();
             this.id_tstd_lb = new MaterialSkin.Controls.MaterialLabel();
+            this.thuno_btn = new MaterialSkin.Controls.MaterialButton();
             this.materialCard1.SuspendLayout();
             this.SuspendLayout();
             // 
             // materialCard1
             // 
             this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard1.Controls.Add(this.thuno_btn);
             this.materialCard1.Controls.Add(this.materialLabel1);
             this.materialCard1.Controls.Add(this.materialLabel2);
             this.materialCard1.Controls.Add(this.materialButton1);
@@ -124,6 +126,26 @@
             this.id_tstd_lb.Text = "12345678";
             this.id_tstd_lb.Click += new System.EventHandler(this.id_ts_Click);
             // 
+            // thuno_btn
+            // 
+            this.thuno_btn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.thuno_btn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.thuno_btn.Depth = 0;
+            this.thuno_btn.HighEmphasis = true;
+            this.thuno_btn.Icon = null;
+            this.thuno_btn.Location = new System.Drawing.Point(350, 26);
+            this.thuno_btn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.thuno_btn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.thuno_btn.Name = "thuno_btn";
+            this.thuno_btn.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.thuno_btn.Size = new System.Drawing.Size(75, 36);
+            this.thuno_btn.TabIndex = 23;
+            this.thuno_btn.Text = "Thu nợ";
+            this.thuno_btn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.thuno_btn.UseAccentColor = false;
+            this.thuno_btn.UseVisualStyleBackColor = true;
+            this.thuno_btn.Click += new System.EventHandler(this.thuno_btn_Click);
+            // 
             // HdtdItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -146,5 +168,6 @@
         private MaterialSkin.Controls.MaterialButton materialButton1;
         private MaterialSkin.Controls.MaterialLabel id_isOver_lb;
         private MaterialSkin.Controls.MaterialLabel id_tstd_lb;
+        private MaterialSkin.Controls.MaterialButton thuno_btn;
     }
 }

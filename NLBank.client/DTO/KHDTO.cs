@@ -9,15 +9,21 @@ namespace NLBank.client.DTO
 {
     public class KHDTO
     {
-        private int _MaKH; 
-        private String _Ten;
-        private String _Dia_chi;
-        private String _Email;
-        private String _Sdt;
-        private int _RoleID;
-        private CANHANDTO _canhan;
-        private DOANHNGHIEPDTO _doanhNghiep;
+        private int _MaKH=0; 
+        private String _Ten="";
+        private String _Dia_chi="";
+        private String _Email="";
+        private string _Password=""; 
+        private String _Sdt = "";
+        private int _RoleID=-1;
+        public CANHANDTO _canhan= new CANHANDTO();
+        public DOANHNGHIEPDTO _doanhNghiep = new DOANHNGHIEPDTO();
 
+        public String Password
+        {
+            get { return _Password; }
+            set { _Password = value; }
+        }
         public int MaKH {
             get { return _MaKH; }
             set { _MaKH = value;} 

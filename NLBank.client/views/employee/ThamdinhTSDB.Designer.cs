@@ -40,8 +40,8 @@
             this.loaits_combobox = new MaterialSkin.Controls.MaterialComboBox();
             this.materialLabel10 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel12 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
+            this.luu_tham_dinh_btn = new MaterialSkin.Controls.MaterialButton();
+            this.ko_dat_yeu_cau_btn = new MaterialSkin.Controls.MaterialButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -209,52 +209,53 @@
             this.materialLabel12.TabIndex = 8;
             this.materialLabel12.Text = "Loại tài sản";
             // 
-            // materialButton1
+            // luu_tham_dinh_btn
             // 
-            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton1.Depth = 0;
-            this.materialButton1.HighEmphasis = true;
-            this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(615, 435);
-            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton1.Name = "materialButton1";
-            this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton1.Size = new System.Drawing.Size(64, 36);
-            this.materialButton1.TabIndex = 13;
-            this.materialButton1.Text = "Lưu";
-            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton1.UseAccentColor = false;
-            this.materialButton1.UseVisualStyleBackColor = true;
-            this.materialButton1.Click += new System.EventHandler(this.materialButton1_Click);
+            this.luu_tham_dinh_btn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.luu_tham_dinh_btn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.luu_tham_dinh_btn.Depth = 0;
+            this.luu_tham_dinh_btn.HighEmphasis = true;
+            this.luu_tham_dinh_btn.Icon = null;
+            this.luu_tham_dinh_btn.Location = new System.Drawing.Point(615, 435);
+            this.luu_tham_dinh_btn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.luu_tham_dinh_btn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.luu_tham_dinh_btn.Name = "luu_tham_dinh_btn";
+            this.luu_tham_dinh_btn.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.luu_tham_dinh_btn.Size = new System.Drawing.Size(134, 36);
+            this.luu_tham_dinh_btn.TabIndex = 13;
+            this.luu_tham_dinh_btn.Text = "Lưu thẩm định ";
+            this.luu_tham_dinh_btn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.luu_tham_dinh_btn.UseAccentColor = false;
+            this.luu_tham_dinh_btn.UseVisualStyleBackColor = true;
+            this.luu_tham_dinh_btn.Click += new System.EventHandler(this.materialButton1_Click);
             // 
-            // materialButton2
+            // ko_dat_yeu_cau_btn
             // 
-            this.materialButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton2.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton2.Depth = 0;
-            this.materialButton2.HighEmphasis = true;
-            this.materialButton2.Icon = null;
-            this.materialButton2.Location = new System.Drawing.Point(496, 435);
-            this.materialButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton2.Name = "materialButton2";
-            this.materialButton2.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton2.Size = new System.Drawing.Size(64, 36);
-            this.materialButton2.TabIndex = 14;
-            this.materialButton2.Text = "Xóa";
-            this.materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton2.UseAccentColor = false;
-            this.materialButton2.UseVisualStyleBackColor = true;
+            this.ko_dat_yeu_cau_btn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ko_dat_yeu_cau_btn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.ko_dat_yeu_cau_btn.Depth = 0;
+            this.ko_dat_yeu_cau_btn.HighEmphasis = true;
+            this.ko_dat_yeu_cau_btn.Icon = null;
+            this.ko_dat_yeu_cau_btn.Location = new System.Drawing.Point(381, 435);
+            this.ko_dat_yeu_cau_btn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.ko_dat_yeu_cau_btn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.ko_dat_yeu_cau_btn.Name = "ko_dat_yeu_cau_btn";
+            this.ko_dat_yeu_cau_btn.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.ko_dat_yeu_cau_btn.Size = new System.Drawing.Size(167, 36);
+            this.ko_dat_yeu_cau_btn.TabIndex = 14;
+            this.ko_dat_yeu_cau_btn.Text = "Không đạt yêu cầu";
+            this.ko_dat_yeu_cau_btn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.ko_dat_yeu_cau_btn.UseAccentColor = false;
+            this.ko_dat_yeu_cau_btn.UseVisualStyleBackColor = true;
+            this.ko_dat_yeu_cau_btn.Click += new System.EventHandler(this.ko_dat_yeu_cau_btn_Click);
             // 
             // ThamdinhTSDB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 551);
-            this.Controls.Add(this.materialButton2);
-            this.Controls.Add(this.materialButton1);
+            this.Controls.Add(this.ko_dat_yeu_cau_btn);
+            this.Controls.Add(this.luu_tham_dinh_btn);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "ThamdinhTSDB";
@@ -283,7 +284,7 @@
         private MaterialSkin.Controls.MaterialComboBox loaits_combobox;
         private MaterialSkin.Controls.MaterialLabel materialLabel10;
         private MaterialSkin.Controls.MaterialLabel materialLabel12;
-        private MaterialSkin.Controls.MaterialButton materialButton1;
-        private MaterialSkin.Controls.MaterialButton materialButton2;
+        private MaterialSkin.Controls.MaterialButton luu_tham_dinh_btn;
+        private MaterialSkin.Controls.MaterialButton ko_dat_yeu_cau_btn;
     }
 }

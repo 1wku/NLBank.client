@@ -33,6 +33,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeHome));
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.type_kv_combobox = new MaterialSkin.Controls.MaterialComboBox();
             this.materialLabel27 = new MaterialSkin.Controls.MaterialLabel();
             this.reload_kv_btn = new MaterialSkin.Controls.MaterialButton();
             this.search_kv_btn = new MaterialSkin.Controls.MaterialButton();
@@ -51,7 +52,7 @@
             this.all_hdtd_panel = new System.Windows.Forms.FlowLayoutPanel();
             this.reaload_hdtd_btn = new MaterialSkin.Controls.MaterialButton();
             this.hdtd_input = new MaterialSkin.Controls.MaterialTextBox();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.them_giaodich_btn = new System.Windows.Forms.TabPage();
             this.materialLabel25 = new MaterialSkin.Controls.MaterialLabel();
             this.search_thuno_btn = new MaterialSkin.Controls.MaterialButton();
             this.reload_thuno_btn = new MaterialSkin.Controls.MaterialButton();
@@ -64,11 +65,13 @@
             this.maloaitsdb_input = new MaterialSkin.Controls.MaterialTextBox();
             this.tsdb_panel = new System.Windows.Forms.FlowLayoutPanel();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.type_kh_search = new MaterialSkin.Controls.MaterialComboBox();
+            this.create_kh_btn = new MaterialSkin.Controls.MaterialButton();
             this.materialLabel13 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
+            this.reload_kh_btn = new MaterialSkin.Controls.MaterialButton();
             this.khachhang_datagrid = new System.Windows.Forms.DataGridView();
-            this.materialButton3 = new MaterialSkin.Controls.MaterialButton();
-            this.materialTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
+            this.search_kh_btn = new MaterialSkin.Controls.MaterialButton();
+            this.search_kh_input = new MaterialSkin.Controls.MaterialTextBox();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
             this.reload_nv_btn = new MaterialSkin.Controls.MaterialButton();
@@ -81,10 +84,8 @@
             this.dieukhoan_gridview = new System.Windows.Forms.DataGridView();
             this.search_dieukhoan_btn = new MaterialSkin.Controls.MaterialButton();
             this.dieukhoan_input = new MaterialSkin.Controls.MaterialTextBox();
-            this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.materialLabel8 = new MaterialSkin.Controls.MaterialLabel();
             this.tabChinhSua = new System.Windows.Forms.TabPage();
-            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
+            this.logout_btn = new MaterialSkin.Controls.MaterialButton();
             this.materialLabel12 = new MaterialSkin.Controls.MaterialLabel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.sdt_nv = new MaterialSkin.Controls.MaterialLabel();
@@ -101,8 +102,8 @@
             this.materialLabel15 = new MaterialSkin.Controls.MaterialLabel();
             this.ten_nv = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel16 = new MaterialSkin.Controls.MaterialLabel();
-            this.chucvu = new MaterialSkin.Controls.MaterialLabel();
-            this.materialButton6 = new MaterialSkin.Controls.MaterialButton();
+            this.chucvu_nv = new MaterialSkin.Controls.MaterialLabel();
+            this.change_password_btn = new MaterialSkin.Controls.MaterialButton();
             this.employee_icon = new System.Windows.Forms.ImageList(this.components);
             employee_tabcontrol = new MaterialSkin.Controls.MaterialTabControl();
             employee_tabcontrol.SuspendLayout();
@@ -112,7 +113,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.tabPage4.SuspendLayout();
-            this.tabPage5.SuspendLayout();
+            this.them_giaodich_btn.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ls_thanhtoan_gridview)).BeginInit();
             this.tabPage6.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -121,7 +122,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nhanvien_gridview)).BeginInit();
             this.tabPage9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dieukhoan_gridview)).BeginInit();
-            this.tabPage7.SuspendLayout();
             this.tabChinhSua.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -132,12 +132,11 @@
             employee_tabcontrol.Controls.Add(this.tabPage1);
             employee_tabcontrol.Controls.Add(this.tabPage2);
             employee_tabcontrol.Controls.Add(this.tabPage4);
-            employee_tabcontrol.Controls.Add(this.tabPage5);
+            employee_tabcontrol.Controls.Add(this.them_giaodich_btn);
             employee_tabcontrol.Controls.Add(this.tabPage6);
             employee_tabcontrol.Controls.Add(this.tabPage3);
             employee_tabcontrol.Controls.Add(this.tabPage8);
             employee_tabcontrol.Controls.Add(this.tabPage9);
-            employee_tabcontrol.Controls.Add(this.tabPage7);
             employee_tabcontrol.Controls.Add(this.tabChinhSua);
             employee_tabcontrol.Depth = 0;
             employee_tabcontrol.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -154,15 +153,16 @@
             // 
             this.tabPage1.BackColor = System.Drawing.Color.Transparent;
             this.tabPage1.ImageKey = "home.png";
-            this.tabPage1.Location = new System.Drawing.Point(4, 42);
+            this.tabPage1.Location = new System.Drawing.Point(4, 23);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(16, 16, 30, 16);
-            this.tabPage1.Size = new System.Drawing.Size(896, 550);
+            this.tabPage1.Size = new System.Drawing.Size(896, 569);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Trang chủ";
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.type_kv_combobox);
             this.tabPage2.Controls.Add(this.materialLabel27);
             this.tabPage2.Controls.Add(this.reload_kv_btn);
             this.tabPage2.Controls.Add(this.search_kv_btn);
@@ -176,6 +176,32 @@
             this.tabPage2.TabIndex = 2;
             this.tabPage2.Text = "Khoản Vay";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // type_kv_combobox
+            // 
+            this.type_kv_combobox.AutoResize = false;
+            this.type_kv_combobox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.type_kv_combobox.Depth = 0;
+            this.type_kv_combobox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.type_kv_combobox.DropDownHeight = 174;
+            this.type_kv_combobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.type_kv_combobox.DropDownWidth = 121;
+            this.type_kv_combobox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.type_kv_combobox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.type_kv_combobox.FormattingEnabled = true;
+            this.type_kv_combobox.IntegralHeight = false;
+            this.type_kv_combobox.ItemHeight = 43;
+            this.type_kv_combobox.Items.AddRange(new object[] {
+            "Tất cả",
+            "Chưa xử lý",
+            "Đã xử lý"});
+            this.type_kv_combobox.Location = new System.Drawing.Point(354, 72);
+            this.type_kv_combobox.MaxDropDownItems = 4;
+            this.type_kv_combobox.MouseState = MaterialSkin.MouseState.OUT;
+            this.type_kv_combobox.Name = "type_kv_combobox";
+            this.type_kv_combobox.Size = new System.Drawing.Size(187, 49);
+            this.type_kv_combobox.StartIndex = 0;
+            this.type_kv_combobox.TabIndex = 16;
             // 
             // materialLabel27
             // 
@@ -197,7 +223,7 @@
             this.reload_kv_btn.Depth = 0;
             this.reload_kv_btn.HighEmphasis = true;
             this.reload_kv_btn.Icon = null;
-            this.reload_kv_btn.Location = new System.Drawing.Point(563, 86);
+            this.reload_kv_btn.Location = new System.Drawing.Point(728, 86);
             this.reload_kv_btn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.reload_kv_btn.MouseState = MaterialSkin.MouseState.HOVER;
             this.reload_kv_btn.Name = "reload_kv_btn";
@@ -217,14 +243,14 @@
             this.search_kv_btn.Depth = 0;
             this.search_kv_btn.HighEmphasis = true;
             this.search_kv_btn.Icon = null;
-            this.search_kv_btn.Location = new System.Drawing.Point(701, 86);
+            this.search_kv_btn.Location = new System.Drawing.Point(582, 86);
             this.search_kv_btn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.search_kv_btn.MouseState = MaterialSkin.MouseState.HOVER;
             this.search_kv_btn.Name = "search_kv_btn";
             this.search_kv_btn.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.search_kv_btn.Size = new System.Drawing.Size(64, 36);
+            this.search_kv_btn.Size = new System.Drawing.Size(106, 36);
             this.search_kv_btn.TabIndex = 13;
-            this.search_kv_btn.Text = "Tìm ";
+            this.search_kv_btn.Text = "Tìm theo ID";
             this.search_kv_btn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.search_kv_btn.UseAccentColor = false;
             this.search_kv_btn.UseVisualStyleBackColor = true;
@@ -237,12 +263,12 @@
             this.lb_kv_input.Depth = 0;
             this.lb_kv_input.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.lb_kv_input.LeadingIcon = null;
-            this.lb_kv_input.Location = new System.Drawing.Point(19, 72);
+            this.lb_kv_input.Location = new System.Drawing.Point(27, 72);
             this.lb_kv_input.MaxLength = 50;
             this.lb_kv_input.MouseState = MaterialSkin.MouseState.OUT;
             this.lb_kv_input.Multiline = false;
             this.lb_kv_input.Name = "lb_kv_input";
-            this.lb_kv_input.Size = new System.Drawing.Size(520, 50);
+            this.lb_kv_input.Size = new System.Drawing.Size(293, 50);
             this.lb_kv_input.TabIndex = 12;
             this.lb_kv_input.Text = "";
             this.lb_kv_input.TrailingIcon = null;
@@ -252,7 +278,7 @@
             this.all_kv_panel.AutoScroll = true;
             this.all_kv_panel.Location = new System.Drawing.Point(19, 136);
             this.all_kv_panel.Name = "all_kv_panel";
-            this.all_kv_panel.Size = new System.Drawing.Size(768, 397);
+            this.all_kv_panel.Size = new System.Drawing.Size(807, 397);
             this.all_kv_panel.TabIndex = 11;
             // 
             // materialCard3
@@ -345,10 +371,10 @@
             this.tabPage4.Controls.Add(this.reaload_hdtd_btn);
             this.tabPage4.Controls.Add(this.hdtd_input);
             this.tabPage4.ImageKey = "hopdong.png";
-            this.tabPage4.Location = new System.Drawing.Point(4, 42);
+            this.tabPage4.Location = new System.Drawing.Point(4, 23);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(896, 550);
+            this.tabPage4.Size = new System.Drawing.Size(896, 569);
             this.tabPage4.TabIndex = 4;
             this.tabPage4.Text = "Hợp đồng ";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -373,14 +399,14 @@
             this.search_hdtd_btn.Depth = 0;
             this.search_hdtd_btn.HighEmphasis = true;
             this.search_hdtd_btn.Icon = null;
-            this.search_hdtd_btn.Location = new System.Drawing.Point(576, 94);
+            this.search_hdtd_btn.Location = new System.Drawing.Point(506, 94);
             this.search_hdtd_btn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.search_hdtd_btn.MouseState = MaterialSkin.MouseState.HOVER;
             this.search_hdtd_btn.Name = "search_hdtd_btn";
             this.search_hdtd_btn.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.search_hdtd_btn.Size = new System.Drawing.Size(64, 36);
+            this.search_hdtd_btn.Size = new System.Drawing.Size(106, 36);
             this.search_hdtd_btn.TabIndex = 16;
-            this.search_hdtd_btn.Text = "Tìm ";
+            this.search_hdtd_btn.Text = "Tìm theo ID";
             this.search_hdtd_btn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.search_hdtd_btn.UseAccentColor = false;
             this.search_hdtd_btn.UseVisualStyleBackColor = true;
@@ -426,26 +452,26 @@
             this.hdtd_input.MouseState = MaterialSkin.MouseState.OUT;
             this.hdtd_input.Multiline = false;
             this.hdtd_input.Name = "hdtd_input";
-            this.hdtd_input.Size = new System.Drawing.Size(520, 50);
+            this.hdtd_input.Size = new System.Drawing.Size(428, 50);
             this.hdtd_input.TabIndex = 15;
             this.hdtd_input.Text = "";
             this.hdtd_input.TrailingIcon = null;
             // 
-            // tabPage5
+            // them_giaodich_btn
             // 
-            this.tabPage5.Controls.Add(this.materialLabel25);
-            this.tabPage5.Controls.Add(this.search_thuno_btn);
-            this.tabPage5.Controls.Add(this.reload_thuno_btn);
-            this.tabPage5.Controls.Add(this.thuno_input);
-            this.tabPage5.Controls.Add(this.ls_thanhtoan_gridview);
-            this.tabPage5.ImageKey = "conheo.png";
-            this.tabPage5.Location = new System.Drawing.Point(4, 42);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(896, 550);
-            this.tabPage5.TabIndex = 5;
-            this.tabPage5.Text = "Thu nợ";
-            this.tabPage5.UseVisualStyleBackColor = true;
+            this.them_giaodich_btn.Controls.Add(this.materialLabel25);
+            this.them_giaodich_btn.Controls.Add(this.search_thuno_btn);
+            this.them_giaodich_btn.Controls.Add(this.reload_thuno_btn);
+            this.them_giaodich_btn.Controls.Add(this.thuno_input);
+            this.them_giaodich_btn.Controls.Add(this.ls_thanhtoan_gridview);
+            this.them_giaodich_btn.ImageKey = "conheo.png";
+            this.them_giaodich_btn.Location = new System.Drawing.Point(4, 23);
+            this.them_giaodich_btn.Name = "them_giaodich_btn";
+            this.them_giaodich_btn.Padding = new System.Windows.Forms.Padding(3);
+            this.them_giaodich_btn.Size = new System.Drawing.Size(896, 569);
+            this.them_giaodich_btn.TabIndex = 5;
+            this.them_giaodich_btn.Text = "Thu nợ";
+            this.them_giaodich_btn.UseVisualStyleBackColor = true;
             // 
             // materialLabel25
             // 
@@ -456,9 +482,9 @@
             this.materialLabel25.Location = new System.Drawing.Point(19, 15);
             this.materialLabel25.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel25.Name = "materialLabel25";
-            this.materialLabel25.Size = new System.Drawing.Size(264, 41);
+            this.materialLabel25.Size = new System.Drawing.Size(142, 41);
             this.materialLabel25.TabIndex = 21;
-            this.materialLabel25.Text = "Lịch sử giao dịch ";
+            this.materialLabel25.Text = "Giao dịch";
             // 
             // search_thuno_btn
             // 
@@ -621,11 +647,13 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.type_kh_search);
+            this.tabPage3.Controls.Add(this.create_kh_btn);
             this.tabPage3.Controls.Add(this.materialLabel13);
-            this.tabPage3.Controls.Add(this.materialButton2);
+            this.tabPage3.Controls.Add(this.reload_kh_btn);
             this.tabPage3.Controls.Add(this.khachhang_datagrid);
-            this.tabPage3.Controls.Add(this.materialButton3);
-            this.tabPage3.Controls.Add(this.materialTextBox1);
+            this.tabPage3.Controls.Add(this.search_kh_btn);
+            this.tabPage3.Controls.Add(this.search_kh_input);
             this.tabPage3.ImageKey = "khachhang.png";
             this.tabPage3.Location = new System.Drawing.Point(4, 42);
             this.tabPage3.Name = "tabPage3";
@@ -633,6 +661,55 @@
             this.tabPage3.TabIndex = 10;
             this.tabPage3.Text = "Khách hàng";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // type_kh_search
+            // 
+            this.type_kh_search.AutoResize = false;
+            this.type_kh_search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.type_kh_search.Depth = 0;
+            this.type_kh_search.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.type_kh_search.DropDownHeight = 174;
+            this.type_kh_search.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.type_kh_search.DropDownWidth = 121;
+            this.type_kh_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.type_kh_search.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.type_kh_search.FormattingEnabled = true;
+            this.type_kh_search.IntegralHeight = false;
+            this.type_kh_search.ItemHeight = 43;
+            this.type_kh_search.Items.AddRange(new object[] {
+            "ten",
+            "dia_chi",
+            "email",
+            "sdt",
+            "CCCD",
+            "MaDN"});
+            this.type_kh_search.Location = new System.Drawing.Point(517, 64);
+            this.type_kh_search.MaxDropDownItems = 4;
+            this.type_kh_search.MouseState = MaterialSkin.MouseState.OUT;
+            this.type_kh_search.Name = "type_kh_search";
+            this.type_kh_search.Size = new System.Drawing.Size(142, 49);
+            this.type_kh_search.StartIndex = 0;
+            this.type_kh_search.TabIndex = 17;
+            // 
+            // create_kh_btn
+            // 
+            this.create_kh_btn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.create_kh_btn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.create_kh_btn.Depth = 0;
+            this.create_kh_btn.HighEmphasis = true;
+            this.create_kh_btn.Icon = null;
+            this.create_kh_btn.Location = new System.Drawing.Point(692, 17);
+            this.create_kh_btn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.create_kh_btn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.create_kh_btn.Name = "create_kh_btn";
+            this.create_kh_btn.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.create_kh_btn.Size = new System.Drawing.Size(64, 36);
+            this.create_kh_btn.TabIndex = 16;
+            this.create_kh_btn.Text = "Thêm";
+            this.create_kh_btn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.create_kh_btn.UseAccentColor = false;
+            this.create_kh_btn.UseVisualStyleBackColor = true;
+            this.create_kh_btn.Click += new System.EventHandler(this.create_kh_btn_Click);
             // 
             // materialLabel13
             // 
@@ -647,68 +724,70 @@
             this.materialLabel13.TabIndex = 15;
             this.materialLabel13.Text = "Khách hàng ";
             // 
-            // materialButton2
+            // reload_kh_btn
             // 
-            this.materialButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton2.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton2.Depth = 0;
-            this.materialButton2.HighEmphasis = true;
-            this.materialButton2.Icon = null;
-            this.materialButton2.Location = new System.Drawing.Point(552, 77);
-            this.materialButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton2.Name = "materialButton2";
-            this.materialButton2.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton2.Size = new System.Drawing.Size(98, 36);
-            this.materialButton2.TabIndex = 14;
-            this.materialButton2.Text = "Khôi phục";
-            this.materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton2.UseAccentColor = false;
-            this.materialButton2.UseVisualStyleBackColor = true;
+            this.reload_kh_btn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.reload_kh_btn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.reload_kh_btn.Depth = 0;
+            this.reload_kh_btn.HighEmphasis = true;
+            this.reload_kh_btn.Icon = null;
+            this.reload_kh_btn.Location = new System.Drawing.Point(561, 17);
+            this.reload_kh_btn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.reload_kh_btn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.reload_kh_btn.Name = "reload_kh_btn";
+            this.reload_kh_btn.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.reload_kh_btn.Size = new System.Drawing.Size(98, 36);
+            this.reload_kh_btn.TabIndex = 14;
+            this.reload_kh_btn.Text = "Khôi phục";
+            this.reload_kh_btn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.reload_kh_btn.UseAccentColor = false;
+            this.reload_kh_btn.UseVisualStyleBackColor = true;
+            this.reload_kh_btn.Click += new System.EventHandler(this.reload_kh_btn_Click);
             // 
             // khachhang_datagrid
             // 
             this.khachhang_datagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.khachhang_datagrid.Location = new System.Drawing.Point(15, 142);
             this.khachhang_datagrid.Name = "khachhang_datagrid";
-            this.khachhang_datagrid.Size = new System.Drawing.Size(741, 391);
+            this.khachhang_datagrid.Size = new System.Drawing.Size(741, 381);
             this.khachhang_datagrid.TabIndex = 13;
             // 
-            // materialButton3
+            // search_kh_btn
             // 
-            this.materialButton3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton3.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton3.Depth = 0;
-            this.materialButton3.HighEmphasis = true;
-            this.materialButton3.Icon = null;
-            this.materialButton3.Location = new System.Drawing.Point(692, 77);
-            this.materialButton3.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton3.Name = "materialButton3";
-            this.materialButton3.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton3.Size = new System.Drawing.Size(64, 36);
-            this.materialButton3.TabIndex = 12;
-            this.materialButton3.Text = "Tìm ";
-            this.materialButton3.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton3.UseAccentColor = false;
-            this.materialButton3.UseVisualStyleBackColor = true;
+            this.search_kh_btn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.search_kh_btn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.search_kh_btn.Depth = 0;
+            this.search_kh_btn.HighEmphasis = true;
+            this.search_kh_btn.Icon = null;
+            this.search_kh_btn.Location = new System.Drawing.Point(692, 77);
+            this.search_kh_btn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.search_kh_btn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.search_kh_btn.Name = "search_kh_btn";
+            this.search_kh_btn.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.search_kh_btn.Size = new System.Drawing.Size(64, 36);
+            this.search_kh_btn.TabIndex = 12;
+            this.search_kh_btn.Text = "Tìm ";
+            this.search_kh_btn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.search_kh_btn.UseAccentColor = false;
+            this.search_kh_btn.UseVisualStyleBackColor = true;
+            this.search_kh_btn.Click += new System.EventHandler(this.search_kh_btn_Click);
             // 
-            // materialTextBox1
+            // search_kh_input
             // 
-            this.materialTextBox1.AnimateReadOnly = false;
-            this.materialTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox1.Depth = 0;
-            this.materialTextBox1.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox1.LeadingIcon = null;
-            this.materialTextBox1.Location = new System.Drawing.Point(15, 63);
-            this.materialTextBox1.MaxLength = 50;
-            this.materialTextBox1.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox1.Multiline = false;
-            this.materialTextBox1.Name = "materialTextBox1";
-            this.materialTextBox1.Size = new System.Drawing.Size(509, 50);
-            this.materialTextBox1.TabIndex = 11;
-            this.materialTextBox1.Text = "";
-            this.materialTextBox1.TrailingIcon = null;
+            this.search_kh_input.AnimateReadOnly = false;
+            this.search_kh_input.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.search_kh_input.Depth = 0;
+            this.search_kh_input.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.search_kh_input.LeadingIcon = null;
+            this.search_kh_input.Location = new System.Drawing.Point(15, 63);
+            this.search_kh_input.MaxLength = 50;
+            this.search_kh_input.MouseState = MaterialSkin.MouseState.OUT;
+            this.search_kh_input.Multiline = false;
+            this.search_kh_input.Name = "search_kh_input";
+            this.search_kh_input.Size = new System.Drawing.Size(478, 50);
+            this.search_kh_input.TabIndex = 11;
+            this.search_kh_input.Text = "";
+            this.search_kh_input.TrailingIcon = null;
             // 
             // tabPage8
             // 
@@ -896,37 +975,13 @@
             this.dieukhoan_input.Text = "";
             this.dieukhoan_input.TrailingIcon = null;
             // 
-            // tabPage7
-            // 
-            this.tabPage7.BackColor = System.Drawing.Color.White;
-            this.tabPage7.Controls.Add(this.materialLabel8);
-            this.tabPage7.ImageKey = "thongnke.png";
-            this.tabPage7.Location = new System.Drawing.Point(4, 42);
-            this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(896, 550);
-            this.tabPage7.TabIndex = 7;
-            this.tabPage7.Text = "Thống kê";
-            // 
-            // materialLabel8
-            // 
-            this.materialLabel8.AutoSize = true;
-            this.materialLabel8.Depth = 0;
-            this.materialLabel8.Font = new System.Drawing.Font("Roboto", 34F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel8.FontType = MaterialSkin.MaterialSkinManager.fontType.H4;
-            this.materialLabel8.Location = new System.Drawing.Point(12, 12);
-            this.materialLabel8.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel8.Name = "materialLabel8";
-            this.materialLabel8.Size = new System.Drawing.Size(151, 41);
-            this.materialLabel8.TabIndex = 11;
-            this.materialLabel8.Text = "Nhân viên";
-            // 
             // tabChinhSua
             // 
-            this.tabChinhSua.Controls.Add(this.materialButton1);
+            this.tabChinhSua.Controls.Add(this.logout_btn);
             this.tabChinhSua.Controls.Add(this.materialLabel12);
             this.tabChinhSua.Controls.Add(this.groupBox2);
             this.tabChinhSua.Controls.Add(this.groupBox1);
-            this.tabChinhSua.Controls.Add(this.materialButton6);
+            this.tabChinhSua.Controls.Add(this.change_password_btn);
             this.tabChinhSua.ImageKey = "setting.png";
             this.tabChinhSua.Location = new System.Drawing.Point(4, 42);
             this.tabChinhSua.Name = "tabChinhSua";
@@ -936,24 +991,25 @@
             this.tabChinhSua.Text = "Thông tin cá nhân";
             this.tabChinhSua.UseVisualStyleBackColor = true;
             // 
-            // materialButton1
+            // logout_btn
             // 
-            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton1.Depth = 0;
-            this.materialButton1.HighEmphasis = true;
-            this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(179, 253);
-            this.materialButton1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton1.Name = "materialButton1";
-            this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton1.Size = new System.Drawing.Size(103, 36);
-            this.materialButton1.TabIndex = 13;
-            this.materialButton1.Text = "Đăng xuất";
-            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton1.UseAccentColor = false;
-            this.materialButton1.UseVisualStyleBackColor = true;
+            this.logout_btn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.logout_btn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.logout_btn.Depth = 0;
+            this.logout_btn.HighEmphasis = true;
+            this.logout_btn.Icon = null;
+            this.logout_btn.Location = new System.Drawing.Point(179, 253);
+            this.logout_btn.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.logout_btn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.logout_btn.Name = "logout_btn";
+            this.logout_btn.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.logout_btn.Size = new System.Drawing.Size(103, 36);
+            this.logout_btn.TabIndex = 13;
+            this.logout_btn.Text = "Đăng xuất";
+            this.logout_btn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.logout_btn.UseAccentColor = false;
+            this.logout_btn.UseVisualStyleBackColor = true;
+            this.logout_btn.Click += new System.EventHandler(this.logout_btn_Click);
             // 
             // materialLabel12
             // 
@@ -1070,7 +1126,7 @@
             this.groupBox1.Controls.Add(this.materialLabel15);
             this.groupBox1.Controls.Add(this.ten_nv);
             this.groupBox1.Controls.Add(this.materialLabel16);
-            this.groupBox1.Controls.Add(this.chucvu);
+            this.groupBox1.Controls.Add(this.chucvu_nv);
             this.groupBox1.Location = new System.Drawing.Point(20, 85);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(361, 149);
@@ -1169,37 +1225,38 @@
             this.materialLabel16.TabIndex = 1;
             this.materialLabel16.Text = "CCCD/CMND ";
             // 
-            // chucvu
+            // chucvu_nv
             // 
-            this.chucvu.AutoSize = true;
-            this.chucvu.Depth = 0;
-            this.chucvu.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.chucvu.Location = new System.Drawing.Point(138, 77);
-            this.chucvu.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.chucvu.MouseState = MaterialSkin.MouseState.HOVER;
-            this.chucvu.Name = "chucvu";
-            this.chucvu.Size = new System.Drawing.Size(72, 19);
-            this.chucvu.TabIndex = 6;
-            this.chucvu.Text = "Nhân viên";
+            this.chucvu_nv.AutoSize = true;
+            this.chucvu_nv.Depth = 0;
+            this.chucvu_nv.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.chucvu_nv.Location = new System.Drawing.Point(138, 77);
+            this.chucvu_nv.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.chucvu_nv.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chucvu_nv.Name = "chucvu_nv";
+            this.chucvu_nv.Size = new System.Drawing.Size(72, 19);
+            this.chucvu_nv.TabIndex = 6;
+            this.chucvu_nv.Text = "Nhân viên";
             // 
-            // materialButton6
+            // change_password_btn
             // 
-            this.materialButton6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton6.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton6.Depth = 0;
-            this.materialButton6.HighEmphasis = true;
-            this.materialButton6.Icon = null;
-            this.materialButton6.Location = new System.Drawing.Point(20, 253);
-            this.materialButton6.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.materialButton6.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton6.Name = "materialButton6";
-            this.materialButton6.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton6.Size = new System.Drawing.Size(123, 36);
-            this.materialButton6.TabIndex = 4;
-            this.materialButton6.Text = "Đổi mật khẩu ";
-            this.materialButton6.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton6.UseAccentColor = false;
-            this.materialButton6.UseVisualStyleBackColor = true;
+            this.change_password_btn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.change_password_btn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.change_password_btn.Depth = 0;
+            this.change_password_btn.HighEmphasis = true;
+            this.change_password_btn.Icon = null;
+            this.change_password_btn.Location = new System.Drawing.Point(20, 253);
+            this.change_password_btn.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.change_password_btn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.change_password_btn.Name = "change_password_btn";
+            this.change_password_btn.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.change_password_btn.Size = new System.Drawing.Size(123, 36);
+            this.change_password_btn.TabIndex = 4;
+            this.change_password_btn.Text = "Đổi mật khẩu ";
+            this.change_password_btn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.change_password_btn.UseAccentColor = false;
+            this.change_password_btn.UseVisualStyleBackColor = true;
+            this.change_password_btn.Click += new System.EventHandler(this.change_password_btn_Click);
             // 
             // employee_icon
             // 
@@ -1241,8 +1298,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
-            this.tabPage5.ResumeLayout(false);
-            this.tabPage5.PerformLayout();
+            this.them_giaodich_btn.ResumeLayout(false);
+            this.them_giaodich_btn.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ls_thanhtoan_gridview)).EndInit();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
@@ -1255,8 +1312,6 @@
             this.tabPage9.ResumeLayout(false);
             this.tabPage9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dieukhoan_gridview)).EndInit();
-            this.tabPage7.ResumeLayout(false);
-            this.tabPage7.PerformLayout();
             this.tabChinhSua.ResumeLayout(false);
             this.tabChinhSua.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -1270,9 +1325,8 @@
         #endregion
         private System.Windows.Forms.TabPage tabPage9;
         private System.Windows.Forms.TabPage tabPage8;
-        private System.Windows.Forms.TabPage tabPage7;
         private System.Windows.Forms.TabPage tabPage6;
-        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.TabPage them_giaodich_btn;
         private System.Windows.Forms.DataGridView ls_thanhtoan_gridview;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.FlowLayoutPanel all_hdtd_panel;
@@ -1286,13 +1340,13 @@
         private System.Windows.Forms.DataGridView dataGridView4;
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.TabPage tabChinhSua;
-        private MaterialSkin.Controls.MaterialButton materialButton6;
+        private MaterialSkin.Controls.MaterialButton change_password_btn;
         private MaterialSkin.Controls.MaterialLabel sdt_nv;
         private MaterialSkin.Controls.MaterialLabel hs_luong_nv;
         private MaterialSkin.Controls.MaterialLabel materialLabel23;
         private MaterialSkin.Controls.MaterialLabel ten_nv;
         private MaterialSkin.Controls.MaterialLabel email_nv;
-        private MaterialSkin.Controls.MaterialLabel chucvu;
+        private MaterialSkin.Controls.MaterialLabel chucvu_nv;
         private MaterialSkin.Controls.MaterialLabel materialLabel17;
         private MaterialSkin.Controls.MaterialLabel materialLabel16;
         private MaterialSkin.Controls.MaterialLabel materialLabel10;
@@ -1325,21 +1379,23 @@
         private MaterialSkin.Controls.MaterialTextBox dieukhoan_input;
         private MaterialSkin.Controls.MaterialLabel materialLabel6;
         private MaterialSkin.Controls.MaterialLabel materialLabel7;
-        private MaterialSkin.Controls.MaterialLabel materialLabel8;
         private MaterialSkin.Controls.MaterialLabel materialLabel24;
         private MaterialSkin.Controls.MaterialLabel materialLabel25;
         private MaterialSkin.Controls.MaterialLabel materialLabel26;
         private MaterialSkin.Controls.MaterialLabel materialLabel27;
-        private MaterialSkin.Controls.MaterialButton materialButton1;
+        private MaterialSkin.Controls.MaterialButton logout_btn;
         private MaterialSkin.Controls.MaterialLabel materialLabel12;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TabPage tabPage3;
         private MaterialSkin.Controls.MaterialLabel materialLabel13;
-        private MaterialSkin.Controls.MaterialButton materialButton2;
+        private MaterialSkin.Controls.MaterialButton reload_kh_btn;
         private System.Windows.Forms.DataGridView khachhang_datagrid;
-        private MaterialSkin.Controls.MaterialButton materialButton3;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox1;
+        private MaterialSkin.Controls.MaterialButton search_kh_btn;
+        private MaterialSkin.Controls.MaterialTextBox search_kh_input;
         private System.Windows.Forms.ImageList employee_icon;
+        private MaterialSkin.Controls.MaterialButton create_kh_btn;
+        private MaterialSkin.Controls.MaterialComboBox type_kh_search;
+        private MaterialSkin.Controls.MaterialComboBox type_kv_combobox;
     }
 }

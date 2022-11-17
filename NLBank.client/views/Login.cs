@@ -52,11 +52,7 @@ namespace NLBank.client
                     if (nv != null)
                     {
                         new EmployeeHome(nv).Show();
-<<<<<<< HEAD
-                       
-=======
                         this.Hide();
->>>>>>> e5534cbc67a9a18be5830ae1d5eea2d37b12530d
                     }
                     break;
                 case -1:

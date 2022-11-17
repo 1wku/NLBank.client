@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace NLBank.client.DAL
 {
@@ -72,16 +73,33 @@ namespace NLBank.client.DAL
             command.ExecuteNonQuery();
             Conn.Close();
         }
-        public static void XoaKhoanVay(KhoanVayDTO kv)
+        public static void XoaKhoanVay(int id)
         {
-            SqlConnection Conn = Connection.KetNoi();
-            SqlCommand command = new SqlCommand("XoaKhoanVay", Conn);
-            command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.Add("@MaKV", SqlDbType.Char);
+            try
+            {
+                if (KhoanVayDAL.LaKhoanVayDangSuDung(id))
+                {
+                    MessageBox.Show("Khoản vay đã có hợp đồng. Không thể xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-            Conn.Open();
-            command.ExecuteNonQuery();
-            Conn.Close();
+                    return; 
+                }
+                SqlConnection Conn = Connection.KetNoi();
+                SqlCommand command = new SqlCommand("XoaKhoanVay", Conn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add("@MaKV", SqlDbType.Int);
+                command.Parameters["@MaKV"].Value = id;
+
+                Conn.Open();
+                command.ExecuteNonQuery();
+                Conn.Close();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e); 
+                MessageBox.Show("Xóa khoản vay không thành công. Vui lòng thử lại hoặc báo cho quản trị viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
         }
         public static List<KhoanVayDTO> getAll()
         {
@@ -97,6 +115,20 @@ namespace NLBank.client.DAL
             }
 
             return danhsach;
+        }
+        public static Boolean LaKhoanVayDangSuDung(int id)
+        {
+            DataTable result = Connection.Instance.ExcuteQuery($"SELECT dbo.La_KV_DangSuDung({id}) ");
+            return (Boolean) result.Rows[0][0]; 
+
+        }
+        public static DataTable getKVChuaSuDung()
+        {
+            return Connection.Instance.ExcuteQuery("select * from f_KVChuaSuDung() "); 
+        }
+        public static DataTable getKVDaSuDung()
+        {
+            return Connection.Instance.ExcuteQuery("select * from f_KVDaSuDung() ");
         }
 
     }

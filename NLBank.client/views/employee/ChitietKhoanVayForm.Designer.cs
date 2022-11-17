@@ -49,7 +49,7 @@
             this.laiquahan_input = new MaterialSkin.Controls.MaterialTextBox();
             this.phuongthuctra_combobox = new MaterialSkin.Controls.MaterialComboBox();
             this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
+            this.xoa_kv_btn = new MaterialSkin.Controls.MaterialButton();
             this.makh = new MaterialSkin.Controls.MaterialLabel();
             this.sotienvay = new MaterialSkin.Controls.MaterialLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -350,24 +350,25 @@
             this.materialButton1.UseVisualStyleBackColor = true;
             this.materialButton1.Click += new System.EventHandler(this.materialButton1_Click);
             // 
-            // materialButton2
+            // xoa_kv_btn
             // 
-            this.materialButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton2.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton2.Depth = 0;
-            this.materialButton2.HighEmphasis = true;
-            this.materialButton2.Icon = null;
-            this.materialButton2.Location = new System.Drawing.Point(441, 516);
-            this.materialButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton2.Name = "materialButton2";
-            this.materialButton2.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton2.Size = new System.Drawing.Size(136, 36);
-            this.materialButton2.TabIndex = 21;
-            this.materialButton2.Text = "Xóa khoản vay";
-            this.materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton2.UseAccentColor = false;
-            this.materialButton2.UseVisualStyleBackColor = true;
+            this.xoa_kv_btn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.xoa_kv_btn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.xoa_kv_btn.Depth = 0;
+            this.xoa_kv_btn.HighEmphasis = true;
+            this.xoa_kv_btn.Icon = null;
+            this.xoa_kv_btn.Location = new System.Drawing.Point(441, 516);
+            this.xoa_kv_btn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.xoa_kv_btn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.xoa_kv_btn.Name = "xoa_kv_btn";
+            this.xoa_kv_btn.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.xoa_kv_btn.Size = new System.Drawing.Size(136, 36);
+            this.xoa_kv_btn.TabIndex = 21;
+            this.xoa_kv_btn.Text = "Xóa khoản vay";
+            this.xoa_kv_btn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.xoa_kv_btn.UseAccentColor = false;
+            this.xoa_kv_btn.UseVisualStyleBackColor = true;
+            this.xoa_kv_btn.Click += new System.EventHandler(this.xoa_kv_btn_Click);
             // 
             // makh
             // 
@@ -420,7 +421,7 @@
             // 
             this.ngayky_input.AutoSize = true;
             this.ngayky_input.Depth = 0;
-            this.ngayky_input.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.ngayky_input.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ngayky_input.Location = new System.Drawing.Point(33, 421);
             this.ngayky_input.MouseState = MaterialSkin.MouseState.HOVER;
             this.ngayky_input.Name = "ngayky_input";
@@ -433,7 +434,7 @@
             this.mucphi_input.AnimateReadOnly = false;
             this.mucphi_input.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mucphi_input.Depth = 0;
-            this.mucphi_input.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.mucphi_input.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.mucphi_input.LeadingIcon = null;
             this.mucphi_input.Location = new System.Drawing.Point(411, 443);
             this.mucphi_input.MaxLength = 50;
@@ -495,7 +496,7 @@
             this.Controls.Add(this.materialLabel13);
             this.Controls.Add(this.ngayky_input);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.materialButton2);
+            this.Controls.Add(this.xoa_kv_btn);
             this.Controls.Add(this.materialButton1);
             this.Controls.Add(this.phuongthuctra_combobox);
             this.Controls.Add(this.laiquahan_input);
@@ -538,7 +539,7 @@
         private MaterialSkin.Controls.MaterialTextBox laiquahan_input;
         private MaterialSkin.Controls.MaterialComboBox phuongthuctra_combobox;
         private MaterialSkin.Controls.MaterialButton materialButton1;
-        private MaterialSkin.Controls.MaterialButton materialButton2;
+        private MaterialSkin.Controls.MaterialButton xoa_kv_btn;
         private MaterialSkin.Controls.MaterialLabel makh;
         private MaterialSkin.Controls.MaterialLabel sotienvay;
         private System.Windows.Forms.GroupBox groupBox1;

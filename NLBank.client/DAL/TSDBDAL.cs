@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace NLBank.client.DAL
 {
@@ -66,16 +67,24 @@ namespace NLBank.client.DAL
             command.ExecuteNonQuery();
             Conn.Close();
         }
-        public static void XoaTSDB(TSDBDTO tsdb)
+        public static void XoaTSDB(int id)
         {
-            SqlConnection Conn = Connection.KetNoi();
-            SqlCommand command = new SqlCommand("sp_XoaTaiSanDamBao", Conn);
-            command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.Add("@MaTSDB", SqlDbType.Char);
-            command.Parameters["@MaTSDB"].Value = tsdb.MaTSDB;
-            Conn.Open();
-            command.ExecuteNonQuery();
-            Conn.Close();
+            try
+            {
+                SqlConnection Conn = Connection.KetNoi();
+                SqlCommand command = new SqlCommand("sp_XoaTaiSanDamBao", Conn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add("@MaTSDB", SqlDbType.Char);
+                command.Parameters["@MaTSDB"].Value = id;
+                Conn.Open();
+                command.ExecuteNonQuery();
+                Conn.Close();
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show("Xóa tài sản không thành công. Vui lòng thử lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
         }
     }
 }

@@ -59,19 +59,36 @@ namespace NLBank.client.views.employee
 
         private void materialButton1_Click(object sender, EventArgs e)
         {
-            if (checkData())
+            DialogResult result = MessageBox.Show("Xác nhận lưu thẩm định tài sản.", "Chấp nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            if (result.Equals(DialogResult.OK))
             {
-                ts.MaLoaiTSDB = allTS.Find(a => a.LoaiTS == loaits_combobox.SelectedItem).MaLoaiTS;
-                TSDBDAL.SuaTSDB(ts); 
+                if (checkData())
+                {
+                    ts.MaLoaiTSDB = allTS.Find(a => a.LoaiTS == loaits_combobox.SelectedItem).MaLoaiTS;
+                    TSDBDAL.SuaTSDB(ts);
 
-                MessageBox.Show("Thẩm định tài sản thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Thẩm định tài sản thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close(); 
 
+                }
+                else
+                {
+                    MessageBox.Show("Thông tin không hợp lệ. Vui lòng nhập lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
             }
-            else
+
+            
+        }
+
+        private void ko_dat_yeu_cau_btn_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Xác nhận tài sản không đạt yêu cầu. Loại bỏ tài sản?", "Chấp nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            if (result.Equals(DialogResult.OK))
             {
-                MessageBox.Show("Thông tin không hợp lệ. Vui lòng nhập lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                TSDBDAL.XoaTSDB(ts.MaTSDB);
             }
+            
         }
     }
 }
