@@ -32,7 +32,4 @@ namespace NLBank.client.DTO
             this._DnB_rating = (int)row["DnB_rating"];
         }
     }
-
-  
-    
 }
