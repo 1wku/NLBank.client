@@ -1,5 +1,7 @@
-﻿using System;
+﻿using NLBank.client.DAL;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +16,8 @@ namespace NLBank.client.DTO
         private String _Email;
         private String _Sdt;
         private int _RoleID;
+        public CANHANDTO canhan;
+        public DOANHNGHIEPDTO doanhNghiep;
 
         public int MaKH {
             get { return _MaKH; }
@@ -47,7 +51,30 @@ namespace NLBank.client.DTO
             _Email = email;
             _Sdt = sdt;
             _RoleID = roleID;
+            if (_RoleID == 0)
+            {
+                canhan = CANHANDAL.GetCaNhan(_MaKH);
+            }
+            if (_RoleID == 1) {
+                doanhNghiep = DOANHNGHIEPDAL.GetDoanhNghiep(_MaKH);
+            }
         }
         public KHDTO() { }
+        public KHDTO(DataRow row) {
+            _MaKH = (int)row["MaKH"];
+            _Ten = row["Ten"].ToString();
+            _Dia_chi = row["Dia_chi"].ToString();
+            _Email = row["Email"].ToString();
+            _Sdt = row["Sdt"].ToString();
+            _RoleID = (byte)row["RoleID"];
+            if (_RoleID == 0)
+            {
+                canhan = CANHANDAL.GetCaNhan(_MaKH);
+            }
+            if (_RoleID == 1)
+            {
+                doanhNghiep = DOANHNGHIEPDAL.GetDoanhNghiep(_MaKH);
+            }
+        }
     }
 }

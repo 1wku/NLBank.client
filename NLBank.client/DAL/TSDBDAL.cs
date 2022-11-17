@@ -88,6 +88,7 @@ namespace NLBank.client.DAL
                 Console.WriteLine(e);
                 return false;
             }
+
         }
         public static void SuaTSDB(TSDBDTO tsdb)
         {

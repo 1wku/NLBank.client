@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NLBank.client.DTO;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -10,10 +11,9 @@ namespace NLBank.client.DAL
 {
     class DOANHNGHIEPDAL
     {
-        public static DOANHNGHIEPDTO getDoanhNghiep(int makh)
+        public static DOANHNGHIEPDTO GetDoanhNghiep(int MaKH)
         {
-            string sql = "SELECT * FROM DOANHNGHIEP WHERE MaKH =" + makh;
-            DataTable data = Connection.Instance.ExcuteQuery(sql);
+            DataTable data = Connection.Instance.ExcuteQuery($"SELECT * FROM f_LayDoanhNghiep({MaKH})");
             foreach (DataRow item in data.Rows)
             {
                 return new DOANHNGHIEPDTO(item);

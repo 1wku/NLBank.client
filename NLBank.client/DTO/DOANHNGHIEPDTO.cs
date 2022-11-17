@@ -23,6 +23,7 @@ namespace NLBank.client.DTO
             _MADN = mADN;
             _DnB_rating = dnB_rating;
         }
+
         public DOANHNGHIEPDTO() { }
         public DOANHNGHIEPDTO(DataRow row)
         {
@@ -32,4 +33,11 @@ namespace NLBank.client.DTO
         }
     }
 
+        public DOANHNGHIEPDTO(DataRow row)
+        {
+            _MaKH = row["MaKh"].ToString();
+            _MADN = row["MaDN"].ToString();
+            _DnB_rating = (int)row["DnB_rating"];
+        }
+    }
 }

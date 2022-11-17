@@ -27,6 +27,7 @@ namespace NLBank.client.DTO
             _FICO_score = fICO_score;
         }
         public CANHANDTO() { }
+
         public CANHANDTO(DataRow row)
         {
             this._MaKH = (int)row["MaKH"];

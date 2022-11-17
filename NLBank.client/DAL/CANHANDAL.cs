@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NLBank.client.DTO;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -10,12 +11,9 @@ namespace NLBank.client.DAL
 {
     class CANHANDAL
     {
-        public static CANHANDTO getCaNhan(int makh)
-        {
-            string sql = "SELECT * FROM CANHAN WHERE MaKH ="+makh;
-            DataTable data = Connection.Instance.ExcuteQuery(sql);
-            foreach(DataRow item in data.Rows)
-            {
+        public static CANHANDTO GetCaNhan(int MaKH) {
+            DataTable data = Connection.Instance.ExcuteQuery($"Select * FROM f_LayCaNhan({MaKH})");
+            foreach (DataRow item in data.Rows) { 
                 return new CANHANDTO(item);
             }
             return null;
