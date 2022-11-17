@@ -126,17 +126,13 @@ namespace NLBank.client.components
             // 
             // chinhSuaCaNhan1
             // 
-            this.chinhSuaCaNhan1.Location = new System.Drawing.Point(69, 88);
-            this.chinhSuaCaNhan1.Name = "chinhSuaCaNhan1";
-            this.chinhSuaCaNhan1.Size = new System.Drawing.Size(8, 8);
-            this.chinhSuaCaNhan1.TabIndex = 5;
+         
             // 
             // KhoanVayItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.materialCard1);
-            this.Controls.Add(this.chinhSuaCaNhan1);
             this.Name = "KhoanVayItem";
             this.Size = new System.Drawing.Size(595, 85);
             this.Load += new System.EventHandler(this.KhoanVayItem_Load);
@@ -153,7 +149,6 @@ namespace NLBank.client.components
         private MaterialSkin.Controls.MaterialButton materialButton1;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
-        private ChinhSuaCaNhan chinhSuaCaNhan1;
         private MaterialSkin.Controls.MaterialCard materialCard1;
     }
 }

@@ -44,10 +44,10 @@ namespace NLBank.client.views.employee
             kh.Ten = ten_input.Text;
             kh.Email = email_input.Text;
             kh.Dia_chi = diachi_input.Text;
-            kh._canhan.CCCD = cccd_input.Text;
+            kh.canhan.CCCD = cccd_input.Text;
             kh.Password = password_input.Text;
-            kh._doanhNghiep.MADN = (MaDN_input.Text);
-            kh._canhan.NgaySinh = ngaysinh_picker.Value;
+            kh.doanhNghiep.MADN = (MaDN_input.Text);
+            kh.canhan.NgaySinh = ngaysinh_picker.Value;
             kh.RoleID = loaitk_combobox.SelectedIndex;
             DialogResult result = MessageBox.Show("Xác nhận Thêm khách hàng.", "Chấp nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             if (result.Equals(DialogResult.OK))

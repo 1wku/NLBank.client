@@ -12,11 +12,11 @@ namespace NLBank.client.BUS
     {
         public static CANHANDTO getCaNhan(int makh)
         {
-            return CANHANDAL.getCaNhan(makh);
+            return CANHANDAL.GetCaNhan(makh);
         }
         public static DOANHNGHIEPDTO getDoanhNghiep(int makh)
         {
-            return DOANHNGHIEPDAL.getDoanhNghiep(makh);
+            return DOANHNGHIEPDAL.GetDoanhNghiep(makh);
         }
 
         public static Boolean SuaCaNhan(CANHANDTO cn, KHDTO kh)

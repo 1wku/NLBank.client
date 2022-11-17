@@ -123,29 +123,10 @@ namespace NLBank.client.DAL
         }
         public static Boolean CheckOverTimeHDTD(int id)
         {
-            SqlConnection Conn = Connection.KetNoi();
-            SqlCommand command = new SqlCommand("select dbo.f_LaHDTDQuaHan('" + id+"')", Conn);
+            String query = "select dbo.f_LaHDTDQuaHan(" + id + ")";
+            Boolean data = (Boolean)Connection.Instance.ExecuteScalar(query);
 
-            Conn.Open();
-             var reader = command.ExecuteReader();
-            if (reader.HasRows)
-            {
-                // Đọc từng dòng tập kết quả
-                while (reader.Read())
-                {
-                    var data = reader.GetInt32(0);
-                    if (data == 0) return false;
-                    else return true; 
-
-                }
-            }
-            else
-            {
-                Console.WriteLine("Không có dữ liệu trả về");
-                return true; 
-            }
-            Conn.Close();
-            return true; 
+            return data; 
         }
 
 

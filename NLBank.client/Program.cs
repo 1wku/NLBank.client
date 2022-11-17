@@ -19,7 +19,7 @@ namespace NLBank.client
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new EmployeeHome(AccountDAL.GetNhanVienByEmail("beo1962@employee.NLBank")));
+            Application.Run(new Login());
         }
     }
 }

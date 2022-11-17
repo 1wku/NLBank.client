@@ -95,7 +95,7 @@ namespace NLBank.client.views.employee
             sdt_nv.Text = nv.Sdt;
             diachi_nv.Text = nv.Dia_chi; 
             cccd_nv.Text = nv.CCCD;
-            hs_luong_nv.Text = nv.ChucVu.HSLuong.ToString();
+            hs_luong_nv.Text = nv.ChucVu.HsLuong.ToString();
             chucvu_nv.Text = nv.ChucVu.TenCV;
 
 

@@ -74,7 +74,7 @@ namespace NLBank.client.DTO
             _Dia_chi = (string)row["Dia_chi"];
             _Email = (string)row["Email"];
             _Sdt = (string)row["Sdt"];
-            _RoleID = (int)row["RoleID"]; 
+            //_RoleID = (int)row["RoleID"];
         }
 
     }

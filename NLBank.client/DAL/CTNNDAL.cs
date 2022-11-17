@@ -103,8 +103,10 @@ namespace NLBank.client.DAL
         {
             try
             {
-                return (int)Connection.Instance.ExecuteScalar($"SELECT TOP 1 SoDuNo FROM CHUNGTUTHUNO WHERE SoHDTD = {hdid} ORDER BY SoCTThuNo DESC");
-
+                object rs = Connection.Instance.ExecuteScalar($"SELECT TOP 1 SoDuNo FROM CHUNGTUTHUNO WHERE SoHDTD = {hdid} ORDER BY SoCTThuNo DESC");
+                if (rs != null)
+                    return (int)rs;
+                return 0;
             }
             catch(Exception e)
             {
