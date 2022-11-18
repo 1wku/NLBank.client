@@ -45,7 +45,14 @@ namespace NLBank.client.components
         private void TSDBitemUser_Load(object sender, EventArgs e)
         {
             lb_tentsdb_item.Text = ts.TenTSDB;
-            lb_maloaitsdb_item.Text = ts.TenLoaiTSDB;
+            foreach (DataRow row in TSDBBUS.GetLoaiTSDB().Rows)
+            {
+                if ((int)row["MaLoaiTSDB"] == ts.MaLoaiTSDB)
+                {
+                    lb_maloaitsdb_item.Text = (String)row["TenLoaiTSDB"];
+                    break;
+                }
+            }
         }
     }
 }

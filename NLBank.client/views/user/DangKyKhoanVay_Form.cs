@@ -43,8 +43,29 @@ namespace NLBank.client.views.user
 
         private void materialButton1_Click(object sender, EventArgs e)
         {
+            if(txt_sotienvay.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập số tiền cần vay");
+                return;
+            }
+            int sotienvay;
+            if (!int.TryParse(txt_sotienvay.Text, out sotienvay))
+            {
+                MessageBox.Show("Vui lòng nhập số tiền hợp lệ");
+                return;
+            }
+            if(txt_mucdich.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập mục đích vay");
+                return;
+            }
+            if(dg_tsdb.CurrentRow == null || dg_tsdb.SelectedRows[0].Index < dg_tsdb.Rows.Count - 1)
+            {
+                MessageBox.Show("Vui lòng chọn tài sản đảm bảo hợp lệ");
+                return;
+            }
             if (KVBUS.ThemKV(new KhoanVayDTO(kh.MaKH, Int32.Parse(dg_tsdb.Rows[dg_tsdb.CurrentRow.Index].Cells[0].Value.ToString()), Int32.Parse(cbx_loaikv.SelectedValue.ToString()),
-                                txt_mucdich.Text, Int32.Parse(txt_sotienvay.Text), cbx_loaitien.SelectedValue.ToString())))
+                                txt_mucdich.Text, sotienvay, cbx_loaitien.SelectedValue.ToString())))
             {
                 MessageBox.Show("Thêm Khoản vay thành công");
                 this.Close();
