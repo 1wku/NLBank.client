@@ -95,6 +95,7 @@
             this.btn_changePasswd.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btn_changePasswd.UseAccentColor = false;
             this.btn_changePasswd.UseVisualStyleBackColor = true;
+            this.btn_changePasswd.Click += new System.EventHandler(this.btn_changePasswd_Click);
             // 
             // materialLabel6
             // 
@@ -143,7 +144,7 @@
             this.txt_diachi.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txt_diachi.LeadingIcon = null;
             this.txt_diachi.Location = new System.Drawing.Point(66, 469);
-            this.txt_diachi.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txt_diachi.Margin = new System.Windows.Forms.Padding(6);
             this.txt_diachi.MaxLength = 50;
             this.txt_diachi.MouseState = MaterialSkin.MouseState.OUT;
             this.txt_diachi.Multiline = false;
@@ -161,7 +162,7 @@
             this.txt_sdt.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txt_sdt.LeadingIcon = null;
             this.txt_sdt.Location = new System.Drawing.Point(776, 300);
-            this.txt_sdt.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txt_sdt.Margin = new System.Windows.Forms.Padding(6);
             this.txt_sdt.MaxLength = 50;
             this.txt_sdt.MouseState = MaterialSkin.MouseState.OUT;
             this.txt_sdt.Multiline = false;
@@ -192,7 +193,7 @@
             this.txt_madn.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txt_madn.LeadingIcon = null;
             this.txt_madn.Location = new System.Drawing.Point(776, 115);
-            this.txt_madn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txt_madn.Margin = new System.Windows.Forms.Padding(6);
             this.txt_madn.MaxLength = 50;
             this.txt_madn.MouseState = MaterialSkin.MouseState.OUT;
             this.txt_madn.Multiline = false;
@@ -210,7 +211,7 @@
             this.txt_email.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txt_email.LeadingIcon = null;
             this.txt_email.Location = new System.Drawing.Point(66, 300);
-            this.txt_email.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txt_email.Margin = new System.Windows.Forms.Padding(6);
             this.txt_email.MaxLength = 50;
             this.txt_email.MouseState = MaterialSkin.MouseState.OUT;
             this.txt_email.Multiline = false;
@@ -241,7 +242,7 @@
             this.txt_ten.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txt_ten.LeadingIcon = null;
             this.txt_ten.Location = new System.Drawing.Point(66, 115);
-            this.txt_ten.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txt_ten.Margin = new System.Windows.Forms.Padding(6);
             this.txt_ten.MaxLength = 50;
             this.txt_ten.MouseState = MaterialSkin.MouseState.OUT;
             this.txt_ten.Multiline = false;
@@ -287,7 +288,7 @@
             this.Controls.Add(this.txt_email);
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.txt_ten);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "ChinhSuaDoanhNghiep";
             this.Size = new System.Drawing.Size(1572, 942);
             this.Load += new System.EventHandler(this.ChinhSuaDoanhNghiep_Load);

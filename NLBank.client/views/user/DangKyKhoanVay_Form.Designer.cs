@@ -183,6 +183,7 @@
             this.dg_tsdb.Margin = new System.Windows.Forms.Padding(6);
             this.dg_tsdb.Name = "dg_tsdb";
             this.dg_tsdb.RowHeadersWidth = 82;
+            this.dg_tsdb.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dg_tsdb.Size = new System.Drawing.Size(1326, 288);
             this.dg_tsdb.TabIndex = 29;
             // 

@@ -204,11 +204,10 @@ namespace NLBank.client.views.user
                 pnl_TSDB.Controls.Add(new TSDBitemUser(new TSDBDTO(
                     row["MaTSDB"] != DBNull.Value ? (int)row["MaTSDB"] : 0,
                     row["MaLoaiTSDB"] != DBNull.Value ? (int)row["MaLoaiTSDB"] : 0,
-                    (string)row["TenTSDB"],
+                    row["TenTSDB"] != DBNull.Value ? (string)row["TenTSDB"] : "Chưa cập nhật",
                     row["MaKH"] != DBNull.Value ? (int)row["MaKH"] : 0,
                     row["TrigiaTS"] != DBNull.Value ? (int)row["TrigiaTS"] : 0,
-
-                row["HinhThucDB"] != DBNull.Value ? (string)row["HinhThucDB"] : "Chưa cập nhập"
+                    row["HinhThucDB"] != DBNull.Value ? (string)row["HinhThucDB"] : "Chưa cập nhập"
                     ), kh));
             }
             cbx_loai.DataSource = TSDBBUS.GetLoaiTSDB();
