@@ -15,12 +15,14 @@ using System.Data.SqlClient;
 
 namespace NLBank.client.views.user
 {
-    public partial class DangKyKhoanVay_Form : MaterialForm
+    public partial class SuaKhoanVay : MaterialForm
     {
+        KhoanVayDTO kv = new KhoanVayDTO();
         KHDTO kh = new KHDTO();
-        public DangKyKhoanVay_Form(KHDTO user)
+        public SuaKhoanVay(KhoanVayDTO kv, KHDTO kh)
         {
-            this.kh = user;
+            this.kv = kv;
+            this.kh = kh;
             InitializeComponent();
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
@@ -37,6 +39,11 @@ namespace NLBank.client.views.user
             cbx_loaitien.DisplayMember = "LoaiTien";
             cbx_loaitien.ValueMember = "MaloaiTien";
             dg_tsdb.DataSource = TSDBBUS.GetListTSDBChuaSD(kh.MaKH);
+
+            txt_mucdich.Text = kv.MucDich;
+            txt_sotienvay.Text = kv.SoTienVay.ToString();
+            cbx_loaikv.SelectedIndex = cbx_loaikv.FindStringExact(kv.MaLoaiKV.ToString());
+            cbx_loaitien.SelectedValue = kv.LoaiTien;
         }
 
         
@@ -64,15 +71,15 @@ namespace NLBank.client.views.user
                 MessageBox.Show("Vui lòng chọn tài sản đảm bảo hợp lệ");
                 return;
             }
-            if (KVBUS.ThemKV(new KhoanVayDTO(kh.MaKH, Int32.Parse(dg_tsdb.Rows[dg_tsdb.CurrentRow.Index].Cells[0].Value.ToString()), Int32.Parse(cbx_loaikv.SelectedValue.ToString()),
+            if (KVBUS.SuaKV(new KhoanVayDTO(kv.MaKV, kh.MaKH, Int32.Parse(dg_tsdb.Rows[dg_tsdb.CurrentRow.Index].Cells[0].Value.ToString()), Int32.Parse(cbx_loaikv.SelectedValue.ToString()),
                                 txt_mucdich.Text, sotienvay, cbx_loaitien.SelectedValue.ToString())))
             {
-                MessageBox.Show("Thêm Khoản vay thành công");
+                MessageBox.Show("Sửa Khoản vay thành công");
                 this.Close();
             }
             else
             {
-                MessageBox.Show("Thêm Khoản vay thất bại");
+                MessageBox.Show("Sửa Khoản vay thất bại");
             }
         }
 

@@ -61,6 +61,13 @@ namespace NLBank.client.DAL
             String sql = "SELECT * FROM LOAITSDB";
             return Connection.Instance.ExcuteQuery(sql);
         }
+
+        public static DataTable getTSDBBySoHDTD(int sohdtd)
+        {
+            String sql = "select * from f_GetTSDBBySoHDTD("+sohdtd+")";
+            return Connection.Instance.ExcuteQuery(sql);
+        }
+
         public static Boolean ThemTSDB(TSDBDTO tsdb)
         {
             try

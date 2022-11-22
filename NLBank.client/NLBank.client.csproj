@@ -75,6 +75,12 @@
     <Compile Include="components\ChinhSuaDoanhNghiep.Designer.cs">
       <DependentUpon>ChinhSuaDoanhNghiep.cs</DependentUpon>
     </Compile>
+    <Compile Include="components\KVItemUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="components\KVItemUser.Designer.cs">
+      <DependentUpon>KVItemUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="components\KhoanVayItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -104,6 +110,12 @@
     </Compile>
     <Compile Include="components\TSDBitemUser.Designer.cs">
       <DependentUpon>TSDBitemUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="components\HDTDItemUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="components\HDTDItemUser.Designer.cs">
+      <DependentUpon>HDTDItemUser.cs</DependentUpon>
     </Compile>
     <Compile Include="DAL\AccountDAL.cs" />
     <Compile Include="DAL\CHUCVUDAL.cs" />
@@ -198,6 +210,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="views\user\SuaKhoanVay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\user\SuaKhoanVay.Designer.cs">
+      <DependentUpon>SuaKhoanVay.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\user\DangKyKhoanVay_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -210,11 +228,17 @@
     <Compile Include="views\user\SuaTSDB.Designer.cs">
       <DependentUpon>SuaTSDB.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\user\TSDBinfo.cs">
+    <Compile Include="views\user\TSDBInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\user\TSDBinfo.Designer.cs">
-      <DependentUpon>TSDBinfo.cs</DependentUpon>
+    <Compile Include="views\user\TSDBInfo.Designer.cs">
+      <DependentUpon>TSDBInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\user\HDTDInfoUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\user\HDTDInfoUser.Designer.cs">
+      <DependentUpon>HDTDInfoUser.cs</DependentUpon>
     </Compile>
     <Compile Include="views\user\ThanhToan.cs">
       <SubType>Form</SubType>
@@ -240,6 +264,9 @@
     <EmbeddedResource Include="components\ChinhSuaDoanhNghiep.resx">
       <DependentUpon>ChinhSuaDoanhNghiep.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="components\KVItemUser.resx">
+      <DependentUpon>KVItemUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="components\KhoanVayItem.resx">
       <DependentUpon>KhoanVayItem.cs</DependentUpon>
     </EmbeddedResource>
@@ -254,6 +281,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="components\TSDBitemUser.resx">
       <DependentUpon>TSDBitemUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="components\HDTDItemUser.resx">
+      <DependentUpon>HDTDItemUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\admin\AdminHome.resx">
       <DependentUpon>AdminHome.cs</DependentUpon>
@@ -294,14 +324,20 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="views\user\SuaKhoanVay.resx">
+      <DependentUpon>SuaKhoanVay.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="views\user\DangKyKhoanVay_Form.resx">
       <DependentUpon>DangKyKhoanVay_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\user\SuaTSDB.resx">
       <DependentUpon>SuaTSDB.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\user\TSDBinfo.resx">
-      <DependentUpon>TSDBinfo.cs</DependentUpon>
+    <EmbeddedResource Include="views\user\TSDBInfo.resx">
+      <DependentUpon>TSDBInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\user\HDTDInfoUser.resx">
+      <DependentUpon>HDTDInfoUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\user\ThanhToan.resx">
       <DependentUpon>ThanhToan.cs</DependentUpon>
