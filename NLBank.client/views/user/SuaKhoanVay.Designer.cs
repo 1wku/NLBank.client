@@ -1,6 +1,6 @@
 ﻿namespace NLBank.client.views.user
 {
-    partial class DangKyKhoanVay_Form
+    partial class SuaKhoanVay
     {
         /// <summary>
         /// Required designer variable.
@@ -200,9 +200,9 @@
             this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton1.Name = "materialButton1";
             this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton1.Size = new System.Drawing.Size(95, 36);
+            this.materialButton1.Size = new System.Drawing.Size(87, 36);
             this.materialButton1.TabIndex = 30;
-            this.materialButton1.Text = "Xác Nhận";
+            this.materialButton1.Text = "Thay đổi";
             this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton1.UseAccentColor = false;
             this.materialButton1.UseVisualStyleBackColor = true;
@@ -228,7 +228,7 @@
             this.materialButton2.UseVisualStyleBackColor = true;
             this.materialButton2.Click += new System.EventHandler(this.materialButton2_Click);
             // 
-            // DangKyKhoanVay_Form
+            // SuaKhoanVay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -245,9 +245,9 @@
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.txt_sotienvay);
             this.Margin = new System.Windows.Forms.Padding(6);
-            this.Name = "DangKyKhoanVay_Form";
+            this.Name = "SuaKhoanVay";
             this.Padding = new System.Windows.Forms.Padding(6, 123, 6, 6);
-            this.Text = "Đăng ký khoản vay";
+            this.Text = "Chi tiết khoản vay";
             this.Load += new System.EventHandler(this.DangKyKhoanVay_Form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dg_tsdb)).EndInit();
             this.ResumeLayout(false);

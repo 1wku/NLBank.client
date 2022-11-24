@@ -26,7 +26,7 @@ namespace NLBank.client.DAL
         }
         public static DataTable getListHDTD(int makh)
         {
-            String sql = "SELECT* FROM HDTD WHERE MaKH = " + makh;
+            String sql = "select * from f_GetHDTDByMaKH(" + makh+")";
             return Connection.Instance.ExcuteQuery(sql);
         }
         public static Boolean ThemHDTD(HDTDDTO hdtd)
