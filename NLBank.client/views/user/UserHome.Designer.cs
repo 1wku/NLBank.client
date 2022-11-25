@@ -276,7 +276,7 @@
             this.tabPage2.Controls.Add(this.materialCard3);
             this.tabPage2.Controls.Add(this.materialCard2);
             this.tabPage2.Controls.Add(this.btn_them_khoan_vay);
-            this.tabPage2.ImageIndex = 2;
+            this.tabPage2.ImageKey = "payment.png";
             this.tabPage2.Location = new System.Drawing.Point(4, 39);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage2.Name = "tabPage2";
@@ -604,7 +604,7 @@
             this.tab_TSDB.Controls.Add(this.cbx_loai);
             this.tab_TSDB.Controls.Add(this.materialButton4);
             this.tab_TSDB.Controls.Add(this.materialButton1);
-            this.tab_TSDB.ImageIndex = 3;
+            this.tab_TSDB.ImageKey = "conheo.png";
             this.tab_TSDB.Location = new System.Drawing.Point(4, 39);
             this.tab_TSDB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tab_TSDB.Name = "tab_TSDB";

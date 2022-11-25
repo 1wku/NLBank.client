@@ -12,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace NLBank.client.views.employee
 {
@@ -34,7 +35,7 @@ namespace NLBank.client.views.employee
         }
         private void EmployeeHome_Load(object sender, EventArgs e)
         {
-            kv_data = KhoanVayDAL.getView();
+            kv_data = KhoanVayDAL.getKVChuaSuDung();
             updateViewKhoanVay(kv_data);
             //
             hdtd_data = HDTDDAL.getView();
@@ -60,10 +61,59 @@ namespace NLBank.client.views.employee
             kh_data = KHDAL.getView();
             updateViewKhachHang(kh_data);
 
+            DataTable Time = new DataTable();
+            Time.Columns.Add("Value");
+            Time.Columns.Add("Display");
+            DataRow dt = Time.NewRow();
+
+            dt["Display"] = "Tháng";
+            dt["Value"] = "thang";
+            Time.Rows.Add(dt);
+
+            dt = Time.NewRow();
+            dt["Display"] = "Năm";
+            dt["Value"] = "nam";
+            Time.Rows.Add(dt);
+
+            cbb_TK_GiaiNgan.DataSource = Time;
+            cbb_TK_GiaiNgan.ValueMember = "Value";
+            cbb_TK_GiaiNgan.DisplayMember = "Display";
+            cbb_TK_GiaiNgan.SelectedValue = "nam";
+            Console.WriteLine(cbb_TK_GiaiNgan.SelectedValue.ToString());
+
+            cbb_TK_ThuNo.DataSource = Time;
+            cbb_TK_ThuNo.ValueMember = "Value";
+            cbb_TK_ThuNo.DisplayMember = "Display";
+            cbb_TK_ThuNo.SelectedIndex = 1;
+
+            //Ve bieu do tren trang chu
+            fillChart();
+
             setupEvent();
 
+        }
 
+        void fillChart() {
+            //Biểu đồ thu nợ
+            DataTable dt_thuNo = CTTNDAL.ThongKe();
+            Ch_ThuNo.DataSource = dt_thuNo;
+            string X_thuNo = cbb_TK_ThuNo.SelectedValue.ToString();
+            //Theo so tien thu
+            Ch_ThuNo.Series["Số tiền thu"].XValueMember = X_thuNo;
+            Ch_ThuNo.Series["Số tiền thu"].YValueMembers = "Tong_No";
 
+            //Theo so tien tra
+            Ch_ThuNo.Series["Số tiền trả"].XValueMember = X_thuNo;
+            Ch_ThuNo.Series["Số tiền trả"].YValueMembers = "Tong_Tien_Tra";
+            Ch_ThuNo.Titles.Add("Biểu đồ thu nợ theo tháng");
+
+            //Biểu đồ giải ngân
+            DataTable dt_giaiNgan = CTGNDAL.ThongKe();
+            Ch_GiaiNgan.DataSource = dt_giaiNgan;
+            string X_GiaiNgan = cbb_TK_GiaiNgan.SelectedValue.ToString();
+            Ch_GiaiNgan.Series["Số tiền giải ngân"].XValueMember = X_GiaiNgan;
+            Ch_GiaiNgan.Series["Số tiền giải ngân"].YValueMembers = "Tong_GiaiNgan";
+            Ch_GiaiNgan.Titles.Add("Biểu đồ giải ngân theo tháng");
         }
 
         void setupEvent()
@@ -175,9 +225,7 @@ namespace NLBank.client.views.employee
                     row["SoTienVay"] != DBNull.Value ? (int)row["SoTienVay"] : 0,
                     row["LoaiTien"] != DBNull.Value ? (string)row["LoaiTien"] : "Chưa cập nhập"
                     )));;
-
-            }
-            
+            }     
         }
 
         void updateViewDieuKhoan(DataTable dieukhoan_data)
@@ -228,7 +276,7 @@ namespace NLBank.client.views.employee
 
         private void reload_kv_btn_Click(object sender, EventArgs e)
         {
-            kv_data = KhoanVayDAL.getView();
+            kv_data = KhoanVayDAL.getKVChuaSuDung();
             updateViewKhoanVay(kv_data); 
         }
 
@@ -287,15 +335,15 @@ namespace NLBank.client.views.employee
             updateViewKhachHang(kh_data); 
         }
 
-        private void materialButton1_Click(object sender, EventArgs e)
+/*        private void cbb_TK_ThuNo_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            fillChart();
         }
 
-        private void giaingan_btn_Click(object sender, EventArgs e)
+        private void cbb_TK_GiaiNgan_Changed(object sender, EventArgs e)
         {
-
-        }
+            fillChart();
+        }*/
 
         private void logout_btn_Click(object sender, EventArgs e)
         {
