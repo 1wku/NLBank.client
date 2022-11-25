@@ -94,5 +94,9 @@ namespace NLBank.client.BUS
         {
             return TSDBDAL.GetListTSDBbyLoaiTSDB(maLoaiTSDB);
         }
+        public static DataTable GetTSDBBySoHDTD(int sohdtd)
+        {
+            return TSDBDAL.getTSDBBySoHDTD(sohdtd);
+        }
     }
 }

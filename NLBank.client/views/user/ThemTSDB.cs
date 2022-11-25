@@ -29,6 +29,11 @@ namespace NLBank.client.views.user
 
         private void materialButton1_Click(object sender, EventArgs e)
         {
+            if(txt_name.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập tên tái sản đảm bảo");
+                return;
+            }
             TSDBDTO tsdb = new TSDBDTO(Int32.Parse(cbx_loai.SelectedValue.ToString()), txt_name.Text, kh.MaKH, 
                 Int32.Parse(cbx_value.SelectedValue.ToString()), cbx_hinhthuc.SelectedValue.ToString());
             if (TSDBBUS.ThemTSDB(tsdb))

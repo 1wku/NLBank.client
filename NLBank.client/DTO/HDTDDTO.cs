@@ -91,19 +91,20 @@ namespace NLBank.client.DTO
             _NgayKi = ngayKi;
         }
         public HDTDDTO() { }
-        //public HDTDDAL(DataTable data)
-        //{
-           
-        //    //hdtd_value.SoHDTD = (string)row["SoHDTD"];
-        //    //hdtd_value.Muc_dich = (string)row["Muc_dich"];
-        //    //hdtd_value.LaiQuaHan = (decimal)row["LaiQuaHan"];
-        //    //hdtd_value.LaiSuat = (decimal)row["LaiSuat"];
-        //    //hdtd_value.ThoiHanVay = (int)row["ThoiHanVay"];
-        //    //hdtd_value.PhuongThucTra = (string)row["PhuongThucTra"];
-        //    //hdtd_value.MucPhi = (int)row["MucPhi"];
-        //    //hdtd_value.TGGiaiNgan = (DateTime)row["TGGiaiNgan"];
-        //    //hdtd_value.NgayKi = (DateTime)row["NgayKi"];
-        //    //hdtd_value.SoTienVay = (double)row["SoTienVay"];
-        //}
+        public HDTDDTO(DataRow row)
+        {
+            this.SoHDTD = row["SoHDTD"] != DBNull.Value ? (int)row["SoHDTD"] : 0;
+            this.SoHDTD = row["MaKH"] != DBNull.Value ? (int)row["MaKH"] : 0;
+            this.SoHDTD = row["MAKV"] != DBNull.Value ? (int)row["MaKV"] : 0;
+            this.Muc_dich = row["Muc_dich"] != DBNull.Value ? (string)row["Muc_dich"] :"Chưa cập nhật" ;
+            this.LaiQuaHan = row["LaiQuaHan"] != DBNull.Value ? (decimal)row["LaiQuaHan"] :0 ;
+            this.LaiSuat = row["LaiSuat"] != DBNull.Value ? (decimal)row["LaiSuat"] : 0;
+            this.ThoiHanVay = row["ThoiHanVay"] != DBNull.Value ? (int)row["ThoiHanVay"] : 0;
+            this.PhuongThucTra = row["PhuongThucTra"] != DBNull.Value ? (string)row["PhuongThucTra"] : "Chưa cập nhật";
+            this.MucPhi = row["MucPhi"] != DBNull.Value ? (int)row["MucPhi"] : 0;
+            this.TGGiaiNgan = row["TGGiaiNgan"] != DBNull.Value ? (DateTime)row["TGGiaiNgan"] : default(DateTime);
+            this.NgayKi = row["NgayKi"] != DBNull.Value ? (DateTime)row["NgayKi"]:default(DateTime);
+            this.LoaiTien = row["LoaiTien"] != DBNull.Value ? (String)row["LoaiTien"] : "Chưa cập nhật";
+        }
     }
 }

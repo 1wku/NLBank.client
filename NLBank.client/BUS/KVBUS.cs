@@ -45,10 +45,22 @@ namespace NLBank.client.BUS
             return KhoanVayDAL.getListSoTienVayByMaKH(makh);
         }
 
+        public static DataTable getKVBySoHDTD(int soHDTD)
+        {
+            return KhoanVayDAL.getKVBySoHDTD(soHDTD);
+        }
 
         public static Boolean ThemKV(KhoanVayDTO kv)
         {
             return KhoanVayDAL.ThemKhoanVay(kv);
+        }
+        public static Boolean SuaKV(KhoanVayDTO kv)
+        {
+            return KhoanVayDAL.SuaKhoanVay(kv);
+        }
+        public static Boolean XoaKV(int id)
+        {
+            return KhoanVayDAL.XoaKV(id);
         }
     }
 }

@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserHome));
             this.user_home_tabcontrol = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.pnl_reminder = new System.Windows.Forms.Panel();
+            this.pnl_hdtd = new System.Windows.Forms.FlowLayoutPanel();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
             this.materialLabel8 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
@@ -47,9 +47,6 @@
             this.btn_reload = new MaterialSkin.Controls.MaterialButton();
             this.materialCard4 = new MaterialSkin.Controls.MaterialCard();
             this.materialLabel10 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel9 = new MaterialSkin.Controls.MaterialLabel();
-            this.dg_pendingKV = new System.Windows.Forms.DataGridView();
-            this.dg_HDTD = new System.Windows.Forms.DataGridView();
             this.materialButton5 = new MaterialSkin.Controls.MaterialButton();
             this.materialCard3 = new MaterialSkin.Controls.MaterialCard();
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
@@ -76,13 +73,12 @@
             this.materialButton4 = new MaterialSkin.Controls.MaterialButton();
             this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
             this.user_home_navbar = new System.Windows.Forms.ImageList(this.components);
+            this.pnl_khoanvay = new System.Windows.Forms.FlowLayoutPanel();
             this.user_home_tabcontrol.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.materialCard1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.materialCard4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dg_pendingKV)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dg_HDTD)).BeginInit();
             this.materialCard3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_tn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dg_nn)).BeginInit();
@@ -111,7 +107,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.Transparent;
-            this.tabPage1.Controls.Add(this.pnl_reminder);
+            this.tabPage1.Controls.Add(this.pnl_hdtd);
             this.tabPage1.Controls.Add(this.materialCard1);
             this.tabPage1.ImageKey = "home.png";
             this.tabPage1.Location = new System.Drawing.Point(4, 39);
@@ -121,13 +117,13 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Trang chủ";
             // 
-            // pnl_reminder
+            // pnl_hdtd
             // 
-            this.pnl_reminder.Location = new System.Drawing.Point(14, 187);
-            this.pnl_reminder.Margin = new System.Windows.Forms.Padding(2);
-            this.pnl_reminder.Name = "pnl_reminder";
-            this.pnl_reminder.Size = new System.Drawing.Size(664, 313);
-            this.pnl_reminder.TabIndex = 1;
+            this.pnl_hdtd.AutoScroll = true;
+            this.pnl_hdtd.Location = new System.Drawing.Point(35, 332);
+            this.pnl_hdtd.Name = "pnl_hdtd";
+            this.pnl_hdtd.Size = new System.Drawing.Size(1653, 799);
+            this.pnl_hdtd.TabIndex = 101;
             // 
             // materialCard1
             // 
@@ -284,8 +280,8 @@
             this.btn_reload.Depth = 0;
             this.btn_reload.HighEmphasis = true;
             this.btn_reload.Icon = null;
-            this.btn_reload.Location = new System.Drawing.Point(199, 16);
-            this.btn_reload.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btn_reload.Location = new System.Drawing.Point(419, 112);
+            this.btn_reload.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btn_reload.MouseState = MaterialSkin.MouseState.HOVER;
             this.btn_reload.Name = "btn_reload";
             this.btn_reload.NoAccentTextColor = System.Drawing.Color.Empty;
@@ -300,10 +296,8 @@
             // materialCard4
             // 
             this.materialCard4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard4.Controls.Add(this.pnl_khoanvay);
             this.materialCard4.Controls.Add(this.materialLabel10);
-            this.materialCard4.Controls.Add(this.materialLabel9);
-            this.materialCard4.Controls.Add(this.dg_pendingKV);
-            this.materialCard4.Controls.Add(this.dg_HDTD);
             this.materialCard4.Depth = 0;
             this.materialCard4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialCard4.Location = new System.Drawing.Point(21, 117);
@@ -319,48 +313,12 @@
             this.materialLabel10.AutoSize = true;
             this.materialLabel10.Depth = 0;
             this.materialLabel10.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel10.Location = new System.Drawing.Point(396, 18);
-            this.materialLabel10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.materialLabel10.Location = new System.Drawing.Point(17, 26);
             this.materialLabel10.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel10.Name = "materialLabel10";
             this.materialLabel10.Size = new System.Drawing.Size(185, 19);
             this.materialLabel10.TabIndex = 1;
             this.materialLabel10.Text = "Khoản vay đang chờ xử lý";
-            // 
-            // materialLabel9
-            // 
-            this.materialLabel9.AutoSize = true;
-            this.materialLabel9.Depth = 0;
-            this.materialLabel9.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel9.Location = new System.Drawing.Point(8, 18);
-            this.materialLabel9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.materialLabel9.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel9.Name = "materialLabel9";
-            this.materialLabel9.Size = new System.Drawing.Size(133, 19);
-            this.materialLabel9.TabIndex = 1;
-            this.materialLabel9.Text = "Hợp đồng tín dụng";
-            // 
-            // dg_pendingKV
-            // 
-            this.dg_pendingKV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dg_pendingKV.Location = new System.Drawing.Point(398, 37);
-            this.dg_pendingKV.Margin = new System.Windows.Forms.Padding(2);
-            this.dg_pendingKV.Name = "dg_pendingKV";
-            this.dg_pendingKV.RowHeadersWidth = 82;
-            this.dg_pendingKV.RowTemplate.Height = 33;
-            this.dg_pendingKV.Size = new System.Drawing.Size(386, 200);
-            this.dg_pendingKV.TabIndex = 0;
-            // 
-            // dg_HDTD
-            // 
-            this.dg_HDTD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dg_HDTD.Location = new System.Drawing.Point(8, 37);
-            this.dg_HDTD.Margin = new System.Windows.Forms.Padding(2);
-            this.dg_HDTD.Name = "dg_HDTD";
-            this.dg_HDTD.RowHeadersWidth = 82;
-            this.dg_HDTD.RowTemplate.Height = 33;
-            this.dg_HDTD.Size = new System.Drawing.Size(374, 200);
-            this.dg_HDTD.TabIndex = 0;
             // 
             // materialButton5
             // 
@@ -630,8 +588,8 @@
             this.btn_reloadTSBD.Depth = 0;
             this.btn_reloadTSBD.HighEmphasis = true;
             this.btn_reloadTSBD.Icon = null;
-            this.btn_reloadTSBD.Location = new System.Drawing.Point(724, 141);
-            this.btn_reloadTSBD.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btn_reloadTSBD.Location = new System.Drawing.Point(1448, 253);
+            this.btn_reloadTSBD.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btn_reloadTSBD.MouseState = MaterialSkin.MouseState.HOVER;
             this.btn_reloadTSBD.Name = "btn_reloadTSBD";
             this.btn_reloadTSBD.NoAccentTextColor = System.Drawing.Color.Empty;
@@ -668,8 +626,8 @@
             this.pnl_TSDB.Location = new System.Drawing.Point(16, 81);
             this.pnl_TSDB.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_TSDB.Name = "pnl_TSDB";
-            this.pnl_TSDB.Size = new System.Drawing.Size(692, 415);
-            this.pnl_TSDB.TabIndex = 6;
+            this.pnl_TSDB.Size = new System.Drawing.Size(1384, 799);
+            this.pnl_TSDB.TabIndex = 100;
             // 
             // cbx_loai
             // 
@@ -742,6 +700,14 @@
             this.user_home_navbar.Images.SetKeyName(2, "payment.png");
             this.user_home_navbar.Images.SetKeyName(3, "conheo.png");
             // 
+            // pnl_khoanvay
+            // 
+            this.pnl_khoanvay.AutoScroll = true;
+            this.pnl_khoanvay.Location = new System.Drawing.Point(17, 65);
+            this.pnl_khoanvay.Name = "pnl_khoanvay";
+            this.pnl_khoanvay.Size = new System.Drawing.Size(1568, 390);
+            this.pnl_khoanvay.TabIndex = 101;
+            // 
             // UserHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -764,8 +730,6 @@
             this.tabPage2.PerformLayout();
             this.materialCard4.ResumeLayout(false);
             this.materialCard4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dg_pendingKV)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dg_HDTD)).EndInit();
             this.materialCard3.ResumeLayout(false);
             this.materialCard3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_tn)).EndInit();
@@ -809,7 +773,6 @@
         private MaterialSkin.Controls.MaterialLabel lb_2;
         private System.Windows.Forms.FlowLayoutPanel pnl_TSDB;
         private MaterialSkin.Controls.MaterialTextBox txt_name;
-        private System.Windows.Forms.Panel pnl_reminder;
         private MaterialSkin.Controls.MaterialLabel lb_totaltn;
         private MaterialSkin.Controls.MaterialLabel lb_totalnn;
         private MaterialSkin.Controls.MaterialLabel lb_totalgn;
@@ -821,10 +784,9 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialCard materialCard4;
         private MaterialSkin.Controls.MaterialLabel materialLabel10;
-        private MaterialSkin.Controls.MaterialLabel materialLabel9;
-        private System.Windows.Forms.DataGridView dg_pendingKV;
-        private System.Windows.Forms.DataGridView dg_HDTD;
         private MaterialSkin.Controls.MaterialButton btn_reload;
         private MaterialSkin.Controls.MaterialButton btn_reloadTSBD;
+        private System.Windows.Forms.FlowLayoutPanel pnl_hdtd;
+        private System.Windows.Forms.FlowLayoutPanel pnl_khoanvay;
     }
 }

@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NLBank.client.views;
 
 namespace NLBank.client.components
 {
@@ -45,6 +46,11 @@ namespace NLBank.client.components
             txt_sdt.Text = kh.Sdt;
             txt_madn.Text = dn.MADN;
             txt_dbrating.Text = dn.DnB_rating.ToString();
+        }
+
+        private void btn_changePasswd_Click(object sender, EventArgs e)
+        {
+            new ChangePasswordForm(kh.Email.Replace(" ", String.Empty)).Show();
         }
     }
 }

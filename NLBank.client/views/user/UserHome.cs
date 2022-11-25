@@ -45,7 +45,7 @@ namespace NLBank.client.views.user
 
         private void materialButton2_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void materialCard2_Paint(object sender, PaintEventArgs e)
@@ -103,7 +103,7 @@ namespace NLBank.client.views.user
 
         private void materialButton5_Click(object sender, EventArgs e)
         {
-            
+
             new ThanhToan(lb_totaldn.Text, lb_totalnn.Text).Show();
         }
 
@@ -127,6 +127,13 @@ namespace NLBank.client.views.user
             lb_adress.Text = kh.Dia_chi;
             lb_email.Text = kh.Email;
             lb_phone.Text = kh.Sdt;
+
+            DataTable hdtd_data = HDTDBUS.getListHDTD(kh.MaKH);
+            pnl_hdtd.Controls.Clear();
+            foreach (DataRow row in hdtd_data.Rows)
+            {
+                pnl_hdtd.Controls.Add(new HDTDItemUser(new HDTDDTO(row)));
+            }
 
             //Thong bao giay nhac no
             //DataTable gnn_data = GNNBUS.GetGNN(kh.MaKH);
@@ -159,7 +166,6 @@ namespace NLBank.client.views.user
             DataTable soduno_data = CTBUS.GetSoDuNoByHDTDMoiNhat(kh.MaKH);
             DataTable sotienvay_data = KVBUS.getListSoTienVayByMaKH(kh.MaKH);
             DataTable kvchuaduyet_data = KVBUS.GetListKVchuaDuyet(kh.MaKH);
-            DataTable hdtd_data = HDTDBUS.getListHDTD(kh.MaKH);
 
             Int64 totalgn = 0;
             Int64 totaltn = 0;
@@ -188,8 +194,20 @@ namespace NLBank.client.views.user
             dg_gn.DataSource = ctgn_data;
             dg_nn.DataSource = ctnn_data;
             dg_tn.DataSource = cttn_data;
-            dg_pendingKV.DataSource = kvchuaduyet_data;
-            dg_HDTD.DataSource = hdtd_data;
+
+            pnl_khoanvay.Controls.Clear();
+            foreach (DataRow row in kvchuaduyet_data.Rows)
+            {
+                pnl_khoanvay.Controls.Add(new KVItemUser(new KhoanVayDTO(
+                    row["MaKV"] != DBNull.Value ? (int)row["MaKV"] : 0,
+                    row["MaKH"] != DBNull.Value ? (int)row["MaKH"] : 0,
+                    row["MaTSDB"] != DBNull.Value ? (int)row["MaTSDB"] : 0,
+                    row["MaLoaiKV"] != DBNull.Value ? (int)row["MaTSDB"] : 0,
+                    row["MucDich"] != DBNull.Value ? (string)row["MucDich"] : "Chưa cập nhật",
+                    row["SoTienVay"] != DBNull.Value ? (int)row["SoTienVay"] : 0,
+                    row["LoaiTien"] != DBNull.Value ? (string)row["LoaiTien"] : "Chưa cập nhập"
+                    ), kh));
+            }
 
             lb_totalgn.Text = totalgn.ToString() + "VND";
             lb_totaltn.Text = totaltn.ToString() + "VND";
@@ -204,11 +222,10 @@ namespace NLBank.client.views.user
                 pnl_TSDB.Controls.Add(new TSDBitemUser(new TSDBDTO(
                     row["MaTSDB"] != DBNull.Value ? (int)row["MaTSDB"] : 0,
                     row["MaLoaiTSDB"] != DBNull.Value ? (int)row["MaLoaiTSDB"] : 0,
-                    (string)row["TenTSDB"],
+                    row["TenTSDB"] != DBNull.Value ? (string)row["TenTSDB"] : "Chưa cập nhật",
                     row["MaKH"] != DBNull.Value ? (int)row["MaKH"] : 0,
                     row["TrigiaTS"] != DBNull.Value ? (int)row["TrigiaTS"] : 0,
-
-                row["HinhThucDB"] != DBNull.Value ? (string)row["HinhThucDB"] : "Chưa cập nhập"
+                    row["HinhThucDB"] != DBNull.Value ? (string)row["HinhThucDB"] : "Chưa cập nhập"
                     ), kh));
             }
             cbx_loai.DataSource = TSDBBUS.GetLoaiTSDB();
