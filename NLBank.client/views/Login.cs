@@ -77,7 +77,6 @@ namespace NLBank.client
                     break;
 
             }
-            Hide();
         }
 
         private void Login_Load(object sender, EventArgs e)

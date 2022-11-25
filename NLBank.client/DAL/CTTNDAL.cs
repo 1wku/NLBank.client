@@ -100,5 +100,10 @@ namespace NLBank.client.DAL
             }
 
         }
+
+        public static DataTable ThongKe()
+        {
+            return Connection.Instance.ExcuteQuery("SELECT * FROM TK_ThuNo ORDER BY nam");
+        }
     }
 }

@@ -68,7 +68,7 @@ namespace NLBank.client.views.employee
             if (isValid())
             {
                 HDTDDTO hDTDDTO = new HDTDDTO();
-                hDTDDTO.LoaiTien = kv.LoaiTien;
+                hDTDDTO.LoaiTien = "VND";
                 hDTDDTO.MaKH = kv.MaKH;
                 hDTDDTO.MAKV = kv.MaKV;
                 hDTDDTO.Muc_dich = kv.MucDich;

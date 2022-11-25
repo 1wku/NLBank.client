@@ -79,5 +79,10 @@ namespace NLBank.client.DAL
             command.ExecuteNonQuery();
             Conn.Close();
         }
+
+        public static DataTable ThongKe() 
+        {
+            return Connection.Instance.ExcuteQuery("SELECT * FROM TK_GiaiNgan ORDER BY nam, thang");
+        }
     }
 }

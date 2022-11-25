@@ -94,8 +94,8 @@ namespace NLBank.client.DTO
         public HDTDDTO(DataRow row)
         {
             this.SoHDTD = row["SoHDTD"] != DBNull.Value ? (int)row["SoHDTD"] : 0;
-            this.SoHDTD = row["MaKH"] != DBNull.Value ? (int)row["MaKH"] : 0;
-            this.SoHDTD = row["MAKV"] != DBNull.Value ? (int)row["MaKV"] : 0;
+            this.MaKH = row["MaKH"] != DBNull.Value ? (int)row["MaKH"] : 0;
+            this.MAKV = row["MAKV"] != DBNull.Value ? (int)row["MaKV"] : 0;
             this.Muc_dich = row["Muc_dich"] != DBNull.Value ? (string)row["Muc_dich"] :"Chưa cập nhật" ;
             this.LaiQuaHan = row["LaiQuaHan"] != DBNull.Value ? (decimal)row["LaiQuaHan"] :0 ;
             this.LaiSuat = row["LaiSuat"] != DBNull.Value ? (decimal)row["LaiSuat"] : 0;
