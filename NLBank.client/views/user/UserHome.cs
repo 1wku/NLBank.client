@@ -237,5 +237,17 @@ namespace NLBank.client.views.user
         {
             getData();
         }
+
+        private void user_home_tabcontrol_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (user_home_tabcontrol.SelectedTab.Name == "Logout")
+            {
+                DialogResult msg = MessageBox.Show("Bạn có thật sự muốn thoát?", "Thoát chương trình", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (msg == DialogResult.OK)
+                {
+                    System.Environment.Exit(0);
+                }
+            }
+        }
     }
 }

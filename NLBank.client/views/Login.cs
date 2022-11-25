@@ -84,5 +84,17 @@ namespace NLBank.client
         {
 
         }
+
+        private void ckb_viewPass_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckb_viewPass.Checked)
+            {
+                txt_password.Password = false;
+            }
+            else
+            {
+                txt_password.Password = true;
+            }
+        }
     }
 }
