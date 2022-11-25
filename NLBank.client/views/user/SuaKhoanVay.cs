@@ -66,9 +66,24 @@ namespace NLBank.client.views.user
                 MessageBox.Show("Vui lòng nhập mục đích vay");
                 return;
             }
+            if (cbx_loaikv.SelectedValue == null)
+            {
+                MessageBox.Show("Chọn loại khoản vay hợp lệ");
+                return;
+            }
             if(dg_tsdb.CurrentRow == null )
             {
-                MessageBox.Show("Vui lòng chọn tài sản đảm bảo hợp lệ");
+                if (KVBUS.SuaKV(new KhoanVayDTO(kv.MaKV, kh.MaKH, kv.MaTSDB, Int32.Parse(cbx_loaikv.SelectedValue.ToString()),
+                                txt_mucdich.Text, sotienvay, cbx_loaitien.SelectedValue.ToString())))
+                {
+                    MessageBox.Show("Sửa Khoản vay thành công");
+                    this.Close();
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("Sửa Khoản vay thất bại");
+                }
                 return;
             }
             if (KVBUS.SuaKV(new KhoanVayDTO(kv.MaKV, kh.MaKH, Int32.Parse(dg_tsdb.Rows[dg_tsdb.CurrentRow.Index].Cells[0].Value.ToString()), Int32.Parse(cbx_loaikv.SelectedValue.ToString()),

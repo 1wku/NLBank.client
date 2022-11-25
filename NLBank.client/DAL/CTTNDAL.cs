@@ -14,7 +14,7 @@ namespace NLBank.client.DAL
     {
         public static DataTable getView()
         {
-            String cmd = "Select * From payBackPaper ";
+            String cmd = "Select * From GiayThuNo ";
             SqlConnection Con = Connection.KetNoi();
             SqlCommand command = new SqlCommand(cmd, Con);
             Con.Open();
@@ -40,7 +40,7 @@ namespace NLBank.client.DAL
 
             try
             {
-                Console.WriteLine($"EXEC sp_ThemCTTN {mahd} ,{macn} , {sotienvay}"); 
+                //Console.WriteLine($"EXEC sp_ThemCTTN {mahd} ,{macn} , {sotienvay}"); 
                 Connection.Instance.ExcuteNonQuery($"EXEC sp_ThemCTTN {mahd} ,{macn} , {sotienvay}");   
             }
             catch (Exception)
@@ -82,7 +82,7 @@ namespace NLBank.client.DAL
         {
             try {
             SqlConnection Conn = Connection.KetNoi();
-            SqlCommand command = new SqlCommand("sp_deletePayBackPaper", Conn);
+            SqlCommand command = new SqlCommand("sp_xoaCTTN", Conn);
             command.CommandType = CommandType.StoredProcedure;
             command.Parameters.Add("@payBackCode", SqlDbType.Char);
             command.Parameters.Add("@HDTDCode", SqlDbType.Char);
